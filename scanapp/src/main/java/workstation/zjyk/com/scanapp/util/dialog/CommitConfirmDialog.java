@@ -139,7 +139,7 @@ public class CommitConfirmDialog extends ScanCommonDialog {
             }
         }
         mAdapterHistoryPhoto.setNewData(photos);
-        if(qualityHandleDetailVO != null){
+        if (qualityHandleDetailVO != null) {
             tvOpreationName.setText("操作人: " + qualityHandleDetailVO.getPersonName());
             String feedStr = (qualityHandleDetailVO.getNeedSupply() != null && qualityHandleDetailVO.getNeedSupply() == ScanYesOrNoEnum.YES) ? "是" : "否";
             tvFeedRecord.setText("是否补料: " + feedStr);
@@ -168,8 +168,14 @@ public class CommitConfirmDialog extends ScanCommonDialog {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_upload_detail:
+                if (dialogCallBackTwo != null) {
+                    dialogCallBackTwo.OnPositiveClick("");
+                }
                 break;
             case R.id.tv_refuse_detail:
+                if (dialogCallBackTwo != null) {
+                    dialogCallBackTwo.OnNegativeClick();
+                }
                 break;
         }
     }

@@ -770,7 +770,8 @@ public class ScanResultAboutPictrueActivity extends ScanBaseActivity<ScanMainPre
                 KeyboardUtils.hideKeyboardOnly(editReason);
                 boolean tag = (boolean) tvUpload.getTag();
                 if (tag) {
-                    uploadImages();
+                    showCommitConfirmDialog();
+//                    uploadImages();
                 } else {
                     ToastUtil.showInfoCenterShort("请选择上传的图片");
                 }
@@ -840,7 +841,7 @@ public class ScanResultAboutPictrueActivity extends ScanBaseActivity<ScanMainPre
             mCommitConfirmDialog = ScanDialogUtils.showCommitConfirmDialog(this, "", new ScanDialogCallBackTwo() {
                 @Override
                 public void OnPositiveClick(Object obj) {
-
+                    uploadImages();
                 }
 
                 @Override
