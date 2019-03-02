@@ -132,6 +132,8 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
     }
 
     private void testServer() {
+        //查看用哪个接口传递mac
+        // params.put("mac", UICommonUtil.getAdresseMAC(this));
         currentPresent.testServer(new HashMap<>());
     }
 
@@ -160,7 +162,12 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
     private void startUi() {
         if (!ScanConstants.isCheckTray()) {
             //质量
-            goLogin(VERTICAL);
+            if (ScanConstants.isWarn()) {
+                //报警
+
+            } else {
+                goLogin(VERTICAL);
+            }
         } else {
             goScan();
         }
