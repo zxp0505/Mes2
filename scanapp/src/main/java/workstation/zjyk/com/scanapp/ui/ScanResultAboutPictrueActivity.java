@@ -66,6 +66,9 @@ import workstation.zjyk.com.scanapp.ui.present.ScanMainPresent;
 import workstation.zjyk.com.scanapp.ui.views.ScanMainView;
 import workstation.zjyk.com.scanapp.util.BundleParams;
 import workstation.zjyk.com.scanapp.util.ScanUserManager;
+import workstation.zjyk.com.scanapp.util.dialog.CommitConfirmDialog;
+import workstation.zjyk.com.scanapp.util.dialog.ScanDialogUtils;
+import workstation.zjyk.com.scanapp.util.dialog.callback.ScanDialogCallBackTwo;
 
 /**
  * Created by zjgz on 2018/1/22.
@@ -123,6 +126,7 @@ public class ScanResultAboutPictrueActivity extends ScanBaseActivity<ScanMainPre
     private boolean toDetail;
     private String detailRecordId;
     private String handleTime;
+    private CommitConfirmDialog mCommitConfirmDialog;
 
 
     private void initView() {
@@ -476,10 +480,11 @@ public class ScanResultAboutPictrueActivity extends ScanBaseActivity<ScanMainPre
 
     ScanTrayInfoVo currentTrayInfoVo;
     Map<String, String> downPicMap = new HashMap<>();
-
+    QualityHandleDetailVO qualityHandleDetailVO;
     @Override
     public void showDetail(QualityHandleDetailVO qualityHandleDetailVO) {
         if (qualityHandleDetailVO != null) {
+            this.qualityHandleDetailVO = qualityHandleDetailVO;
             ScanTrayInfoVo trayInfoVo = new ScanTrayInfoVo();
             trayInfoVo.setBinder(qualityHandleDetailVO.getBinder());
             trayInfoVo.setBinderCode(qualityHandleDetailVO.getBinderCode());
@@ -828,5 +833,28 @@ public class ScanResultAboutPictrueActivity extends ScanBaseActivity<ScanMainPre
             ToastUtil.showInfoCenterShort("拒绝成功");
             toScanActivity();
         }
+    }
+
+    private void showCommitConfirmDialog(){
+        if(mCommitConfirmDialog == null) {
+            mCommitConfirmDialog = ScanDialogUtils.showCommitConfirmDialog(this, "", new ScanDialogCallBackTwo() {
+                @Override
+                public void OnPositiveClick(Object obj) {
+
+                }
+
+                @Override
+                public void OnNegativeClick() {
+
+                }
+            });
+        }
+        QualityHandleDetailVO qualityHandleDetailVO =new QualityHandleDetailVO();
+        qualityHandleDetailVO.setPersonName(ScanUserManager.getInstance().getCurrentPerson().getUserName());
+        qualityHandleDetailVO.setExceptionType(exceptTypes.get(spinnerOne.getSelectedItemPosition()));
+        qualityHandleDetailVO.setHandleType(handleTypes.get(spinnerTwo.getSelectedItemPosition()));
+        qualityHandleDetailVO.setReason(editReason.getText().toString());
+        mCommitConfirmDialog.showDatas(mScanResultAdapter.getData(),mScanResultOrderAdapter.getData(),selectList,qualityHandleDetailVO);
+        mCommitConfirmDialog.show();
     }
 }

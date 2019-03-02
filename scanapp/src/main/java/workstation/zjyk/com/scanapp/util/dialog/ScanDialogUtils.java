@@ -33,5 +33,11 @@ public class ScanDialogUtils {
         return resultErrorDialog;
     }
 
+    public static CommitConfirmDialog showCommitConfirmDialog(Context context, String title, ScanDialogCallBackTwo callBackTwo) {
+        CommitConfirmDialog resultErrorDialog = new CommitConfirmDialog(context, title, callBackTwo);
+        resultErrorDialog.setCanceledOnTouchOutside(false);
+        return resultErrorDialog;
+    }
+
 
 }
