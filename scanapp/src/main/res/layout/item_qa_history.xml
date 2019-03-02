@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/x_design_20px"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constrain_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/y_design_10px"
+        android:paddingBottom="@dimen/y_design_10px"
+        android:background="@drawable/shape_qa_history_item_bg">
+
+        <TextView
+            android:id="@+id/tv_one"
+            style="@style/tv_one"
+            android:text="追溯码: "
+            android:paddingLeft="@dimen/x_design_10px"
+            android:paddingTop="@dimen/y_design_10px"
+            android:paddingBottom="@dimen/y_design_5px"
+            android:textSize="@dimen/text_design_26px" />
+
+        <TextView
+            android:id="@+id/tv_barcode"
+            style="@style/tv_one"
+            android:textSize="@dimen/text_design_32px"
+            tools:text="型号4444"
+            app:layout_constraintLeft_toRightOf="@id/tv_one"
+            app:layout_constraintBottom_toBottomOf="@id/tv_one" />
+
+        <View
+            android:id="@+id/line_one"
+            style="@style/line_hz"
+            android:layout_marginTop="@dimen/y_design_5px"
+            app:layout_constraintTop_toBottomOf="@+id/tv_one" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x_design_2px"
+            android:layout_marginRight="@dimen/x_design_2px"
+            android:paddingBottom="@dimen/y_design_5px"
+            android:paddingLeft="@dimen/x_design_10px"
+            app:layout_constraintTop_toBottomOf="@+id/line_one">
+
+            <TextView
+                android:id="@+id/tv_two"
+                style="@style/tv_one"
+                android:paddingBottom="@dimen/y_design_5px"
+                android:paddingTop="@dimen/y_design_10px"
+                android:text="型号: "
+                android:textSize="@dimen/text_design_26px" />
+
+            <TextView
+                android:id="@+id/tv_model"
+                style="@style/tv_one"
+                android:textSize="@dimen/text_design_32px"
+                app:layout_constraintBottom_toBottomOf="@id/tv_two"
+                app:layout_constraintLeft_toRightOf="@id/tv_two"
+                tools:text="订单编号00000" />
+
+
+            <TextView
+                android:id="@+id/tv_three"
+                style="@style/tv_one"
+                android:paddingBottom="@dimen/y_design_5px"
+                android:paddingTop="@dimen/y_design_10px"
+                android:text="生产订单编号: "
+                android:textSize="@dimen/text_design_26px"
+                app:layout_constraintLeft_toLeftOf="@id/tv_two"
+                app:layout_constraintTop_toBottomOf="@id/tv_two" />
+
+            <TextView
+                android:id="@+id/tv_product_number"
+                style="@style/tv_one"
+                android:textSize="@dimen/text_design_32px"
+                app:layout_constraintBottom_toBottomOf="@id/tv_three"
+                app:layout_constraintLeft_toRightOf="@id/tv_three"
+                tools:text="生产序号3333" />
+
+            <TextView
+                android:id="@+id/tv_four"
+                style="@style/tv_one"
+                android:paddingBottom="@dimen/y_design_5px"
+                android:paddingTop="@dimen/y_design_10px"
+                android:text="计划日期: "
+                android:textSize="@dimen/text_design_26px"
+                app:layout_constraintLeft_toLeftOf="@id/tv_three"
+                app:layout_constraintTop_toBottomOf="@id/tv_three" />
+
+
+            <TextView
+                android:id="@+id/tv_date"
+                style="@style/tv_one"
+                android:textSize="@dimen/text_design_32px"
+                app:layout_constraintBottom_toBottomOf="@id/tv_four"
+                app:layout_constraintLeft_toRightOf="@id/tv_four"
+                tools:text="3333" />
+
+            <TextView
+                android:id="@+id/tv_five"
+                style="@style/tv_one"
+                android:paddingBottom="@dimen/y_design_5px"
+                android:paddingTop="@dimen/y_design_10px"
+                android:text="处理日期: "
+                android:textSize="@dimen/text_design_26px"
+                app:layout_constraintLeft_toLeftOf="@id/tv_three"
+                app:layout_constraintTop_toBottomOf="@id/tv_four" />
+
+
+            <TextView
+                android:id="@+id/tv_handle_date"
+                style="@style/tv_one"
+                android:textSize="@dimen/text_design_32px"
+                app:layout_constraintBottom_toBottomOf="@id/tv_five"
+                app:layout_constraintLeft_toRightOf="@id/tv_five"
+                tools:text="3333" />
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/line_two"
+            style="@style/line_hz"
+            app:layout_constraintTop_toBottomOf="@+id/cl_content" />
+
+        <TextView
+            android:id="@+id/tv_opreation_lable"
+            style="@style/tv_one"
+            android:text="处理人员: "
+            android:paddingLeft="@dimen/x_design_10px"
+            android:layout_marginTop="@dimen/y_design_20px"
+            android:textSize="@dimen/text_design_26px"
+            android:drawablePadding="@dimen/x_design_10px"
+            app:layout_constraintTop_toBottomOf="@id/line_two" />
+
+        <TextView
+            android:id="@+id/tv_opreation_name"
+            style="@style/tv_one"
+            tools:text="张三"
+            android:textSize="@dimen/text_design_32px"
+            app:layout_constraintLeft_toRightOf="@+id/tv_opreation_lable"
+            app:layout_constraintBottom_toBottomOf="@id/tv_opreation_lable" />
+
+        <TextView
+            android:id="@+id/tv_opreation_method"
+            style="@style/tv_one"
+            tools:text="张三"
+            android:textSize="@dimen/text_design_32px"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingRight="10dp"/>
+
+        <TextView
+            style="@style/tv_one"
+            android:text="处理方式: "
+            android:textSize="@dimen/text_design_26px"
+            app:layout_constraintRight_toLeftOf="@id/tv_opreation_method"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

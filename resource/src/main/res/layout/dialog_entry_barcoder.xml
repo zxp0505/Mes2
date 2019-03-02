@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_dialog_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/x_design_50px"
+    android:paddingRight="@dimen/x_design_50px"
+    android:paddingBottom="@dimen/y_design_50px">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_20px"
+        android:gravity="center"
+        android:text="请输入分配数量"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_design_35px" />
+
+    <EditText
+        android:id="@+id/edit_number"
+        android:layout_width="@dimen/x_design_350px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_30px"
+        android:background="@drawable/shape_bg_editext"
+        android:hint="请输入..."
+        android:lines="1"
+        android:layout_marginLeft="@dimen/x_design_40px"
+        android:layout_marginRight="@dimen/x_design_40px"
+        android:padding="@dimen/x_design_6px"
+        android:textSize="@dimen/text_design_30px" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_40px">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="@style/dialog_bt_cancle"
+            android:layout_marginRight="@dimen/x_design_30px"
+            />
+
+        <Button
+            android:id="@+id/btn_sure"
+            style="@style/dialog_bt_confirm"
+            android:layout_marginLeft="@dimen/x_design_30px"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>

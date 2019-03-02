@@ -1,0 +1,76 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_report_work">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x_design_2px"
+        android:layout_gravity="top"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_70px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <View
+            style="@style/cm_line_ve"
+            android:visibility="visible" />
+
+        <TextView
+            style="@style/tv_one"
+            android:text="订单编号"
+            android:textColor="@color/white_full"
+            android:layout_weight="0.8"
+            android:textSize="@dimen/design_33px" />
+
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            style="@style/tv_one"
+            android:text="生产序号"
+            android:layout_weight="0.9"
+            android:textColor="@color/white_full"
+            android:textSize="@dimen/design_33px" />
+
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            style="@style/tv_one"
+            android:layout_weight="1.3"
+            android:text="型号"
+            android:textColor="@color/white_full"
+            android:textSize="@dimen/design_33px" />
+
+        <View style="@style/cm_line_ve" />
+        <TextView
+            style="@style/tv_one"
+            android:layout_weight="0.5"
+            android:text="数量"
+            android:textColor="@color/white_full"
+            android:textSize="@dimen/design_33px" />
+
+        <View style="@style/cm_line_ve" />
+        <TextView
+            style="@style/tv_one"
+            android:layout_weight="1.5"
+            android:text="报工记录"
+            android:textColor="@color/white_full"
+            android:textSize="@dimen/design_33px" />
+
+        <View style="@style/cm_line_ve" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x_design_2px"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/y_design_10px"
+        android:background="#000" />
+</FrameLayout>

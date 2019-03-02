@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/fragmnet_bg_one"
+    android:orientation="vertical">
+
+    <include layout="@layout/fragment_title" />
+
+    <include
+        layout="@layout/menu_station_transfer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x_design_180px"
+        android:layout_marginRight="@dimen/x_design_180px" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_490px"
+        android:layout_marginLeft="@dimen/x_design_180px"
+        android:layout_marginRight="@dimen/x_design_180px"
+        android:overScrollMode="never">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/tv_report_confirm"
+        style="@style/tv_shape_two"
+        android:layout_width="@dimen/x_design_250px"
+        android:layout_height="@dimen/y_design_120px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y_design_50px"
+        android:text="确认转移"
+        android:textSize="@dimen/text_design_45px" />
+
+
+</LinearLayout>

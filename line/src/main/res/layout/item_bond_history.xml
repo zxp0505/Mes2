@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/x_design_20px"
+        android:paddingTop="@dimen/x_design_20px"
+        android:background="@drawable/shape_bond_history_record_bg">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/iv_traycode"
+                android:layout_width="@dimen/x_design_300px"
+                android:layout_height="@dimen/y_design_50px"
+                android:scaleType="fitXY"
+                android:src="@drawable/traycode" />
+
+            <TextView
+                android:id="@+id/tv_traycode"
+                style="@style/tv_one"
+                android:text="条码"
+                android:layout_below="@id/iv_traycode"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_print"
+            style="@style/tv_one"
+            android:text="打印"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/shape_bond_tab_bg_selected"
+            android:paddingLeft="@dimen/x_design_40px"
+            android:paddingRight="@dimen/x_design_40px"
+            android:paddingTop="@dimen/x_design_20px"
+            android:paddingBottom="@dimen/x_design_10px"
+            android:layout_alignParentRight="true" />
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bond_history_record_bg"
+        android:paddingLeft="@dimen/x_design_30px"
+        android:paddingTop="@dimen/y_design_10px"
+        android:paddingBottom="@dimen/y_design_20px"
+        android:paddingRight="@dimen/x_design_30px"
+        >
+
+        <TextView
+            android:id="@+id/tv_bond_position"
+            style="@style/tv_one"
+            tools:text="下发工位: 机械"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tv_bond_time"
+            style="@style/tv_one"
+            tools:text="下发时间: 2018-10-10"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <include layout="@layout/menu_item_history_record" />
+
+    <LinearLayout
+        android:id="@+id/ll_mateail_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/fragmnet_bg_one"
+    android:orientation="vertical">
+
+    <include layout="@layout/fragment_title" />
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/y_design_20px"
+    android:paddingLeft="@dimen/x_design_50px"
+    android:paddingRight="@dimen/x_design_50px">
+
+    <LinearLayout
+        android:id="@+id/ll_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_task_entry_mt_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/tv_task"
+            android:padding="@dimen/x_design_15px"
+            android:text="物料"
+            android:textSize="@dimen/design_35px" />
+
+        <include
+            layout="@layout/menu_exception_materaill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycyle_entry_materail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y_design_450px">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_right"
+        android:layout_width="@dimen/x_design_500px"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/ll_left"
+        android:background="@drawable/shape_task_entry_mt_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginRight="@dimen/x_design_30px">
+
+        <TextView
+            style="@style/tv_task"
+            android:padding="@dimen/x_design_15px"
+            android:text="在制品"
+            android:textSize="@dimen/design_35px" />
+
+        <include
+            layout="@layout/menu_exception_making"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycyle_making"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y_design_350px">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+
+</RelativeLayout>
+    <TextView
+        android:id="@+id/tv_bind_tray_except"
+        style="@style/tv_shape_two"
+        android:layout_width="@dimen/x_design_250px"
+        android:layout_height="@dimen/y_design_120px"
+        android:text="绑定托盘"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/text_design_45px"
+        android:layout_marginTop="@dimen/y_design_50px"/>
+
+
+</LinearLayout>

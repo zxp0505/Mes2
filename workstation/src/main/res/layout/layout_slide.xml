@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_wran"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_full"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_warn"
+        style="@style/tv_task"
+        android:layout_width="@dimen/x_design_300px"
+        android:layout_height="@dimen/x_design_300px"
+        android:background="@drawable/shape_wran_circle"
+        android:text="报警"
+        android:textSize="@dimen/text_design_60px" />
+</LinearLayout>

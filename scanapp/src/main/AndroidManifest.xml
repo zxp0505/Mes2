@@ -1,0 +1,77 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="workstation.zjyk.com.scanapp">
+
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".ui.application.ScanBaseApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/NavigationTheme"
+        tools:replace="android:theme">
+        <!--android:theme="@style/NavigationTheme"-->
+        <activity
+            android:name=".ui.ScanSplashActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--<activity-->
+        <!--android:name=".ui.ScanMainActivity"-->
+        <!--android:screenOrientation="portrait" />-->
+        <activity
+            android:name=".ui.ScanCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ScanCode2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ScanResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ScanResultAboutPictrueActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MaterailDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.WipDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ScanHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ScanLoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ScanLoginHzActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.ScanInspectActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="cn.com.ethank.mylibrary.resourcelibrary.common_util.crash.BugReportActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

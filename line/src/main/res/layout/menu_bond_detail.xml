@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <View
+        style="@style/line_hz"
+        android:layout_gravity="top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="7"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <View style="@style/line_ve" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1.1"
+            android:paddingTop="@dimen/y_design_10px"
+            android:paddingBottom="@dimen/y_design_10px">
+
+            <TextView
+                android:id="@+id/tv_materail_condition"
+                style="@style/tv_one"
+                android:layout_width="wrap_content"
+                android:text="料齐"
+                android:drawableLeft="@drawable/ok"
+                android:drawablePadding="@dimen/x_design_10px" />
+        </LinearLayout>
+
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            style="@style/tv_bond_detail"
+            android:layout_weight="1.5"
+            android:text="物料编号" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            style="@style/tv_bond_detail"
+            android:text="物料名称"
+            android:layout_weight="1.7" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            style="@style/tv_bond_detail"
+            android:text="需要"
+            android:layout_weight="0.6" />
+        <View style="@style/line_ve" />
+        <TextView
+            style="@style/tv_bond_detail"
+            android:layout_weight="0.6"
+            android:text="已收" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            style="@style/tv_bond_detail"
+            android:layout_weight="0.6"
+            android:text="已发" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            style="@style/tv_bond_detail"
+            android:layout_weight="0.9"
+            android:text="本次可发放" />
+
+        <View style="@style/line_ve" />
+    </LinearLayout>
+    <View
+        style="@style/line_hz"
+        android:layout_gravity="bottom" />
+</FrameLayout>

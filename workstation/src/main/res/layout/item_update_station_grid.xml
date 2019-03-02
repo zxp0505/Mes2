@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_item"
+    android:layout_width="match_parent"
+    android:paddingTop="@dimen/y_design_15px"
+    android:paddingBottom="@dimen/y_design_15px"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_step"
+        style="@style/tv_task"
+        android:layout_width="@dimen/x_design_300px"
+        android:paddingTop="@dimen/y_design_30px"
+        android:paddingBottom="@dimen/y_design_30px"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/text_design_35px"
+        tools:text="工步工步" />
+</FrameLayout>

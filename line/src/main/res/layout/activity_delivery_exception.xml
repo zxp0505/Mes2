@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="@dimen/x_design_1540px"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="@dimen/x_design_1500px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y_design_40px"
+            android:background="@drawable/shape_makesure_dialog"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y_design_10px"
+                android:text="您扫描到一个待投递异常托盘,请打印物料清单"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_design_45px" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/y_design_20px"
+                android:paddingLeft="@dimen/x_design_100px"
+                android:paddingRight="@dimen/x_design_100px">
+
+
+                <TextView
+                    android:id="@+id/tv_tray_number"
+                    style="@style/tv_two"
+                    android:layout_marginTop="@dimen/design_5px"
+                    tools:text="目标工位:光学001" />
+
+                <TextView
+                    android:id="@+id/tv_order_product_number"
+                    style="@style/tv_two"
+                    android:layout_alignLeft="@id/tv_tray_number"
+                    android:layout_below="@id/tv_tray_number"
+                    android:layout_marginTop="@dimen/design_20px"
+                    tools:text="订单生产编号:S222222"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_materail_detail"
+                    style="@style/tv_two"
+                    android:layout_below="@id/tv_order_product_number"
+                    android:layout_centerHorizontal="true"
+                    android:padding="@dimen/x_design_10px"
+                    android:text="物料清单"
+                    android:textSize="@dimen/text_design_35px" />
+
+                <View
+                    android:id="@+id/view_line_one"
+                    style="@style/line_hz"
+                    android:layout_below="@id/tv_materail_detail"
+                    android:layout_marginTop="@dimen/y_design_5px" />
+
+                <include
+                    android:id="@+id/ll_menu"
+                    layout="@layout/delivery_exception_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y_design_72px"
+                    android:layout_below="@id/view_line_one"
+                    android:background="@drawable/bg_share_work" />
+
+                <View
+                    android:id="@+id/view_line_two"
+                    style="@style/line_hz"
+                    android:layout_below="@id/ll_menu" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycyleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y_design_285px"
+                    android:layout_below="@id/view_line_two">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <TextView
+                    android:id="@+id/tv_yes"
+                    style="@style/tv_dialog_make_sure_bottom_text"
+                    android:layout_below="@id/recycyleview"
+                    android:layout_marginLeft="@dimen/x_design_200px"
+                    android:layout_marginTop="@dimen/y_design_20px"
+                    android:text="是"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_cancle"
+                    style="@style/tv_dialog_make_sure_bottom_text"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@id/tv_yes"
+                    android:layout_marginRight="@dimen/x_design_200px"
+                    android:text="否"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_print"
+                    style="@style/tv_dialog_make_sure_bottom_text"
+                    android:layout_width="@dimen/x_design_250px"
+                    android:layout_height="@dimen/y_design_100px"
+                    android:layout_below="@id/recycyleview"
+                    android:layout_marginLeft="@dimen/x_design_300px"
+                    android:layout_marginTop="@dimen/y_design_25px"
+                    android:text="打印" />
+
+                <TextView
+                    android:id="@+id/tv_hand_barcode"
+                    style="@style/tv_two"
+                    android:textSize="@dimen/text_design_30px"
+                    android:layout_width="@dimen/x_design_250px"
+                    android:layout_height="@dimen/y_design_100px"
+                    android:layout_alignTop="@id/tv_print"
+                    android:layout_marginRight="@dimen/x_design_300px"
+                    android:layout_alignParentRight="true"
+                    android:text="手动输入条码"
+                    android:background="@drawable/shape_makesure"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_print"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/y_design_15px"
+                    android:paddingBottom="@dimen/y_design_20px"
+                    android:text="若打印成功，请扫描控制清单上的条码凭证进行投递"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_design_30px" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="@dimen/x_design_80px"
+            android:layout_height="@dimen/x_design_80px"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/close" />
+    </RelativeLayout>
+</LinearLayout>

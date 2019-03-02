@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/x_design_1400px"
+    android:layout_height="@dimen/y_design_70px"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="6">
+
+    <TextView
+        style="@style/tv_dialog_make_sure_menu_text"
+        android:text="订单生产编号"
+        android:textSize="@dimen/text_design_33px" />
+
+    <TextView
+        style="@style/tv_dialog_make_sure_menu_text"
+        android:text="物料编号"
+        android:textSize="@dimen/text_design_33px" />
+
+    <TextView
+        style="@style/tv_dialog_make_sure_menu_text"
+        android:text="物料名称"
+        android:textSize="@dimen/text_design_33px"
+        android:layout_weight="1.4"/>
+
+    <TextView
+        style="@style/tv_dialog_make_sure_menu_text"
+        android:text="批次号"
+        android:textSize="@dimen/text_design_33px" />
+
+    <TextView
+        style="@style/tv_dialog_make_sure_menu_text"
+        android:text="接收数量"
+        android:textSize="@dimen/text_design_33px"
+        android:layout_weight="0.8"/>
+
+    <TextView
+        style="@style/tv_dialog_make_sure_menu_text"
+        android:text="未分配数量"
+        android:textSize="@dimen/text_design_33px"
+        android:layout_weight="0.8"/>
+</LinearLayout>

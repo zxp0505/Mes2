@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_bond_position"
+            style="@style/tv_one"
+            tools:text="下发工位: 机械"
+            android:gravity="start"/>
+
+        <TextView
+            android:id="@+id/tv_bond_time"
+            style="@style/tv_one"
+            tools:text="下发时间: 2018-10-10"
+            android:gravity="right" />
+    </FrameLayout>
+</LinearLayout>

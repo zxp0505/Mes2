@@ -1,0 +1,119 @@
+if (isDebug.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+
+}
+
+android {
+    flavorDimensions "channel"
+    signingConfigs {
+        release {
+            keyAlias 'key0'
+            keyPassword 'zjgz123456'
+            storeFile file('C:/Users/84707/Desktop/sign/zjgzkeystore.jks')
+            storePassword 'zjgz123456'
+        }
+        debug {
+            keyAlias 'key0'
+            keyPassword 'zjgz123456'
+            storeFile file('C:/Users/84707/Desktop/sign/zjgzkeystore.jks')
+            storePassword 'zjgz123456'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        if (isDebug.toBoolean()) {
+            applicationId "workstation.zjyk.workstation"
+        }
+
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode_workstation
+        versionName rootProject.ext.versionName_workstation
+        //所有资源必须以此 prefix 开头，否则会报错
+//        resourcePrefix "workstation_"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'arm64-v8a', 'armeabi' //, 'x86', , 'x86_64', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false //自动移除资源
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true //自动移除资源
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // 多渠道/多环境 的不同配置
+    productFlavors {
+        workstation {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.workstation"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "工位"
+//            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "isInspect", "false"
+            // 修改 AndroidManifest.xml 里渠道变量
+//            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
+//                                    ,app_icon   : "@mipmap/logo_baidu"]
+        }
+        inspect {
+
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.com.inspect"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "巡检"
+//            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "isInspect", "true"
+            // 修改 AndroidManifest.xml 里渠道变量
+//            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
+//                                    ,app_icon   : "@mipmap/logo_baidu"]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.appcompatV7
+    implementation rootProject.ext.constraintLayout
+    //    butterknife
+    implementation rootProject.ext.butterknife
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    annotationProcessor rootProject.ext.butterknifeCompiler
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    //    implementation project(':resource')
+    implementation rootProject.ext.pdfview
+    //    implementation rootProject.ext.calendar
+    implementation project(':mylibrary')
+    implementation project(':calendarview')
+//    implementation 'anylife.scrolltextview:ScrollTextviewLib:1.1'
+    compile 'com.github.385841539:MarqueeView:1.0.0'
+}
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'

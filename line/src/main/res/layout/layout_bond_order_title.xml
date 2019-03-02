@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/x_design_20px"
+    android:paddingRight="@dimen/x_design_20px">
+
+    <TextView
+        android:id="@+id/tv_bond_un"
+        style="@style/tv_feed_right_button"
+        android:background="@drawable/shape_bong_bg"
+        android:layout_centerVertical="true"
+        android:text="未下发" />
+
+    <TextView
+        android:id="@+id/tv_bonded"
+        style="@style/tv_feed_right_button"
+        android:background="@drawable/shape_bong_bg"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/tv_bond_un"
+        android:text="已下发" />
+
+    <TextView
+        android:id="@+id/tv_bond_all"
+        style="@style/tv_feed_right_button"
+        android:background="@drawable/shape_bong_bg"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/tv_bonded"
+        android:text="所有" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        style="@style/tv_one"
+        tools:text="2018-10-11"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/tv_one"
+        tools:text="订单"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/text_design_35px"
+        android:visibility="gone"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/tv_cancle"
+        style="@style/tv_feed_right_button"
+        android:layout_alignParentRight="true"
+        android:text="取消" />
+
+    <TextView
+        android:id="@+id/tv_date_select"
+        style="@style/tv_feed_right_button"
+        android:layout_toLeftOf="@id/tv_cancle"
+        android:layout_marginRight="@dimen/x_design_20px"
+        android:text="日期搜索" />
+
+    <TextView
+        android:id="@+id/tv_order_select"
+        style="@style/tv_feed_right_button"
+        android:layout_toLeftOf="@id/tv_date_select"
+        android:layout_marginRight="@dimen/x_design_20px"
+        android:text="订单搜索" />
+</RelativeLayout>

@@ -1,0 +1,77 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" >
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="SplashTheme" parent="AppTheme" >
+        <item name="android:windowBackground">@drawable/elco_logo</item>
+    </style>
+
+    <style name="NavigationTheme" parent="AppTheme">
+        <item name="listPreferredItemHeightSmall">@dimen/design_80px
+        </item><!-- menu item height- vary as u need -->
+        <item name="android:listDivider">@drawable/shape_divider_list</item>
+    </style>
+
+    <!--AppBg背景-->
+    <style name="AppBg" >
+        <item name="android:background">@drawable/ic_app_bg</item>
+    </style>
+
+    <style name="title_bar_style">
+        <item name="android:background">@color/login_bg_title_bar</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="detail_title_bar_style" parent="@style/title_bar_style"></style>
+    <style name="back_view">
+        <item name="android:gravity">right|center</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:paddingRight">@dimen/show_padding</item>
+        <item name="android:layout_marginLeft">0.0dip</item>
+        <item name="android:layout_marginRight">0.0dip</item>
+        <item name="android:minHeight">44.0dip</item>
+        <item name="android:clickable">true</item>
+        <item name="android:drawableLeft">@drawable/btn_back_selector</item>
+        <item name="android:drawablePadding">3dip</item>
+        <item name="android:textSize">@dimen/text_design_20px</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="detail_back_view" parent="@style/back_view">
+        <!-- <item name="android:background">@drawable/ripple_btn_back_left2</item>-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:text">@string/st_back</item>
+    </style>
+
+    <style name="login_infor_bt">
+        <item name="android:layout_width">@dimen/design_200px</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_design_35px</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:background">@drawable/btn_main_login</item>
+    </style>
+    <style name="ProgressHUD" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!--登陆左下角text one-->
+    <style name="login_infor_text_one">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_design_35px</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

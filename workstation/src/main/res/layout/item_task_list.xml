@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_root"
+    android:layout_width="@dimen/x_design_630px"
+    android:layout_height="@dimen/y_design_400px"
+    android:layout_margin="@dimen/x_design_10px"
+    android:paddingLeft="@dimen/x_design_20px"
+    android:paddingRight="@dimen/x_design_10px"
+    android:paddingTop="@dimen/y_design_20px">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_work_condition"
+            style="@style/tv_task"
+            android:layout_height="@dimen/y_design_55px"
+            android:drawablePadding="@dimen/x_design_10px"
+            android:drawableRight="@drawable/normal"
+            android:gravity="center_vertical"
+            android:text="工作条件:" />
+
+        <TextView
+            android:id="@+id/tv_order"
+            style="@style/tv_task"
+            android:paddingBottom="@dimen/y_design_10px"
+            android:paddingTop="@dimen/y_design_10px"
+            tools:text="订单:00000" />
+
+        <TextView
+            android:id="@+id/tv_product"
+            style="@style/tv_task"
+            android:paddingBottom="@dimen/y_design_10px"
+            android:paddingTop="@dimen/y_design_10px"
+            tools:text="产品:00000" />
+
+        <TextView
+            android:id="@+id/tv_produce"
+            style="@style/tv_task"
+            android:paddingBottom="@dimen/y_design_10px"
+            android:paddingTop="@dimen/y_design_10px"
+            android:visibility="gone"
+            tools:text="工序:00000" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            style="@style/tv_task"
+            android:paddingBottom="@dimen/y_design_10px"
+            android:paddingTop="@dimen/y_design_10px"
+            tools:text="数量:00000" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_station_trasfer"
+        style="@style/tv_shape_three"
+        android:layout_width="@dimen/x_design_150px"
+        android:layout_height="@dimen/y_design_70px"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="@dimen/y_design_10px"
+        android:text="任务转移" />
+
+    <ImageView
+        android:id="@+id/iv_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:paddingBottom="@dimen/y_design_10px"
+        android:src="@drawable/first_product" />
+</FrameLayout>

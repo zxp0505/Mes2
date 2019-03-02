@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/x_design_1500px"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_dialog_bg"
+    android:orientation="vertical"
+    android:padding="@dimen/y_design_40px">
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/tv_task"
+       android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/text_design_40px"
+        android:paddingBottom="@dimen/y_design_20px"
+        tools:text="工序bom清单" />
+
+    <View style="@style/cm_line_hz" />
+
+    <include layout="@layout/menu_recivered_tray" />
+
+    <View style="@style/cm_line_hz" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_450px"
+        android:overScrollMode="never">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_40px">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/tv_shape_two"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:text="取消" />
+
+        <Button
+            android:id="@+id/btn_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/tv_shape_two"
+            android:paddingLeft="@dimen/x_design_20px"
+            android:paddingRight="@dimen/x_design_20px"
+            android:layout_marginLeft="@dimen/x_design_30px"
+            android:text="进入任务详情" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

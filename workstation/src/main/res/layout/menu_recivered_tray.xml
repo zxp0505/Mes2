@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y_design_80px"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@drawable/shape_report_work"
+    android:weightSum="2">
+
+    <View style="@style/cm_line_ve" />
+
+
+    <TextView
+        style="@style/tv_one"
+        android:layout_weight="1"
+        android:text="名称"
+        android:textColor="@color/white_full"
+        android:textSize="@dimen/text_design_35px" />
+
+    <View style="@style/cm_line_ve" />
+
+    <TextView
+        style="@style/tv_one"
+        android:layout_weight="1"
+        android:text="内容"
+        android:textColor="@color/white_full"
+        android:textSize="@dimen/text_design_35px" />
+
+    <View style="@style/cm_line_ve" />
+
+
+</LinearLayout>

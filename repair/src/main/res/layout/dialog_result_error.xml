@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_root"
+    android:layout_width="@dimen/x_design_500px"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_makesure_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/y_design_50px"
+    android:paddingLeft="@dimen/x_design_20px"
+    android:paddingRight="@dimen/x_design_20px">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_50px"
+        android:gravity="center"
+
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_design_35px"
+        tools:text="投递成功" />
+
+    <Button
+        android:id="@+id/btn_sure"
+        style="@style/dialog_bt_confirm"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y_design_50px" />
+
+    <RelativeLayout
+        android:id="@+id/rl_two_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/x_design_30px"
+        android:paddingRight="@dimen/x_design_30px"
+        android:layout_marginTop="@dimen/y_design_50px"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_sure1"
+            android:layout_width="@dimen/x_design_160px"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_main_login"
+            android:padding="@dimen/x_design_12px"
+            android:textColor="#fff"
+            android:textSize="@dimen/f_work_font_size"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/btn_cancle1"
+            android:layout_width="@dimen/x_design_160px"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_main_login"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/x_design_12px"
+            android:textColor="#fff"
+            android:textSize="@dimen/f_work_font_size"
+            android:text="取消" />
+    </RelativeLayout>
+
+
+</LinearLayout>

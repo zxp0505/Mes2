@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/fragmnet_bg_one"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <include layout="@layout/fragment_title"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_count"
+        android:paddingTop="@dimen/y_design_100px">
+
+        <ImageView
+            android:layout_width="@dimen/x_design_504px"
+            android:layout_height="@dimen/y_design_188px"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/bind_tray" />
+
+        <TextView
+            android:id="@+id/tv_tray_number"
+            style="@style/tv_task"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/y_design_90px"
+            android:paddingTop="@dimen/y_design_15px"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_design_35px"
+            tools:text="未绑定" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_clear"
+        style="@style/tv_shape_two"
+        android:layout_width="@dimen/x_design_200px"
+        android:layout_height="@dimen/y_design_100px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y_design_50px"
+        android:text="确认"
+        android:textSize="@dimen/text_design_45px" />
+
+
+</LinearLayout>

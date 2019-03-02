@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/x_design_1540px"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="@dimen/x_design_1500px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_design_40px"
+        android:layout_marginRight="@dimen/x_design_40px"
+        android:paddingBottom="@dimen/y_design_50px"
+        android:background="@drawable/shape_makesure_dialog"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/y_design_20px"
+            android:text="历史记录"
+            android:textColor="@color/color_reciver"
+            android:textSize="@dimen/text_design_45px" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycyleview"
+                android:layout_width="@dimen/x_design_1300px"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="@dimen/x_design_80px"
+        android:layout_height="@dimen/x_design_80px"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/close" />
+</RelativeLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_5px"
+        android:background="@color/c_btn_login" />
+
+    <include
+        android:id="@+id/menu_title"
+        layout="@layout/menu_bond_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_line" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="7"
+        android:layout_below="@id/menu_title"
+        android:orientation="horizontal">
+
+
+        <View style="@style/line_ve" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1.1"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/y_design_10px"
+            android:paddingBottom="@dimen/y_design_10px">
+
+            <TextView
+                android:id="@+id/tv_produce"
+                style="@style/tv_one"
+                android:paddingTop="@dimen/y_design_30px"
+                android:paddingBottom="@dimen/y_design_30px"
+                android:text="机械" />
+
+            <View
+                android:id="@+id/view_line_three"
+                style="@style/line_hz"
+                android:layout_height="@dimen/design_80px"
+                />
+
+            <TextView
+                android:id="@+id/tv_one_bond"
+                style="@style/tv_one"
+                android:paddingTop="@dimen/y_design_10px"
+                android:paddingBottom="@dimen/y_design_10px"
+                android:layout_marginTop="@dimen/y_design_20px"
+                android:layout_marginBottom="@dimen/y_design_20px"
+                android:paddingLeft="@dimen/x_design_20px"
+                android:paddingRight="@dimen/x_design_20px"
+                android:background="@drawable/shape_bond_bg"
+                android:text="一键下发" />
+
+            <TextView
+                android:id="@+id/tv_history"
+                style="@style/tv_one"
+                android:paddingTop="@dimen/y_design_10px"
+                android:paddingBottom="@dimen/y_design_10px"
+                android:paddingLeft="@dimen/x_design_20px"
+                android:paddingRight="@dimen/x_design_20px"
+                android:background="@drawable/shape_bond_bg"
+                android:layout_marginTop="@dimen/y_design_10px"
+                android:layout_marginBottom="@dimen/y_design_10px"
+                android:text="历史记录" />
+        </LinearLayout>
+
+        <View style="@style/line_ve" />
+
+        <LinearLayout
+            android:id="@+id/ll_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="5.9"></LinearLayout>
+
+
+        <View style="@style/line_ve" />
+    </LinearLayout>
+
+    <View
+        style="@style/line_hz"
+        android:layout_below="@id/ll_content" />
+
+</RelativeLayout>

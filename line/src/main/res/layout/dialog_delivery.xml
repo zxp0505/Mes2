@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x_design_500px"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/y_design_50px"
+    android:background="@drawable/shape_makesure_dialog">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="投递成功，请打印"
+        android:textSize="@dimen/text_design_40px"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/y_design_50px"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请确定打印成功后，关闭弹框!"
+        android:textSize="@dimen/text_design_30px"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/y_design_30px"
+        android:gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_print"
+            android:layout_width="@dimen/x_design_160px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/y_design_70px"
+            android:background="@drawable/btn_main_login"
+            android:padding="@dimen/x_design_20px"
+            android:layout_marginLeft="@dimen/x_design_30px"
+            android:text="打印"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_design_30px" />
+        <Button
+            android:id="@+id/btn_cancle"
+            android:layout_width="@dimen/x_design_160px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:layout_alignTop="@id/btn_print"
+            android:background="@drawable/btn_main_login"
+            android:padding="@dimen/x_design_20px"
+            android:text="关闭"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_design_30px" />
+    </RelativeLayout>
+
+
+</LinearLayout>

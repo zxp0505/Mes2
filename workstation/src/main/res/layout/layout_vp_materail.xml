@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <include
+        layout="@layout/menu_task_entry_matarail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycyle_entry_materail_vp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_300px">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

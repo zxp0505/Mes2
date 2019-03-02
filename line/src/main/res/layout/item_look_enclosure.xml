@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/y_design_5px">
+
+    <ImageView
+        android:id="@+id/iv_select_status"
+        android:layout_width="@dimen/x_design_150px"
+        android:layout_height="@dimen/x_design_150px"
+        android:scaleType="centerInside"
+        android:src="@drawable/pdf" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/tv_one"
+        android:paddingLeft="@dimen/x_design_10px"
+        tools:text="产品型号: EV50W15-L5CR-1024.JW05M8" />
+
+
+</LinearLayout>

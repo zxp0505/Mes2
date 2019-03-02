@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+//gradle.projectsEvaluated {
+//    tasks.withType(JavaCompile) {
+//        options.compilerArgs << "-Xbootclasspath/a:" + System.properties.get("java.home") + "/lib/rt.jar"
+//    }
+//}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        dependencies {
+            implementation fileTree(include: ['*.jar'], dir: 'libs')
+            androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+                exclude group: 'com.android.support', module: 'support-annotations'
+            })
+            //retrofit``
+            api rootProject.ext.retrofit_one
+            api rootProject.ext.retrofit_two
+            api rootProject.ext.retrofit_three
+            api rootProject.ext.retrofit_four
+
+            //rxjava
+            api rootProject.ext.rxjava_one
+            api rootProject.ext.rxjava_two
+            api rootProject.ext.rxjava_three
+            api rootProject.ext.rxjava_adapter_two
+            //rxpermission
+            api rootProject.ext.rxpermission
+            api rootProject.ext.okhttputils
+
+            api rootProject.ext.glide
+            api rootProject.ext.fastjson
+            api rootProject.ext.loggerutil
+            api rootProject.ext.convenientbanner
+
+            api rootProject.ext.fragmentation
+            api rootProject.ext.fragmentation_swipe
+            api rootProject.ext.easypermissions
+            api rootProject.ext.eventbus
+            api rootProject.ext.logger
+            api rootProject.ext.loadingidalog
+            api rootProject.ext.baserecycleadapter
+
+            api rootProject.ext.rx_binding_one
+            api rootProject.ext.rxlife_one
+            api rootProject.ext.rxlife_two
+
+            api rootProject.ext.support_design
+//            api rootProject.ext.pdfview
+
+            api project(':resource')
+
+//            debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+//            releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+            debugApi 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+            releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+        }
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '27.0.3'
+}
+

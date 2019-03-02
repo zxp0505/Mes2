@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="@dimen/x_design_1500px"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_makesure_dialog"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/y_design_20px"
+            android:text="收料信息确认"
+            android:textColor="@color/color_reciver"
+            android:textSize="@dimen/text_design_45px" />
+
+        <TextView
+            android:id="@+id/tv_send_good_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/y_design_10px"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_design_30px"
+            tools:text="仓库发料条码:10000000" />
+
+        <LinearLayout
+            android:layout_width="@dimen/x_design_1300px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y_design_17px"
+            android:background="@drawable/bg_menu"
+            android:paddingTop="@dimen/y_design_5px"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/reciver_menu_make_sure"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y_design_60px" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycyleview"
+            android:layout_width="@dimen/x_design_1300px"
+            android:layout_height="@dimen/y_design_425px">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <RelativeLayout
+            android:layout_width="@dimen/x_design_1300px"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/y_design_20px"
+            android:paddingBottom="@dimen/y_design_20px">
+
+            <TextView
+                android:id="@+id/tv_reciver_and_makesure"
+                style="@style/tv_dialog_make_sure_bottom_text"
+                android:text="确认收料并立即分料"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_reciver_makesure"
+                style="@style/tv_dialog_make_sure_bottom_text"
+                android:layout_marginLeft="@dimen/x_design_100px"
+                android:text="确认收料" />
+
+            <TextView
+                android:id="@+id/tv_cancle"
+                style="@style/tv_dialog_make_sure_bottom_text"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/x_design_100px"
+                android:text="取消并关闭" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/x_design_50px"
+    android:paddingRight="@dimen/x_design_50px">
+
+    <TextView
+        android:id="@+id/tv_unbond"
+        style="@style/tv_one"
+        android:text="未下发"
+        android:paddingLeft="@dimen/x_design_50px"
+        android:paddingRight="@dimen/x_design_50px"
+        android:paddingTop="@dimen/y_design_20px"
+        android:paddingBottom="@dimen/y_design_20px"
+        android:background="@drawable/shape_order_item_bg"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/tv_bonded"
+        style="@style/tv_one"
+        android:text="已下发"
+        android:paddingLeft="@dimen/x_design_50px"
+        android:paddingRight="@dimen/x_design_50px"
+        android:paddingTop="@dimen/y_design_20px"
+        android:paddingBottom="@dimen/y_design_20px"
+        android:layout_toRightOf="@id/tv_unbond"
+        android:background="@drawable/shape_order_item_bg"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/iv_urgent"
+        android:layout_width="@dimen/x_design_60px"
+        android:layout_height="@dimen/x_design_60px"
+        android:layout_toRightOf="@id/tv_bonded"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/x_design_20px"
+        android:src="@drawable/urgent"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/iv_top"
+        android:layout_width="@dimen/x_design_50px"
+        android:layout_height="@dimen/x_design_50px"
+        android:layout_toRightOf="@id/iv_urgent"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/x_design_20px"
+        android:visibility="gone"
+        android:src="@drawable/top" />
+
+    <TextView
+        android:id="@+id/tv_cancle"
+        style="@style/tv_feed_right_button"
+        android:layout_alignParentRight="true"
+        android:text="取消" />
+    <TextView
+        android:id="@+id/tv_accessory"
+        style="@style/tv_feed_right_button"
+        android:layout_toLeftOf="@+id/tv_cancle"
+        android:layout_marginRight="@dimen/x_design_10px"
+        android:text="附件" />
+    <View
+        style="@style/line_hz"
+        android:layout_marginTop="@dimen/y_design_10px"
+        android:layout_below="@id/tv_cancle"/>
+
+</RelativeLayout>

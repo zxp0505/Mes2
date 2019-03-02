@@ -1,0 +1,250 @@
+<resources>
+    <!--<string name="app_name">AllocatingTask</string>-->
+    <!--<string name="app_name">线边库</string>-->
+
+    <string name="st_main_no_work">您还没有任务哦~</string>
+    <string name="st_exit">退出</string>
+    <!-- upgrade -->
+    <string name="st_hmm_text36_2">正在下载</string>
+    <string name="st_hmm_text36_3">下载中...</string>
+    <string name="st_hmm_text36_4">有新的版本是否更新</string>
+    <string name="st_hmm_text36_5">当前已是最新版本</string>
+    <!--收料分类-->
+    <string name="st_materal_deposit">位置</string>
+    <string name="st_materal_name">仓库发料条码</string>
+    <string name="st_materal_receive_no">订单编号</string>
+    <string name="st_materal_receive_name">工序名称</string>
+    <string name="st_materal_receive_user">收料人</string>
+    <string name="st_materal_receive_status">物料状态</string>
+
+    <!--toolbar标题-->
+    <string name="toolbar_feed_title">请您使用扫枪扫描仓库发料条码进行收料操作</string>
+    <string name="toolbar_received_title">请您使用扫枪扫描仓库发料条码进行收料操作</string>
+
+    <string name="sorting_inquiries">分料查询</string>
+    <string name="edittext_hint">分料查询,请输入工位编码标识或者扫描当前正在工位工作的人员条码</string>
+    <string name="search">搜索</string>
+
+    <!--sorting__Recycleritem-->
+    <string name="tv_location_information">位置信息：</string>
+    <string name="tv_ip_address">IP地址：</string>
+    <!--分料详情-->
+    <string name="tv_Subdivision_details">分料详情</string>
+    <string name="st_Target_station">目标工位：</string>
+    <string name="st_Station_position">工位位置：</string>
+    <string name="back">返回</string>
+    <string name="st_Material_record">分料记录</string>
+    <string name="st_Material_people">分料人</string>
+    <string name="st_Material_Line_edge_library">分料线边库</string>
+    <string name="st_Material_time">分料时间</string>
+    <string name="st_Material_receive_produce_no">订单生产编号</string>
+    <string name="st_Material_reason">分料原因</string>
+    <string name="st_Material_no">物料编号</string>
+    <string name="st_Material_batch_number">物料批号</string>
+    <string name="st_count">数量</string>
+    <string name="st_unit">单位</string>
+    <string name="st_Warehouse_delivery_code">仓库发料编码</string>
+
+
+    <string name="st_main_product_model">产品型号：%1$s</string>
+    <string name="st_main_production">工&#160;&#160;&#8201;&#160;&#160;&#8201;&#160;&#160;&#8201;序：%1$s</string>
+    <string name="st_main_plan_num">计划生产：%1$s</string>
+    <string name="st_main_plan_condition">准备条件：%1$s</string>
+    <string name="st_main_task_status">任务状态</string>
+    <string name="st_main_station_name">工位：</string>
+    <string name="st_main_station_ip">工位ip：192.168.1.1</string>
+    <string name="st_main_location">位&#8201;&#8201;&#8201;&#8201;置：%1$s</string>
+    <string name="st_main_station_switch">工位开关</string>
+    <string name="st_main_exit">退出</string>
+    <string name="st_main_time">时间  %1$s</string>
+
+    <string name="st_main_work_status">就绪</string>
+    <string name="st_main_work_status1">未就绪</string>
+    <string name="st_main_work_status2">未开始</string>
+    <string name="st_main_work_status3">已开始</string>
+    <string name="st_main_work_status4">已完成</string>
+    <string name="st_main_work_status5">已停止</string>
+    <string name="st_main_work_status6">已暂停</string>
+    <string name="st_main_work_status7">已提交</string>
+    <string name="st_main_no_login">未登录</string>
+    <string name="st_main_login">登录</string>
+
+    <string name="st_back_notice">再按一次返回键退出应用</string>
+
+    <string name="st_work_detail">任务详情</string>
+    <string name="st_work_info">任务信息</string>
+    <string name="st_work_model">产品型号</string>
+    <string name="st_work_production">产品工序</string>
+    <string name="st_work_plan">计划数</string>
+    <string name="st_work_predict_num">预计可输出在制品</string>
+    <string name="st_work_work_condition">工作条件</string>
+    <string name="st_work_material">物料(就绪)</string>
+    <string name="st_work_m_not">物料(未就绪)</string>
+    <string name="st_work_material2">物料</string>
+    <string name="st_work_processed3">在制品</string>
+    <string name="st_work_m_name">物料名称</string>
+    <string name="st_work_m_num">数量</string>
+    <string name="st_work_m_receive">已收到</string>
+    <string name="st_work_m_surplus">剩余</string>
+    <string name="st_work_processed">在制品(就绪)</string>
+    <string name="st_work_p_not">在制品(未就绪)</string>
+    <string name="st_work_p_output_station">输出工位</string>
+    <string name="st_work_p_output_model">输出型号</string>
+    <string name="st_work_p_process">工序</string>
+    <string name="st_work_p_num">数量</string>
+    <string name="st_work_p_receive">已收到</string>
+    <string name="st_work_tray_name">托盘标识</string>
+    <string name="st_work_tray_num2">已放置</string>
+    <string name="st_work_tray_num">数量</string>
+    <string name="st_work_processed_output">在制品输出</string>
+    <string name="st_work_tray_may">可放置</string>
+    <string name="st_work_operation">操作区</string>
+    <string name="st_work_present_tray">当前托盘 %1$s</string>
+    <string name="st_work_present_tray_not">未绑定</string>
+    <string name="st_work_reject_num">报废</string>
+    <string name="st_work_product_num">成品</string>
+    <string name="st_work_maintain_num">维修</string>
+    <string name="st_work_waste">废品+1</string>
+    <string name="st_work_count">成品+1</string>
+    <string name="st_work_process_instruction">工艺指导书</string>
+    <string name="st_work_process_i_error">工艺指导书加载失败</string>
+    <string name="st_work_resolved">任务已完成</string>
+    <string name="st_work_resolved_hint">当前任务已完成</string>
+    <string name="st_work_resolved_hint2">当前任务已停止或已暂停</string>
+    <string name="st_work_resolved_hint3">当前任务数据未加载</string>
+    <string name="st_work_processed_output_null">暂无在制品输出~</string>
+    <string name="st_work_materal_null">暂无物料~</string>
+    <string name="st_work_materal_tray_name">托盘标识:%1$s</string>
+    <string name="st_work_materal_num">已收到:(%1$s)</string>
+    <string name="st_work_materal_surplus_num">剩余:(%1$s)</string>
+    <string name="st_work_processed_null">暂无在制品~</string>
+    <string name="toast_pick_file_error">创建pdf失败,请检查是否开启文件权限</string>
+
+    <string name="st_admin">主管操作</string>
+    <string name="st_admin_update_processed">修改在制品</string>
+    <string name="st_admin_update_w">修改废品数</string>
+    <string name="st_admin_update_processed_place">已放置</string>
+    <string name="st_admin_save">保存</string>
+    <string name="st_admin_update_tray_capacity">可放置:&#160;&#160;&#160;&#160;%1$s</string>
+    <string name="st_work_plan2">计划数&#160;&#160;&#160;&#160;</string>
+
+    <string name="st_user_login_error">登录失败</string>
+    <string name="st_operation_error">操作失败</string>
+    <string name="st_confirm">确定</string>
+    <string name="st_cancel">取消</string>
+    <string name="st_identity_error">身份认证失败</string>
+    <string name="st_work_tray_already">绑定失败，托盘已满</string>
+    <string name="st_work_tray_already_bound_new">托盘已满，请绑定新托盘</string>
+    <string name="st_report_message">告警信息/消息推送</string>
+
+    <string name="st_login_save_error">照片保存失败</string>
+    <string name="st_login_upload_error">照片上传失败</string>
+    <string name="st_data_parse_error">数据解析异常</string>
+    <string name="st_work_close">工位已关闭</string>
+    <string name="st_work_open">工位已开启</string>
+    <string name="st_work_close_error">工位关闭失败</string>
+    <string name="st_work_open_error">工位开启失败</string>
+    <string name="st_main_station_login_hint">请先登录</string>
+    <string name="st_main_station_hint">请打开工位开关</string>
+    <string name="st_update_v">有新版本了，快来更新吧~</string>
+    <string name="st_tray_error">托盘信息有误</string>
+    <string name="st_tray_bing_hint">请绑定一个托盘</string>
+    <string name="st_tray_bing_hint2">托盘已满，请绑定一个新托盘</string>
+    <string name="st_tray_bing_hint3">请稍后再试</string>
+    <string name="st_operation_success">操作成功</string>
+    <string name="st_tray_bing_hint4">检测到这是一个空托盘，确定将这个托盘用于放置【%1$s】？</string>
+    <string name="st_tray_bing_hint5">托盘已绑定</string>
+    <string name="st_logout_success">退出成功</string>
+    <string name="st_logout_error">退出失败</string>
+    <string name="st_v">-</string>
+    <string name="st_work_waste_hint">不具备输出条件</string>
+
+    <string name="st_work_tray_category">类别</string>
+    <string name="st_work_sub_num">已提交</string>
+    <string name="st_submit">提交</string>
+
+    <string name="st_work_reject_num2">废品</string>
+    <string name="st_work_product_num2">成品</string>
+    <string name="st_work_maintain_num2">维修</string>
+    <string name="st_tray_bing1">请绑定一个用于放置【%1$s】的托盘</string>
+    <string name="st_tray_bing2">托盘已经被绑定了，请扫描其他托盘</string>
+    <string name="st_work_hint_num">请输入合法的数量</string>
+    <string name="st_work_hint_sub">该操作不可修改，请确定增加%1$s个%2$s？</string>
+    <string name="st_tray_bing_hint6">检测到这是一个空托盘,请选择绑定这个托盘的用途，选择后不可修改</string>
+    <string name="st_tray_bing_hint7">确定将这个托盘用于放置【%1$s】？</string>
+
+    <string name="st_main_material">物料</string>
+    <string name="st_main_material_num">数量</string>
+    <string name="st_main_m_allocation_num">已分配数量</string>
+    <string name="st_main_m_get_num">已领取数量</string>
+    <string name="st_main_allocation_status">分配状态</string>
+    <string name="st_main_get_status">领取状态</string>
+    <string name="st_main_operation">操作</string>
+    <string name="st_main_allocation_status1">未分配</string>
+    <string name="st_main_allocation_status2">分配中</string>
+    <string name="st_main_allocation_status3">已分配</string>
+    <string name="st_main_status">-</string>
+    <string name="st_main_get_status1">未领取</string>
+    <string name="st_main_get_status2">部分已领取</string>
+    <string name="st_main_get_status3">已领取</string>
+    <string name="st_main_allocation">分配</string>
+
+    <string name="st_reciver_text">收料</string>
+    <string name="st_materal_id">LotID</string>
+    <string name="st_feed_text">分料</string>
+
+
+    <string name="st_materal_null_hint">暂无收料记录~</string>
+
+    <string name="st_materials_receiving">领料</string>
+    <string name="st_materials_affirm">确认领料</string>
+    <string name="st_materials_tray_id">托盘标识</string>
+    <string name="st_materials_tray_name">物料名称</string>
+    <string name="st_materials_tray_num">数量</string>
+    <string name="st_materials_allocation_num">已分配</string>
+    <string name="st_materials_no">暂无可以领取的物料~</string>
+
+    <string name="st_material_allocation">物料分配</string>
+    <string name="st_m_task_info">任务信息</string>
+    <string name="st_m_work_station">工位</string>
+    <string name="st_m_allocation_name">当前分配物料</string>
+    <string name="st_m_plan_allocation">计划分配%1$s</string>
+    <string name="st_m_assigned">已分配%1$s</string>
+    <string name="st_m_allocation_record">分配记录</string>
+    <string name="st_m_a_record_mo">暂无分配记录~</string>
+    <string name="st_m_put_tray">已放托盘</string>
+    <string name="st_m_allocation_num">已分配</string>
+    <string name="st_m_allocation_status">状态</string>
+    <string name="st_material">物料</string>
+    <string name="st_material_no">暂无物料~</string>
+    <string name="st_material_id">LotID</string>
+    <string name="st_material_name">物料名称</string>
+    <string name="st_material_receive_num">已收到</string>
+    <string name="st_material_surplus_num">剩余</string>
+
+    <string name="st_m_allocation_name2">当前分配物料</string>
+    <string name="st_m_plan_allocation2">计划分配</string>
+    <string name="st_m_can_allocation">可分配</string>
+    <string name="st_m_allocation_tray_name">当前分配托盘</string>
+    <string name="st_m_allocation">分配</string>
+
+
+    <!--<string name="common_loading_message">Loading...</string>-->
+    <!--<string name="common_empty_msg">暂无数据</string>-->
+    <!--<string name="common_error_msg">暂无数据</string>-->
+    <!--<string name="common_no_network_msg">请检查网络,点击重试</string>-->
+    <!--<string name="common_no_network_msg_toast">请检查网络</string>-->
+
+    <string name="feed_order_one">分料第一步:选择工位</string>
+    <string name="feed_order_one_describe">根据您选扫描的物料条码,我们为您匹配了一下工位需求</string>
+    <string name="feed_order_two">分料第二步:确认发放的物料</string>
+    <string name="feed_order_two_describe">请确认您要发放的物料数量</string>
+    <string name="feed_order_three">分料第三步:绑定分料托盘</string>
+    <string name="feed_order_three_describe">请使用您的扫枪,绑定您要分料的托盘</string>
+    <string name="tv_in_warehouse_title">入仓:确认入仓物料</string>
+    <string name="tv_in_warehouse_describe">请确认您要入仓的物料</string>
+    <string name="text_one_bond">一键发料</string>
+    <string name="text_bonded">已下发</string>
+    <string name="text_one_bond_two">一键下发</string>
+    <string name="text_unbind">未绑定</string>
+</resources>

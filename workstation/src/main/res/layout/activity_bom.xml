@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="@dimen/x_design_1540px"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="@dimen/x_design_1500px"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x_design_40px"
+            android:layout_marginTop="@dimen/y_design_40px"
+            android:background="@drawable/shape_dialog_bg"
+            android:paddingBottom="@dimen/y_design_40px"
+            android:paddingLeft="@dimen/x_design_40px"
+            android:paddingRight="@dimen/x_design_40px">
+
+            <TextView
+                android:id="@+id/tv_print"
+                style="@style/tv_shape_four"
+                android:paddingLeft="@dimen/x_design_40px"
+                android:paddingRight="@dimen/x_design_40px"
+                android:layout_marginRight="@dimen/x_design_20px"
+                android:layout_marginTop="@dimen/y_design_15px"
+                android:layout_marginBottom="@dimen/y_design_15px"
+                android:text="打印" />
+            <TextView
+                android:id="@+id/tv_follow"
+                style="@style/tv_shape_four"
+                android:paddingLeft="@dimen/x_design_40px"
+                android:paddingRight="@dimen/x_design_40px"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/x_design_20px"
+                android:layout_marginTop="@dimen/y_design_15px"
+                android:layout_marginBottom="@dimen/y_design_15px"
+                android:text="变更关注" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/tv_task"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="@dimen/y_design_20px"
+                android:text="工序bom清单"
+                android:textSize="@dimen/text_design_40px" />
+
+            <LinearLayout
+                android:id="@+id/ll_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tv_print"
+                android:layout_below="@+id/tv_print"
+
+                android:background="@drawable/shape_task_entry_mt_bg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/tv_task"
+                    android:padding="@dimen/x_design_15px"
+                    android:text="物料"
+                    android:textSize="@dimen/design_35px" />
+
+                <include
+                    layout="@layout/menu_bom_materaill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycyle_entry_materail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y_design_500px">
+
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_right"
+                android:layout_width="@dimen/x_design_500px"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/ll_left"
+                android:layout_marginLeft="@dimen/x_design_40px"
+                android:background="@drawable/shape_task_entry_mt_bg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/tv_task"
+                    android:padding="@dimen/x_design_15px"
+                    android:text="在制品"
+                    android:textSize="@dimen/design_35px" />
+
+                <include
+                    layout="@layout/menu_bom_making"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycyle_making"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y_design_500px">
+
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="@dimen/x_design_80px"
+            android:layout_height="@dimen/x_design_80px"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/close" />
+
+    </RelativeLayout>
+</LinearLayout>

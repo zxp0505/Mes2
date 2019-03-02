@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/x_design_650px"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_feed_three_dialog"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/y_design_20px"
+            android:layout_marginTop="@dimen/y_design_60px">
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="打印辅料"
+                android:textSize="@dimen/text_design_40px"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000"
+                android:textSize="@dimen/text_design_35px"
+                android:layout_marginBottom="@dimen/y_design_20px"
+                android:layout_below="@+id/checkbox"
+                tools:text="确定切换当前影片?"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/iv_tray"
+                android:layout_width="@dimen/x_design_504px"
+                android:layout_height="@dimen/y_design_188px"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tv_dialog_title"
+                android:src="@drawable/bind_tray" />
+
+            <TextView
+                android:id="@+id/tv_tray_number"
+                style="@style/tv_one"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/y_design_90px"
+                android:paddingTop="@dimen/y_design_30px"
+                android:layout_below="@id/tv_dialog_title"
+                android:textColor="#fff"
+                android:textSize="@dimen/text_design_35px"
+                tools:text="未绑定" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/y_design_30px">
+
+            <TextView
+                android:id="@+id/tv_sure"
+                android:layout_width="@dimen/x_design_200px"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x_design_50px"
+                android:layout_marginTop="@dimen/x_design_80px"
+                android:background="@drawable/bg_share_work"
+                android:gravity="center"
+                android:padding="@dimen/x_design_20px"
+                android:text="打印"
+                android:textColor="#fff"
+                android:textSize="@dimen/text_design_35px" />
+
+            <TextView
+                android:id="@+id/tv_cancle"
+                android:layout_width="@dimen/x_design_200px"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/tv_sure"
+                android:layout_marginRight="@dimen/x_design_50px"
+                android:background="@drawable/bg_share_work"
+                android:gravity="center"
+                android:padding="@dimen/x_design_20px"
+                android:text="取消"
+                android:textColor="#fff"
+                android:textSize="@dimen/text_design_35px" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

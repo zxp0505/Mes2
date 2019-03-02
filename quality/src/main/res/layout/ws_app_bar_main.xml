@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppBg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="@dimen/d_padding">
+
+        <LinearLayout
+            android:layout_width="@dimen/design_380px"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_share_work3"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/design_30px"
+                android:paddingLeft="@dimen/d_main_list_padding"
+                android:paddingRight="@dimen/d_main_list_padding"
+                android:paddingTop="@dimen/design_30px">
+
+
+
+                <TextView
+                    android:id="@+id/tv_station_position"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_design_55px"
+                    android:layout_marginLeft="30dp"
+                    android:background="@color/black"
+                    tools:text="A0001" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/design_10px"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_design_35px"
+                    tools:text="2017年10月1日" />
+
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/design_10px"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_design_35px"
+                    tools:text="上午08:30" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/design_20px"
+                android:background="@drawable/bg_share_work3"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/design_10px">
+
+
+                <ImageView
+                    android:id="@+id/iv_main_user_photo"
+                    android:layout_width="@dimen/design_280px"
+                    android:layout_height="@dimen/design_280px"
+                    android:layout_marginTop="@dimen/design_10px"
+                    android:src="@drawable/ic_main_user" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_worker_name_current"
+                        style="@style/login_infor_text_one"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="@dimen/design_10px"
+                        tools:text="姓名:张三" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycle_woker_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/design_145px"
+                        android:overScrollMode="never"
+                        android:paddingTop="@dimen/design_30px">
+
+                    </android.support.v7.widget.RecyclerView>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/design_40px"
+                        android:paddingLeft="@dimen/design_10px"
+                        android:paddingRight="@dimen/design_10px">
+
+                        <Button
+                            android:id="@+id/btn_login_two"
+                            android:layout_width="@dimen/design_150px"
+                            android:layout_height="@dimen/design_80px"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/design_20px"
+                            android:background="@drawable/btn_main_login"
+                            android:padding="@dimen/design_8px"
+                            android:text="登入"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/text_design_35px" />
+
+                        <Button
+                            android:id="@+id/btn_quit_two"
+                            android:layout_width="@dimen/design_150px"
+                            android:layout_height="@dimen/design_80px"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/design_20px"
+                            android:background="@drawable/btn_main_login"
+                            android:padding="@dimen/design_8px"
+                            android:text="退出"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/text_design_35px" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
+

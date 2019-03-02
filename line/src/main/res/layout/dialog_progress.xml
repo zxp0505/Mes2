@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/x_design_400px"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_makesure_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/y_design_50px">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_50px"
+        android:gravity="center"
+        android:paddingLeft="@dimen/x_design_20px"
+        android:paddingRight="@dimen/x_design_20px"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_design_35px"
+        android:visibility="gone"
+        tools:text="投递成功" />
+
+    <workstation.zjyk.line.ui.customview.DonutProgress
+        android:id="@+id/progress"
+        android:layout_width="@dimen/x_design_150px"
+        android:layout_height="@dimen/x_design_150px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y_design_50px"
+        app:donut_max="100"
+        app:donut_progress="0" />
+
+
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_width="@dimen/x_design_160px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y_design_50px"
+        android:background="@drawable/btn_main_login"
+        android:padding="@dimen/x_design_12px"
+        android:textColor="#fff"
+        android:textSize="@dimen/f_work_font_size"
+        tools:text="确定" />
+
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_order_product_number"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="订单生产编号" />
+
+        <View style="@style/line_ve" />
+
+
+        <TextView
+            android:id="@+id/tv_materail_number"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="物料编号" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_materail_name"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="物料名称" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_batch_number"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="批次号" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="数量" />
+
+        <View style="@style/line_ve" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+</LinearLayout>

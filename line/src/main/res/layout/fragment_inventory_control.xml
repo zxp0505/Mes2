@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/x_design_50px"
+    android:paddingRight="@dimen/x_design_50px"
+    android:paddingTop="@dimen/y_design_20px">
+
+    <TextView
+        style="@style/tv_feed_title_one"
+        android:text="库存管理" />
+
+    <include
+        layout="@layout/inventory_control_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_30px" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycyleview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_720px">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>

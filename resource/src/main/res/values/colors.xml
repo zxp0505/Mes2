@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#88ffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="black_sixty">#99000000</color>
+    <color name="black_fourty">#66000000</color>
+    <color name="stroke_black">#666666</color>
+    <color name="white_full">#ffffff</color>
+    <color name="color_candle_six">#6699FFFF</color>
+
+
+    <color name="dialog_bg">#C0C0C0</color>
+    <color name="login_bg_title_bar">#F8F8F8</color>
+    <color name="thall_tv_unchecked">#cacaca</color>
+    <color name="thall_tv_unchecked_four">#66cacaca</color>
+    <color name="c_tv_font_black">#333333</color>
+    <color name="c_main_line_color">#e2e2e2</color>
+    <color name="c_main_hint_color">#9d9d9d</color>
+    <color name="c_main_work_bg">#807abf66</color>
+    <color name="c_main_work_list_bg">#80ffffff</color>
+    <color name="c_main_work_font_color">#333333</color>
+    <color name="ripple_color">#3aa51b</color>
+    <color name="c_btn_bg">#15b214</color>
+    <color name="assis_bg">#9915b214</color>
+    <color name="staion_bg">#00B050</color>
+    <color name="c_main_list_selector">#dddddd</color>
+    <color name="c_work_red">#E94859</color>
+    <color name="c_work_green">#55BE7F</color>
+    <color name="horse_win">#ef0000</color>
+    <color name="red">#ff0000</color>
+    <color name="c_pop_bg">#16000000</color>
+
+    <color name="c_work_yellow">#FFB90F</color>
+    <color name="c_work_yellow2">#FFA54F</color>
+    <color name="c_btn_login">#0099FF</color>
+    <color name="c_btn_login_pre">#0099CC</color>
+    <color name="c_main_bg">#C2FFFFFF</color>
+    <color name="task_normal">#99D9EA</color>
+    <color name="task_rework">#FFC90E</color>
+    <color name="yello">#FFff00</color>
+
+    <color name="task_assis">#B5E61D</color>
+    <color name="task_history">#CDCDCD</color>
+    <color name="fragment_bg">#f3ffffff</color>
+
+    <!--load-->
+    <color name="base_msg_color">#ff999999</color>
+    <color name="font_color">#474747</color>
+    <color name="abc_color">#60000000</color>
+    <color name="unclick_bg">#CDCDCD</color>
+    <color name="color_dialog_gray">#AAADB3</color>
+    <color name="color_title_line">#798394</color>
+    <color name="color_reciver">#0000cc</color>
+    <color name="color_blue_three">#33009933</color>
+    <color name="color_base">#669966</color>
+    <color name="color_unnormal">#bcbcbc</color>
+    <color name="color_normal">#ccffcc</color>
+    <color name="color_scan_bg">#ebebeb</color>
+</resources>

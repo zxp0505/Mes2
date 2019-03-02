@@ -1,0 +1,50 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_70px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_materail_number"
+            style="@style/tv_materail_require_text"
+            tools:text="物料编号" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_materail_name"
+            style="@style/tv_materail_require_text"
+            tools:text="物料名称" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            style="@style/tv_materail_require_text"
+            tools:text="数量" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_opration"
+            style="@style/tv_materail_require_text"
+            android:text="修改"
+            android:textColor="#3737fb" />
+
+        <View style="@style/line_ve" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/line_hz"
+        android:layout_gravity="bottom" />
+</FrameLayout>

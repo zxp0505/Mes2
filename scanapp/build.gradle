@@ -1,0 +1,142 @@
+if (isDebug.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+
+}
+
+android {
+
+    signingConfigs {
+        release {
+            keyAlias 'key0'
+            keyPassword 'zjgz123456'
+            storeFile file('../keystore/zjgzkeystore.jks')
+            storePassword 'zjgz123456'
+        }
+        debug {
+            keyAlias 'key0'
+            keyPassword 'zjgz123456'
+            storeFile file('../keystore/zjgzkeystore.jks')
+            storePassword 'zjgz123456'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+//        if (isDebug.toBoolean()) {
+//            applicationId "workstation.zjyk.com.scanapp"
+//        }
+//        if(isScanCheckOnly.toBoolean()){
+            applicationId "workstation.zjyk.com.scanapp"
+//        }else{
+//            applicationId "workstation.zjyk.com.scanapp.check"
+//        }
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion 24
+        versionCode rootProject.ext.versionCode_scanapp
+        versionName rootProject.ext.versionName_scanapp
+        //所有资源必须以此 prefix 开头，否则会报错
+//        resourcePrefix "workstation_"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'arm64-v8a', 'armeabi' //, 'x86', , 'x86_64', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false //自动移除资源
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true //自动移除资源
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    flavorDimensions "channel"
+    // 多渠道/多环境 的不同配置
+    productFlavors {
+
+
+        check {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.com.check"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "托盘查询"
+//            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "isCheck", "true"
+            buildConfigField "boolean", "isInspect", "false"
+            // 修改 AndroidManifest.xml 里渠道变量
+//            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
+//                                    ,app_icon   : "@mipmap/logo_baidu"]
+        }
+
+
+
+
+        quality {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.com.quality"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "质量"
+//            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "isCheck", "false"
+            buildConfigField "boolean", "isInspect", "false"
+        }
+
+
+
+    }
+
+}
+
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.appcompatV7
+    implementation rootProject.ext.constraintLayout
+    //    butterknife
+    implementation rootProject.ext.butterknife
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    annotationProcessor rootProject.ext.butterknifeCompiler
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.2.0'
+    implementation 'cn.bingoogolapple:bga-qrcode-zbar:1.2.0'
+    implementation project(':mylibrary')
+    implementation rootProject.ext.percent_layout
+    implementation("com.github.hotchemi:permissionsdispatcher:3.1.0") {
+        // if you don't use android.app.Fragment you can exclude support for them
+        exclude module: "support-v13"
+    }
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.1.0"
+    implementation rootProject.ext.picktureSelect
+
+    compile ('com.github.ganfra:material-spinner:2.0.0')
+    compile 'com.github.arcadefire:nice-spinner:1.3.1'
+    implementation 'com.android.support:design:24.2.0'
+
+
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'

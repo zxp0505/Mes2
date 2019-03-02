@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="5">
+
+    <TextView
+        style="@style/tv_reciver_menu"
+        android:text="订单生产编号" />
+
+    <TextView
+        style="@style/tv_reciver_menu"
+        android:text="物料编号" />
+
+    <TextView
+        style="@style/tv_reciver_menu"
+        android:text="物料名称" />
+
+    <TextView
+        style="@style/tv_reciver_menu"
+        android:text="批次号" />
+
+    <TextView
+        style="@style/tv_reciver_menu"
+        android:text="数量" />
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/fragmnet_bg_one"
+    android:orientation="vertical">
+
+    <include layout="@layout/fragment_title" />
+
+    <include
+        layout="@layout/menu_review_work"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x_design_30px"
+        android:layout_marginRight="@dimen/x_design_30px" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_270px"
+        android:layout_marginLeft="@dimen/x_design_30px"
+        android:layout_marginRight="@dimen/x_design_30px"
+        android:overScrollMode="never">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <include layout="@layout/layout_review_work_history_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_20px"/>
+
+    <include
+        layout="@layout/menu_review_work_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x_design_30px"
+        android:layout_marginRight="@dimen/x_design_30px"
+        android:layout_marginTop="@dimen/y_design_20px" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview_history"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_308px"
+        android:layout_marginLeft="@dimen/x_design_30px"
+        android:layout_marginRight="@dimen/x_design_30px"
+        android:overScrollMode="never">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+    <TextView
+        android:id="@+id/tv_review_confirm"
+        style="@style/tv_shape_two"
+        android:layout_width="@dimen/x_design_250px"
+        android:layout_height="@dimen/y_design_120px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y_design_20px"
+        android:text="绑定托盘"
+        android:textSize="@dimen/text_design_45px"
+        android:visibility="gone" />
+
+
+</LinearLayout>

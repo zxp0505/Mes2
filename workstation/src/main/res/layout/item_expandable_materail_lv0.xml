@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c_main_hint_color">
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_70px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            style="@style/cm_line_ve"
+            android:layout_centerVertical="true" />
+
+
+        <TextView
+            android:id="@+id/tv_tray_name"
+            style="@style/tv_one"
+            android:layout_weight="1.4"
+            android:drawableLeft="@drawable/open_list_tree"
+            android:drawablePadding="@dimen/x_design_5px"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="@dimen/x_design_20px"
+            tools:text="名称"
+            android:textSize="@dimen/text_design_32px" />
+
+        <View
+            android:id="@+id/line_one"
+            style="@style/cm_line_ve"
+            android:layout_centerInParent="true" />
+        <TextView
+            android:id="@+id/tv_tray_number"
+            style="@style/tv_one"
+            tools:text="编号"
+            android:textSize="@dimen/text_design_32px" />
+
+        <View
+            style="@style/cm_line_ve"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            style="@style/tv_one"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/line_one"
+            android:layout_weight="0.6"
+            tools:text="数量"
+            android:textSize="@dimen/text_design_32px" />
+
+        <View
+            style="@style/cm_line_ve"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </LinearLayout>
+
+    <View
+        style="@style/cm_line_hz"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

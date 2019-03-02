@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppBg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="@dimen/x_d_padding">
+
+        <LinearLayout
+            android:layout_width="@dimen/x_design_380px"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_share_work3"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y_design_75px"
+                    android:paddingLeft="@dimen/x_d_main_list_padding"
+                    android:paddingRight="@dimen/x_d_main_list_padding">
+
+                    <ImageView
+                        android:id="@+id/iv_logo_or_return"
+                        android:layout_width="@dimen/x_design_160px"
+                        android:layout_height="@dimen/y_design_54px"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/elco_logo2" />
+
+                    <TextView
+                        style="@style/tv_task"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+
+                        android:text="编码器" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_station_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y_design_165px"
+                    android:background="@color/color_reciver">
+
+                    <TextView
+                        android:id="@+id/tv_station_position"
+                        style="@style/tv_task"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/white_full"
+                        android:textSize="@dimen/text_design_60px"
+                        tools:text="线缆工位可视对讲" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y_design_40px"
+                    android:background="@drawable/shape_station_time_bg"
+                    android:paddingLeft="@dimen/x_d_main_list_padding"
+                    android:paddingRight="@dimen/x_d_main_list_padding">
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        style="@style/tv_task"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/white_full"
+                        tools:text="2017-10-1" />
+
+                    <TextView
+                        android:id="@+id/tv_timer"
+                        style="@style/tv_task"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/white_full"
+                        tools:text="上午08:30" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/y_design_20px"
+                android:background="@drawable/bg_share_work3"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/x_design_10px">
+
+
+                <ImageView
+                    android:id="@+id/iv_main_user_photo"
+                    android:layout_width="@dimen/x_design_250px"
+                    android:layout_height="@dimen/x_design_250px"
+                    android:layout_marginTop="@dimen/y_design_10px"
+                    android:src="@drawable/ic_main_user" />
+
+                <TextView
+                    android:id="@+id/tv_person_time"
+                    style="@style/tv_task"
+                    android:layout_width="@dimen/x_design_250px"
+                    android:layout_height="@dimen/y_design_40px"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/white_full"
+                    android:background="@color/black"
+                    android:visibility="visible"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_worker_name_current"
+                        style="@style/login_infor_text_one"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="@dimen/y_design_10px"
+                        tools:text="姓名:张三" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycle_woker_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/y_design_145px"
+                        android:overScrollMode="never"
+                        android:paddingTop="@dimen/y_design_20px">
+
+                    </android.support.v7.widget.RecyclerView>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y_design_20px"
+                        android:paddingLeft="@dimen/x_design_10px"
+                        android:paddingRight="@dimen/x_design_10px">
+
+                        <Button
+                            android:id="@+id/btn_login_two"
+                            android:layout_width="@dimen/x_design_150px"
+                            android:layout_height="@dimen/y_design_80px"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/y_design_20px"
+                            android:background="@drawable/btn_main_login"
+                            android:padding="@dimen/x_design_8px"
+                            android:text="登入"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/text_design_35px" />
+
+                        <Button
+                            android:id="@+id/btn_quit_two"
+                            android:layout_width="@dimen/x_design_150px"
+                            android:layout_height="@dimen/y_design_80px"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/y_design_20px"
+                            android:background="@drawable/btn_main_login"
+                            android:padding="@dimen/x_design_8px"
+                            android:text="退出"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/text_design_35px" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/frame_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x_design_20px"
+            android:layout_weight="0.9"
+            ></FrameLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
+

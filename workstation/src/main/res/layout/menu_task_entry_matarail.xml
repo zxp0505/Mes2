@@ -1,0 +1,94 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x_design_2px"
+        android:layout_gravity="top"
+        android:background="@color/black"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_70px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="6.6">
+
+        <View style="@style/cm_line_ve"
+            android:visibility="gone"/>
+        <TextView
+            style="@style/tv_one"
+            android:layout_weight="1.2"
+            android:textSize="@dimen/design_33px"
+            android:text="物料编码" />
+
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            style="@style/tv_one"
+            android:layout_weight="2.4"
+            android:textSize="@dimen/design_33px"
+            android:text="名称" />
+
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            style="@style/tv_one"
+            android:layout_weight="0.6"
+            android:textSize="@dimen/design_33px"
+            android:text="应收" />
+
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            style="@style/tv_one"
+            android:textSize="@dimen/design_33px"
+            android:layout_weight="0.6"
+            android:text="已收" />
+
+        <View style="@style/cm_line_ve" />
+        <TextView
+            style="@style/tv_one"
+            android:textSize="@dimen/design_33px"
+            android:layout_weight="0.6"
+            android:text="异常" />
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            style="@style/tv_one"
+            android:textSize="@dimen/design_33px"
+            android:layout_weight="0.6"
+            android:text="维修" />
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            style="@style/tv_one"
+            android:textSize="@dimen/design_33px"
+            android:layout_weight="0.6"
+            android:text="剩余" />
+
+        <View style="@style/cm_line_ve"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/iv_look_materail_tray_info"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/design_55px"
+            android:scaleType="centerInside"
+            android:layout_weight="1.0"
+            android:src="@drawable/tray_two"
+            android:visibility="gone"/>
+        <View style="@style/cm_line_ve" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x_design_2px"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/y_design_10px"
+        android:background="#000"
+         />
+</FrameLayout>

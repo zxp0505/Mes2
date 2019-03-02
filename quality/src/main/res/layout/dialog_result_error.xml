@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/design_500px"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_makesure_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/design_50px">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/design_50px"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_design_35px"
+        tools:text="投递成功" />
+
+
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_width="@dimen/design_160px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/design_30px"
+        android:layout_marginTop="@dimen/design_50px"
+        android:background="@drawable/btn_main_login"
+        android:padding="@dimen/design_12px"
+        android:textColor="#fff"
+        android:textSize="@dimen/f_work_font_size"
+        tools:text="确定" />
+
+
+</LinearLayout>

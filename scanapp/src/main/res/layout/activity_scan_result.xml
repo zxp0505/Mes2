@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white_full"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_tray_title"
+                style="@style/tv_one"
+                android:padding="10dp"
+                android:text="托盘信息"
+                android:textColor="@color/black_sixty"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white_full"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_order_title"
+                style="@style/tv_one"
+                android:padding="10dp"
+                android:text="订单信息"
+                android:textColor="@color/black_sixty"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleview_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/x_design_10px"
+            android:paddingRight="@dimen/x_design_10px"
+            android:overScrollMode="never"
+            android:visibility="gone">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/tv_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_sixty"
+            android:textSize="15sp"
+            android:layout_marginTop="@dimen/y_design_10px"
+            android:layout_marginLeft="@dimen/x_design_10px"
+            android:text="上传"
+            android:background="@color/c_btn_login"
+            android:paddingLeft="@dimen/x_design_40px"
+            android:paddingRight="@dimen/x_design_40px"
+            android:paddingTop="@dimen/y_design_20px"
+            android:paddingBottom="@dimen/y_design_20px"
+            android:visibility="gone" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

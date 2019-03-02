@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_70px"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:weightSum="3">
+
+
+        <View style="@style/cm_line_ve" />
+
+
+        <TextView
+            android:id="@+id/tv_materail_name"
+            style="@style/tv_one"
+            android:layout_weight="1.4"
+            android:gravity="left"
+            android:paddingLeft="@dimen/x_design_80px"
+            tools:text="名称"
+
+            />
+
+        <View
+            style="@style/cm_line_ve" />
+        <TextView
+            android:id="@+id/tv_materail_number"
+            style="@style/tv_one"
+            android:gravity="left"
+            android:paddingLeft="@dimen/x_design_80px"
+            tools:text="编号"
+
+            />
+
+        <View
+            style="@style/cm_line_ve" />
+
+        <TextView
+            android:id="@+id/tv_materail_count"
+            style="@style/tv_one"
+            android:layout_weight="0.6"
+            tools:text="数量" />
+
+        <View style="@style/cm_line_ve" />
+    </LinearLayout>
+
+    <View
+        style="@style/cm_line_hz"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

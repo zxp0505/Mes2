@@ -1,0 +1,1 @@
+include ':app', ':line', ':workstation', ':resource', ':mylibrary', ':repair', ':quality', ':scanapp', ':calendarview'

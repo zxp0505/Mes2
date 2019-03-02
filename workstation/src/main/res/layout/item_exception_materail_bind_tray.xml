@@ -1,0 +1,58 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x_design_2px"
+        android:layout_gravity="top"
+        android:background="@color/black"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_75px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <View
+            style="@style/cm_line_ve"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_materail_number"
+            style="@style/tv_one_child_one"
+            android:layout_weight="0.8"
+            tools:text="物料编号" />
+
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            android:id="@+id/tv_materail_name"
+            style="@style/tv_one_child_one"
+            android:layout_weight="1.2"
+            tools:text="物料名称sad尖峰时刻大家发附件是打开房间斯柯达姐夫" />
+
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            style="@style/tv_one_child_two"
+            android:layout_weight="1.0"
+            tools:text="数量" />
+
+        <View style="@style/cm_line_ve" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x_design_2px"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/y_design_10px"
+        android:background="#000" />
+</FrameLayout>

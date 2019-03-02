@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/x_design_50px"
+    android:paddingRight="@dimen/x_design_20px"
+    android:paddingTop="@dimen/y_design_20px">
+
+    <include layout="@layout/layout_feed_order_title" />
+    <include
+        layout="@layout/bind_tray_materail_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_20px" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycyleview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_490px"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/y_design_20px">
+        <ImageView
+            android:layout_width="@dimen/x_design_526px"
+            android:layout_height="@dimen/y_design_195px"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/bind_tray"/>
+        <TextView
+            android:id="@+id/tv_tray_number"
+            style="@style/tv_one"
+            android:paddingTop="@dimen/y_design_15px"
+            android:textSize="@dimen/text_design_35px"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#fff"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y_design_100px"
+            tools:text="未绑定"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_next_botton"
+        style="@style/tv_next"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y_design_20px"
+        android:visibility="gone"
+        android:text="确认发放" />
+
+</LinearLayout>

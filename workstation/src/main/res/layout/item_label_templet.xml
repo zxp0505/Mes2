@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cons_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/y_design_5px">
+
+    <ImageView
+        android:id="@+id/iv_select_status"
+        android:layout_width="@dimen/x_design_70px"
+        android:layout_height="@dimen/x_design_70px"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/un_select_work" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/tv_task"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toTopOf="@+id/iv_select_status"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_select_status"
+        app:layout_constraintLeft_toRightOf="@+id/iv_select_status"
+        android:layout_marginLeft="@dimen/x_design_30px"
+        tools:text="双方都就手动阀黄sdfdsf"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_width="@dimen/x_design_350px"
+        android:textSize="@dimen/text_design_40px"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

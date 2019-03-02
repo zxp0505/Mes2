@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<workstation.zjyk.workstation.ui.customview.TaskItemRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_root"
+    android:layout_width="@dimen/x_design_850px"
+    android:layout_height="@dimen/y_design_400px"
+    android:layout_margin="@dimen/x_design_10px"
+    android:background="@drawable/shape_task_item_bg"
+    android:paddingLeft="@dimen/x_design_1px"
+    android:paddingRight="@dimen/x_design_1px"
+    android:paddingTop="@dimen/y_design_10px">
+
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_top"
+        android:layout_marginTop="@dimen/y_design_8px"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/y_design_10px"
+        android:paddingLeft="@dimen/x_design_10px"
+        android:paddingRight="@dimen/x_design_10px"
+        android:paddingTop="@dimen/y_design_10px">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/y_design_5px"
+            android:paddingTop="@dimen/y_design_5px">
+
+            <TextView
+                style="@style/tv_task"
+                android:gravity="center_vertical|left"
+                android:text="生产序号: "
+                android:textColor="@color/black_sixty"
+                android:textSize="@dimen/text_design_23px" />
+
+            <TextView
+                android:id="@+id/tv_product_number"
+                style="@style/tv_task"
+                android:gravity="center_vertical|left"
+                android:textSize="@dimen/text_design_32px"
+                tools:text="生产序号:" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/y_design_5px"
+            android:paddingTop="@dimen/y_design_5px">
+
+            <TextView
+                style="@style/tv_task"
+                android:gravity="center_vertical|left"
+                android:text="订单编号: "
+                android:textColor="@color/black_sixty"
+                android:textSize="@dimen/text_design_23px" />
+
+            <TextView
+                android:id="@+id/tv_order_number"
+                style="@style/tv_task"
+                android:gravity="center_vertical|left"
+                android:textSize="@dimen/text_design_32px"
+                tools:text="订单编号:" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/y_design_5px"
+            android:paddingTop="@dimen/y_design_5px">
+
+            <TextView
+                style="@style/tv_task"
+                android:gravity="center_vertical|left"
+                android:text="产品型号: "
+                android:textColor="@color/black_sixty"
+                android:textSize="@dimen/text_design_23px" />
+
+            <TextView
+                android:id="@+id/tv_product_modle"
+                style="@style/tv_task"
+                android:gravity="center_vertical|left"
+                android:textSize="@dimen/text_design_32px"
+                tools:text="产品型号:00000" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/y_design_5px"
+                android:paddingTop="@dimen/y_design_5px">
+
+                <TextView
+                    style="@style/tv_task"
+                    android:gravity="center_vertical|left"
+                    android:text="下达时间: "
+                    android:textColor="@color/black_sixty"
+                    android:textSize="@dimen/text_design_23px" />
+
+                <TextView
+                    android:id="@+id/tv_task_come_time"
+                    style="@style/tv_task"
+                    android:gravity="center_vertical|left"
+                    android:textSize="@dimen/text_design_32px"
+                    tools:text="下达时间:00000" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/y_design_5px"
+                android:layout_alignParentRight="true"
+                android:paddingTop="@dimen/y_design_5px">
+
+                <TextView
+                    style="@style/tv_task"
+                    android:gravity="center_vertical|left"
+                    android:text="交货时间: "
+                    android:textColor="@color/black_sixty"
+                    android:textSize="@dimen/text_design_23px" />
+
+                <TextView
+                    android:id="@+id/tv_delivery_time"
+                    style="@style/tv_task"
+                    android:gravity="center_vertical|left"
+                    android:textSize="@dimen/text_design_32px"
+                    tools:text="2018-01-02" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/y_design_5px"
+            android:layout_alignParentRight="true"
+            android:paddingTop="@dimen/y_design_5px">
+
+            <TextView
+                style="@style/tv_task"
+                android:gravity="center_vertical|left"
+                android:text="备注: "
+                android:textColor="@color/black_sixty"
+                android:textSize="@dimen/text_design_23px" />
+
+            <TextView
+                android:id="@+id/tv_remark"
+                style="@style/tv_task"
+                android:gravity="center_vertical|left"
+                android:textSize="@dimen/text_design_32px"
+                android:lines="1"
+                android:ellipsize="end"
+                tools:text="2018-01-02" />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_work_condition"
+            style="@style/tv_task"
+            android:layout_height="@dimen/y_design_55px"
+            android:drawablePadding="@dimen/x_design_10px"
+            android:drawableRight="@drawable/normal"
+            android:gravity="center_vertical"
+            android:text="工作条件:"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_order"
+            style="@style/tv_task"
+            android:paddingBottom="@dimen/y_design_10px"
+            android:paddingTop="@dimen/y_design_10px"
+            android:visibility="gone"
+            tools:text="订单:00000" />
+
+        <TextView
+            android:id="@+id/tv_product"
+            style="@style/tv_task"
+            android:paddingBottom="@dimen/y_design_10px"
+            android:paddingTop="@dimen/y_design_10px"
+            android:visibility="gone"
+            tools:text="产品:00000" />
+
+        <TextView
+            android:id="@+id/tv_produce"
+            style="@style/tv_task"
+            android:paddingBottom="@dimen/y_design_10px"
+            android:paddingTop="@dimen/y_design_10px"
+            android:visibility="gone"
+            tools:text="工序:00000" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            style="@style/tv_task"
+            android:paddingBottom="@dimen/y_design_10px"
+            android:paddingTop="@dimen/y_design_10px"
+            android:visibility="gone"
+            tools:text="数量:00000" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="@dimen/x_design_10px"
+        android:paddingRight="@dimen/x_design_10px">
+
+        <LinearLayout
+            android:id="@+id/ll_station_trasfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/x_design_70px"
+                android:layout_height="@dimen/x_design_70px"
+                android:src="@drawable/zhuanyi"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_inspect_status"
+                style="@style/tv_task"
+                android:layout_marginLeft="@dimen/x_design_10px"
+                android:paddingLeft="@dimen/x_design_30px"
+                android:paddingRight="@dimen/x_design_30px"
+                android:paddingTop="@dimen/x_design_15px"
+                android:paddingBottom="@dimen/x_design_15px"
+                android:layout_marginBottom="@dimen/y_design_5px"
+                android:layout_marginTop="@dimen/y_design_5px"
+                android:background="@drawable/shape_report_work_unselect"
+                tools:text="任务转移" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_task_type"
+            style="@style/tv_task"
+            android:layout_marginLeft="@dimen/x_design_10px"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            tools:text="任务类型" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_count_alrealy"
+                style="@style/tv_task"
+                android:textColor="@color/c_btn_bg"
+                android:textSize="@dimen/text_design_45px"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="500" />
+
+            <TextView
+                style="@style/tv_task"
+                android:layout_marginLeft="@dimen/x_design_10px"
+                android:visibility="gone"
+                android:text="/" />
+
+            <TextView
+                android:id="@+id/tv_count_all"
+                style="@style/tv_task"
+                android:layout_marginLeft="@dimen/x_design_10px"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_design_45px"
+                android:textStyle="bold"
+                tools:text="1000" />
+
+            <TextView
+                style="@style/tv_task"
+                android:layout_marginLeft="@dimen/x_design_10px"
+                android:text="件" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</workstation.zjyk.workstation.ui.customview.TaskItemRelativeLayout>

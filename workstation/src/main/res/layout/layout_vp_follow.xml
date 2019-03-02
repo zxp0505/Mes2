@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <include
+        layout="@layout/menu_bom_follow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycyle_entry_follow_vp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y_design_300px">
+
+        </android.support.v7.widget.RecyclerView>
+        <TextView
+            android:id="@+id/tv_un_follow"
+            style="@style/tv_task"
+            android:text="暂无关注物料"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_design_60px"/>
+    </FrameLayout>
+
+
+</LinearLayout>

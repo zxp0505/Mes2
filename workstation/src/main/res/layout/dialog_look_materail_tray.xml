@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/x_design_800px"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="@dimen/x_design_760px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y_design_40px"
+            android:background="@drawable/shape_makesure_dialog"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/y_design_20px"
+            android:paddingLeft="@dimen/x_design_20px"
+            android:paddingRight="@dimen/x_design_20px"
+            android:paddingTop="@dimen/y_design_20px">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/tv_two"
+                android:text="所有在制品托盘信息" />
+
+            <View style="@style/cm_line_hz" />
+
+            <include layout="@layout/menu_look_materail_tray" />
+
+            <View style="@style/cm_line_hz" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y_design_420px"
+                android:overScrollMode="never">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="@dimen/x_design_80px"
+            android:layout_height="@dimen/x_design_80px"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/close" />
+    </RelativeLayout>
+
+
+</LinearLayout>

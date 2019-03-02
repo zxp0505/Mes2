@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:showIn="@layout/activity_materail">
+
+    <View
+        style="@style/cm_line_hz"
+        android:background="@color/black_fourty"
+        android:layout_gravity="top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <View
+            style="@style/cm_line_ve"
+            android:background="@color/black_fourty"
+            android:visibility="visible" />
+
+        <TextView
+            style="@style/tv_one"
+            android:layout_weight="0.9"
+            android:layout_width="0dp"
+            android:text="编号"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" />
+
+        <View
+            style="@style/cm_line_ve"
+            android:background="@color/black_fourty"
+            android:visibility="visible" />
+
+        <TextView
+            style="@style/tv_one"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:text="名称" />
+
+        <View
+            style="@style/cm_line_ve"
+            android:background="@color/black_fourty" />
+
+
+        <TextView
+            style="@style/tv_one"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:text="数量" />
+
+        <View
+            style="@style/cm_line_ve"
+            android:background="@color/black_fourty" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/cm_line_hz"
+        android:background="@color/black_fourty"
+        android:layout_gravity="bottom" />
+</FrameLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/x_design_1540px"
+    android:layout_height="wrap_content"
+
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="@dimen/x_design_1500px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_40px"
+        android:background="@drawable/shape_dialog_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/y_design_40px"
+        android:paddingLeft="@dimen/x_design_40px"
+        android:paddingRight="@dimen/x_design_40px">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/tv_task"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="@dimen/y_design_20px"
+            android:textSize="@dimen/text_design_40px"
+            tools:text="工序bom清单" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_insoection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/menu_output_inspection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x_design_90px"
+                    android:layout_marginRight="@dimen/x_design_90px"
+                    android:layout_marginTop="@dimen/y_design_20px" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y_design_500px"
+                    android:layout_marginLeft="@dimen/x_design_90px"
+                    android:layout_marginRight="@dimen/x_design_90px"
+                    android:overScrollMode="never">
+
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_insoection_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_centerInParent="true"
+                android:paddingTop="@dimen/y_design_50px"
+                android:paddingBottom="@dimen/y_design_50px"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/tv_task"
+                    android:text="请输入报验数量" />
+
+                <EditText
+                    android:id="@+id/edit_number"
+                    android:layout_width="@dimen/x_design_400px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y_design_30px"
+                    android:background="@drawable/shape_bg_editext"
+                    android:hint="请输入数量..."
+                    android:inputType="number"
+                    android:lines="1"
+                    android:padding="@dimen/x_design_6px"
+                    android:textSize="@dimen/text_design_30px" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y_design_40px">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                style="@style/tv_dialog_button_bg"
+                android:layout_width="@dimen/x_design_160px"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/x_design_30px"
+                android:visibility="gone"
+                android:text="取消" />
+
+            <Button
+                android:id="@+id/btn_sure"
+                style="@style/tv_dialog_button_bg"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/x_design_70px"
+                android:paddingRight="@dimen/x_design_70px"
+                android:paddingTop="@dimen/y_design_40px"
+                android:paddingBottom="@dimen/y_design_40px"
+                android:layout_marginRight="@dimen/x_design_100px"
+                android:layout_marginLeft="@dimen/x_design_30px"
+                android:textSize="@dimen/text_design_40px"
+                android:text="报验" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:layout_width="@dimen/x_design_380px"
+                    android:layout_height="@dimen/y_design_140px"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/bind_tray" />
+
+                <TextView
+                    android:id="@+id/tv_tray_number"
+                    style="@style/tv_task"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/y_design_75px"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/text_design_35px"
+                    tools:text="未绑定" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="@dimen/x_design_80px"
+        android:layout_height="@dimen/x_design_80px"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/close" />
+
+</RelativeLayout>

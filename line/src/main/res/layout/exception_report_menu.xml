@@ -1,0 +1,50 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x_design_2px"
+        android:layout_gravity="top"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_70px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            style="@style/tv_feed_list"
+            android:text="异常编号" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            style="@style/tv_feed_list"
+            android:text="异常输出人员" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            style="@style/tv_feed_list"
+            android:text="输出时间" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            style="@style/tv_feed_list"
+            android:text="操作" />
+
+        <View style="@style/line_ve" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/line_hz"
+        android:layout_gravity="bottom" />
+</FrameLayout>

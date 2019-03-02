@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_station_detail_popup_bg"
+    android:gravity="center"
+    android:padding="@dimen/x_design_15px"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_change_station"
+        android:text="更换工位"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_30px"
+        android:layout_marginBottom="@dimen/y_design_30px"
+        android:paddingLeft="@dimen/x_design_30px"
+        android:paddingRight="@dimen/x_design_30px"
+        android:paddingTop="@dimen/y_design_15px"
+        android:paddingBottom="@dimen/y_design_15px"
+        style="@style/tv_shape_three" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

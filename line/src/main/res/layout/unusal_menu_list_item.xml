@@ -1,0 +1,91 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_80px"
+        android:orientation="horizontal"
+        android:weightSum="4.2">
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_materail_number"
+            style="@style/tv_materail_require_text"
+            android:layout_height="match_parent"
+            tools:text="物料编号" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_materail_name"
+            style="@style/tv_materail_require_text"
+            android:layout_height="match_parent"
+            tools:text="物料名称"
+            android:layout_weight="1.3"/>
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_require"
+            style="@style/tv_materail_require_text"
+            android:layout_height="match_parent"
+            tools:text="需要"
+            android:layout_weight="0.7"/>
+
+        <View style="@style/line_ve" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2">
+
+            <ImageView
+                android:id="@+id/iv_reduce_bag"
+                android:layout_width="@dimen/x_design_70px"
+                android:layout_height="@dimen/x_design_70px"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/x_design_10px"
+                android:paddingRight="@dimen/x_design_10px"
+                android:src="@drawable/reduce" />
+
+
+            <ImageView
+                android:id="@+id/iv_add_bag"
+                android:layout_width="@dimen/x_design_70px"
+                android:layout_height="@dimen/x_design_70px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/x_design_10px"
+                android:paddingRight="@dimen/x_design_10px"
+                android:src="@drawable/add" />
+
+            <TextView
+                android:id="@+id/tv_true_bag"
+                style="@style/tv_feed_two_list_item_two"
+                android:layout_width="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/x_design_10px"
+                android:layout_marginRight="@dimen/x_design_10px"
+                android:layout_toLeftOf="@id/iv_add_bag"
+                android:layout_toRightOf="@id/iv_reduce_bag"
+                android:text="0"
+                tools:text="100" />
+        </RelativeLayout>
+
+        <View style="@style/line_ve" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x_design_2px"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/y_design_10px"
+        android:background="#000"
+        android:visibility="visible" />
+</FrameLayout>

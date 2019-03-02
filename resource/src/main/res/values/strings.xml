@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">resource</string>
+    <string name="common_loading_message">Loading...</string>
+    <string name="common_empty_msg">暂无数据</string>
+    <string name="common_error_msg">暂无数据</string>
+    <string name="common_no_network_msg">请检查网络,点击重试</string>
+    <string name="common_no_network_msg_toast">请检查网络</string>
+
+    <string name="st_main_login_hint">请扫描条形码进行登录</string>
+    <string name="st_main_quit_hint">请扫描条形码进行退出</string>
+    <string name="st_back">返回</string>
+    <string name="text_loading">正在加载中...</string>
+    <string name="login_out_un">没有可退出的人员!</string>
+    <string name="text_hand_entry_barcode">请手动输入条码</string>
+    <string name="text_handle_input">请手动输入</string>
+    <string name="text_bind_tray">请先绑定托盘</string>
+    <string name="text_unbind">未绑定</string>
+    <string name="text_bind_sucess">托盘绑定成功</string>
+    <!--未就绪-->
+    <string name="text_un_conditionStatus">000天00:00</string>
+    <!--未开始-->
+    <string name="text_work_unstart">0天0时0分</string>
+
+    <string name="text_work_start">开始</string>
+    <string name="text_work_pause">暂停</string>
+    <string name="text_work_to_end">结束</string>
+    <string name="text_work_end">已结束</string>
+    <string name="text_un_login">您尚未登陆,请先登陆</string>
+    <string name="text_print_success">打印成功</string>
+</resources>

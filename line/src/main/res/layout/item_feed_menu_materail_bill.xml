@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="@dimen/x_design_1400px"
+        android:layout_height="@dimen/y_design_70px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_order_product_number"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="订单生产编号" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_materail_number"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="物料编号" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_materail_name"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="物料名称"
+            android:layout_weight="1.4"/>
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_materail_batch_number"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="批次号" />
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_reciver_count"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="接收数量"
+            android:layout_weight="0.8"/>
+
+        <View style="@style/line_ve" />
+
+        <TextView
+            android:id="@+id/tv_undistribution_count"
+            style="@style/tv_dialog_make_sure_menu_text"
+            tools:text="未分配数量"
+            android:layout_weight="0.8"/>
+
+        <View style="@style/line_ve" />
+    </LinearLayout>
+
+    <View style="@style/line_hz" />
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/x_design_10px"
+    android:background="@color/c_main_work_list_bg">
+
+    <TextView
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/left_two"
+        android:drawablePadding="@dimen/x_design_5px"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:text="返回"
+        android:textColor="@color/black"
+        android:padding="@dimen/x_design_20px"
+        android:textSize="@dimen/text_design_35px" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/tv_two"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/text_design_40px"
+        tools:text="扫码登录" />
+    <TextView
+        android:id="@+id/tv_hand_barcode"
+        style="@style/tv_three"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/x_design_20px"
+        />
+</RelativeLayout>

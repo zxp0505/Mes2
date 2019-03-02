@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y_design_80px"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="3">
+
+    <View
+        style="@style/cm_line_ve"
+        />
+
+
+    <TextView
+        style="@style/tv_one"
+        android:text="名称"
+        android:textSize="@dimen/text_design_32px"
+        android:layout_weight="1.4"/>
+
+    <View
+        style="@style/cm_line_ve"/>
+    <TextView
+        style="@style/tv_one"
+        android:text="物料编号"
+        android:textSize="@dimen/text_design_32px"
+        />
+
+    <View
+        style="@style/cm_line_ve"/>
+
+    <TextView
+        style="@style/tv_one"
+        android:text="数量"
+        android:textSize="@dimen/text_design_32px"
+        android:layout_weight="0.6"/>
+
+    <View
+        style="@style/cm_line_ve" />
+
+
+</LinearLayout>

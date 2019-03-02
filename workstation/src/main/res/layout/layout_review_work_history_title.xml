@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_output_count"
+        style="@style/tv_task"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/x_design_30px"
+        android:text="输出数量" />
+
+    <TextView
+        style="@style/tv_task"
+        android:layout_centerInParent="true"
+        android:text="返工记录"
+        android:textSize="@dimen/text_design_40px" />
+
+    <TextView
+        android:id="@+id/tv_review_work_count"
+        style="@style/tv_task"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/x_design_30px"
+        android:text="返工数量" />
+
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/y_design_5px">
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/tv_task"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_report_work_unselect"
+        android:paddingLeft="@dimen/x_design_60px"
+        android:paddingRight="@dimen/x_design_60px"
+        android:paddingTop="@dimen/y_design_30px"
+        android:paddingBottom="@dimen/y_design_30px"
+        tools:text="60x60" />
+
+
+</FrameLayout>

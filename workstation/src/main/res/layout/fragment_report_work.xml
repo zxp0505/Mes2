@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/fragmnet_bg_one"
+    android:orientation="vertical">
+
+    <include layout="@layout/fragment_title" />
+
+    <include
+        layout="@layout/menu_report_work"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_20px"
+        android:layout_marginLeft="@dimen/x_design_90px"
+        android:layout_marginRight="@dimen/x_design_90px"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/ll_count"
+            android:layout_width="@dimen/x_design_400px"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/y_design_10px"
+            android:paddingLeft="@dimen/x_design_30px"
+            android:paddingRight="@dimen/x_design_30px"
+            android:paddingTop="@dimen/y_design_40px">
+
+            <ImageView
+                android:id="@+id/iv_add"
+                android:layout_width="@dimen/x_design_140px"
+                android:layout_height="@dimen/x_design_140px"
+                android:padding="@dimen/x_design_20px"
+                android:src="@drawable/add_count" />
+
+
+            <TextView
+                android:id="@+id/tv_output_count"
+                style="@style/tv_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/shape_output_count_bg"
+                android:paddingLeft="@dimen/x_design_20px"
+                android:paddingRight="@dimen/x_design_20px"
+                android:textSize="@dimen/text_design_100px"
+                tools:text="1117" />
+
+            <ImageView
+                android:id="@+id/iv_reduce"
+                android:layout_width="@dimen/x_design_140px"
+                android:layout_height="@dimen/x_design_140px"
+                android:padding="@dimen/x_design_20px"
+                android:src="@drawable/reduce_count" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y_design_630px"
+            android:layout_marginLeft="@dimen/x_design_90px"
+            android:layout_marginRight="@dimen/x_design_40px"
+            android:layout_toLeftOf="@id/ll_count"
+            android:overScrollMode="never" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_report_confirm"
+        style="@style/tv_shape_two"
+        android:layout_width="@dimen/x_design_250px"
+        android:layout_height="@dimen/y_design_120px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y_design_40px"
+        android:text="确认提报"
+        android:textSize="@dimen/text_design_45px" />
+
+    <TextView
+        android:id="@+id/tv_history_title"
+        style="@style/tv_two"
+        android:layout_marginTop="@dimen/y_design_10px"
+        android:layout_marginLeft="@dimen/x_design_180px"
+        android:text="历史报工记录:"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/menu_report_work_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x_design_180px"
+        android:layout_marginRight="@dimen/x_design_180px"
+        android:layout_marginTop="@dimen/y_design_10px"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview_history"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_210px"
+        android:layout_marginLeft="@dimen/x_design_180px"
+        android:layout_marginRight="@dimen/x_design_180px"
+        android:visibility="gone"
+        android:overScrollMode="never">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>

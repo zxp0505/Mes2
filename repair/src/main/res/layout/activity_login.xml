@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppBg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/c_main_work_list_bg"
+        android:visibility="visible"
+
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <!--自定义带图片的立即播放按钮-->  <!--app:layout_collapseMode="pin"-->
+        <android.support.v7.widget.ButtonBarLayout
+            android:id="@+id/playButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <include
+                android:id="@+id/title_bar"
+                layout="@layout/layout_app_detail_title" />
+
+        </android.support.v7.widget.ButtonBarLayout>
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:id="@+id/ll_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_login_saomiao" />
+
+        <TextView
+            android:id="@+id/tv_main_station_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/design_50px"
+            android:text="@string/st_main_login_hint"
+            android:textColor="@color/c_tv_font_black"
+            android:textSize="@dimen/f_main_font_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_login_hand"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/design_50px"
+            android:src="@drawable/hand" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_entry"
+                android:layout_width="@dimen/design_500px"
+                android:layout_height="@dimen/design_100px"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/design_50px"
+                android:gravity="center"
+                android:hint="请手动输入工号"
+                android:textColor="@color/c_tv_font_black"
+                android:textSize="@dimen/f_main_font_size" />
+
+            <Button
+                android:id="@+id/btn_login"
+                style="@style/login_infor_bt"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/design_30px"
+                android:layout_toRightOf="@id/edit_entry"
+                android:padding="@dimen/design_12px"
+                android:text="登陆" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_login2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/design_80px"
+        android:layout_marginLeft="@dimen/design_150px"
+        android:layout_marginRight="@dimen/design_150px"
+        android:layout_marginTop="@dimen/design_80px"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/iv_login_photograph"
+            android:background="@drawable/bg_shape_login"
+            android:padding="@dimen/design_2px">
+
+            <FrameLayout
+                android:id="@+id/fl_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_login_photograph"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/design_70px"
+            android:src="@drawable/ic_login_paizhao" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

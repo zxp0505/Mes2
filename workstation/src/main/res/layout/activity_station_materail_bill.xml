@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/x_design_1500px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_40px"
+        android:background="@drawable/shape_makesure_dialog"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/y_design_50px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y_design_20px"
+            android:text="工位物料清单"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_design_45px" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/y_design_20px"
+            android:paddingLeft="@dimen/x_design_100px"
+            android:paddingRight="@dimen/x_design_100px">
+
+
+            <View
+                android:id="@+id/view_line_one"
+                style="@style/cm_line_hz"
+                android:layout_below="@id/tv_materail_detail"
+                android:layout_marginTop="@dimen/y_design_5px" />
+
+            <include
+                android:id="@+id/ll_menu"
+                layout="@layout/menu_station_materail_billl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y_design_72px"
+                android:layout_below="@id/view_line_one"
+                android:background="@drawable/bg_share_work" />
+
+            <View
+                android:id="@+id/view_line_two"
+                style="@style/cm_line_hz"
+                android:layout_below="@id/ll_menu" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycyleview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y_design_308px"
+                android:layout_below="@id/view_line_two">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/tv_close"
+                style="@style/tv_shape_three"
+                android:layout_width="@dimen/x_design_290px"
+                android:layout_height="@dimen/y_design_120px"
+                android:layout_below="@id/recycyleview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/y_design_40px"
+                android:text="关闭"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

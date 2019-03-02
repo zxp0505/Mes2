@@ -1,0 +1,99 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_75px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="6.6">
+
+        <View style="@style/cm_line_ve"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/tv_materail_number"
+            style="@style/tv_one"
+            android:layout_weight="1.2"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="@dimen/x_design_10px"
+            tools:text="物料编码" />
+
+        <View style="@style/cm_line_ve" />
+        <TextView
+            android:id="@+id/tv_materail_name"
+            style="@style/tv_one"
+            android:layout_weight="2.4"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="@dimen/x_design_10px"
+            tools:text="名称" />
+
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            android:id="@+id/tv_s_reciver_count"
+            style="@style/tv_one"
+            android:layout_weight="0.6"
+            android:gravity="right|center_vertical"
+            android:paddingRight="@dimen/x_design_10px"
+            tools:text="应收" />
+
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            android:id="@+id/tv_a_reciver_count"
+            style="@style/tv_one"
+            android:layout_weight="0.6"
+            android:gravity="right|center_vertical"
+            android:paddingRight="@dimen/x_design_10px"
+            tools:text="已收" />
+
+        <View style="@style/cm_line_ve" />
+        <TextView
+            android:id="@+id/tv_except_count"
+            style="@style/tv_one"
+            android:layout_weight="0.6"
+            android:gravity="right|center_vertical"
+            android:paddingRight="@dimen/x_design_10px"
+            tools:text="异常" />
+        <View style="@style/cm_line_ve" />
+        <TextView
+            android:id="@+id/tv_repair_count"
+            style="@style/tv_one"
+            android:layout_weight="0.6"
+            android:gravity="right|center_vertical"
+            android:paddingRight="@dimen/x_design_10px"
+            tools:text="维修" />
+
+        <View style="@style/cm_line_ve" />
+
+        <TextView
+            android:id="@+id/tv_stupls"
+            style="@style/tv_one"
+            android:layout_weight="0.6"
+            android:gravity="right|center_vertical"
+            android:paddingRight="@dimen/x_design_10px"
+            tools:text="剩余" />
+
+        <View style="@style/cm_line_ve" 
+		android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/iv_look_tray_info_item"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/y_design_40px"
+            android:scaleType="centerInside"
+            android:layout_weight="1.0"
+            android:src="@drawable/tray_two"
+			android:visibility="gone"/>
+    </LinearLayout>
+
+    <View
+        style="@style/cm_line_hz"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/y_design_10px"
+        android:visibility="visible" />
+</FrameLayout>

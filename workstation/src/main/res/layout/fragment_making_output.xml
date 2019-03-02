@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/fragmnet_bg_one"
+    android:orientation="vertical">
+
+    <include layout="@layout/fragment_title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/x_design_100px"
+        android:paddingRight="@dimen/x_design_100px"
+        android:paddingTop="@dimen/y_design_20px">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/y_design_10px"
+                android:paddingLeft="@dimen/x_design_20px"
+                android:paddingTop="@dimen/y_design_10px">
+
+                <ImageView
+                    android:id="@+id/iv_reduce"
+                    android:layout_width="@dimen/x_design_120px"
+                    android:layout_height="@dimen/x_design_120px"
+                    android:padding="@dimen/x_design_20px"
+                    android:src="@drawable/reduce_count" />
+
+                <TextView
+                    android:id="@+id/tv_output_count"
+                    style="@style/tv_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x_design_30px"
+                    android:layout_marginRight="@dimen/x_design_30px"
+                    android:background="@drawable/shape_output_count_bg"
+                    android:paddingLeft="@dimen/x_design_20px"
+                    android:paddingRight="@dimen/x_design_20px"
+                    android:textSize="@dimen/text_design_100px"
+                    tools:text="7" />
+
+                <ImageView
+                    android:id="@+id/iv_add"
+                    android:layout_width="@dimen/x_design_120px"
+                    android:layout_height="@dimen/x_design_120px"
+                    android:padding="@dimen/x_design_20px"
+                    android:src="@drawable/add_count" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_count"
+                android:paddingTop="@dimen/y_design_20px">
+
+                <ImageView
+                    android:layout_width="@dimen/x_design_504px"
+                    android:layout_height="@dimen/y_design_188px"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/bind_tray" />
+
+                <TextView
+                    android:id="@+id/tv_tray_number"
+                    style="@style/tv_task"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/y_design_90px"
+                    android:paddingTop="@dimen/y_design_15px"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/text_design_35px"
+                    tools:text="未绑定" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_delivery"
+            android:layout_width="@dimen/x_design_300px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_100px"
+            android:scaleType="centerInside"
+            android:src="@drawable/making_output" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/cm_line_hz"
+        android:layout_marginTop="@dimen/y_design_20px" />
+
+    <View
+        style="@style/cm_line_hz"
+        android:layout_marginTop="@dimen/y_design_10px" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_product_modle"
+            style="@style/tv_task"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/x_design_50px"
+            tools:text="产品型号:123" />
+
+        <TextView
+            style="@style/tv_task"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/x_design_5px"
+            android:text="已完成投递的在制品记录"
+            android:textSize="@dimen/design_40px" />
+
+        <TextView
+            android:id="@+id/tv_delivery_count"
+            style="@style/tv_task"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="@dimen/x_design_100px"
+            tools:text="已投递总数:15" />
+    </RelativeLayout>
+
+    <include
+        layout="@layout/menu_making_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_10px" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_280px"
+        android:overScrollMode="never"
+        android:paddingLeft="@dimen/x_design_50px"
+        android:paddingRight="@dimen/x_design_50px">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

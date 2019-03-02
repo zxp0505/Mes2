@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/prl_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        app:layout_widthPercent="90%">
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/tv_one"
+            android:layout_width="wrap_content"
+            android:gravity="start|top"
+            android:lines="1"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:textSize="17sp"
+            tools:text="托盘号" />
+        <TextView
+            android:id="@+id/tv_value"
+            style="@style/tv_one"
+            android:layout_width="wrap_content"
+            android:gravity="start|top"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:textSize="17sp"
+            android:textColor="@color/colorPrimary"
+            tools:text="托盘号sdkjfaksd就是看地方就爱看的积分卡阿萨德看风景阿萨德空间发空间的发送卡的上岛咖啡就爱看时代峰峻as打开飞机撒看电视的房间" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_load"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/right"
+        app:layout_widthPercent="10%" />
+
+    <View
+        android:id="@+id/view_top_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black_fourty" />
+
+    <View
+        android:id="@+id/view_botoom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ll_name"
+        android:background="@color/black_fourty" />
+</android.support.percent.PercentRelativeLayout>

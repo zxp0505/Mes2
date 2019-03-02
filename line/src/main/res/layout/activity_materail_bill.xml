@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="@dimen/x_design_1640px"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="@dimen/x_design_1600px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y_design_40px"
+            android:background="@drawable/shape_makesure_dialog"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/y_design_20px"
+                android:text="物料清单"
+                android:textColor="@color/color_reciver"
+                android:textSize="@dimen/text_design_45px" />
+
+            <TextView
+                android:id="@+id/tv_send_good_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/y_design_10px"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_design_30px"
+                tools:text="仓库发料条码:10000000" />
+
+            <LinearLayout
+                android:layout_width="@dimen/x_design_1400px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y_design_17px"
+                android:paddingTop="@dimen/y_design_5px"
+
+                android:background="@drawable/bg_menu">
+
+                <include
+                    layout="@layout/feed_menu_materail_bill"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y_design_60px" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycyleview"
+                android:layout_width="@dimen/x_design_1400px"
+                android:layout_height="@dimen/y_design_425px"
+                android:layout_marginBottom="@dimen/y_design_30px">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <RelativeLayout
+                android:id="@+id/rl_opreat"
+                android:layout_width="@dimen/x_design_1400px"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/y_design_20px">
+
+                <TextView
+                    android:id="@+id/tv_start_feed"
+                    style="@style/tv_dialog_make_sure_bottom_text"
+                    android:text="开始分料"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_put_in_store"
+                    style="@style/tv_dialog_make_sure_bottom_text"
+                    android:layout_centerHorizontal="true"
+                    android:text="入仓"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tv_unusal"
+                    style="@style/tv_dialog_make_sure_bottom_text"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/shape_makesure_except"
+                    android:text="异常输出" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="@dimen/x_design_80px"
+            android:layout_height="@dimen/x_design_80px"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/close" />
+    </RelativeLayout>
+</LinearLayout>

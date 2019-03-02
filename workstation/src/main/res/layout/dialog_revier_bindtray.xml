@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/x_design_900px"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_makesure_dialog"
+
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/y_design_50px">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y_design_20px"
+        android:gravity="center"
+        android:text="维修"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_design_35px" />
+
+    <TextView
+        android:id="@+id/tv_reciver_tray"
+        style="@style/tv_task"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y_design_30px"
+        tools:text="托盘码: " />
+
+    <RelativeLayout
+        android:id="@+id/rl_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x_design_120px"
+        android:layout_marginTop="@dimen/y_design_10px">
+
+        <TextView
+            style="@style/tv_task"
+            android:layout_centerVertical="true"
+            android:text="托盘码: " />
+
+        <EditText
+            android:id="@+id/edit_bind_tray"
+            android:layout_width="@dimen/x_design_380px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/x_design_140px"
+            android:layout_marginTop="@dimen/y_design_10px"
+            android:background="@drawable/shape_bg_editext"
+            android:hint="扫码或手动输入托盘码"
+            android:lines="1"
+            android:padding="@dimen/x_design_6px"
+            android:textSize="@dimen/text_design_30px" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_20px">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="@dimen/x_design_160px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="@dimen/y_design_80px"
+            android:layout_marginTop="@dimen/y_design_20px"
+            android:background="@drawable/btn_main_login"
+            android:padding="@dimen/x_design_20px"
+            android:text="取消"
+            android:textColor="#fff"
+            android:textSize="@dimen/f_work_font_size" />
+
+        <Button
+            android:id="@+id/btn_sure"
+            android:layout_width="@dimen/x_design_160px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/x_design_80px"
+            android:layout_marginTop="@dimen/y_design_20px"
+            android:background="@drawable/btn_main_login"
+            android:padding="@dimen/x_design_20px"
+            android:text="确定"
+            android:textColor="#fff"
+            android:textSize="@dimen/f_work_font_size" />
+    </RelativeLayout>
+
+
+</LinearLayout>

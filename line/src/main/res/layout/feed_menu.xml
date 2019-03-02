@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/x_design_1100px"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <TextView
+        style="@style/tv_feed_menu"
+        android:text="仓库发料条码" />
+
+    <TextView
+        style="@style/tv_feed_menu"
+        android:text="订单生产编号" />
+
+    <TextView
+        style="@style/tv_feed_menu"
+        android:text="物料状态"
+        android:visibility="gone"/>
+
+</LinearLayout>

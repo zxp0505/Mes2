@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/y_design_10px">
+
+        <TextView
+            android:id="@+id/tv_feed_title"
+            style="@style/tv_feed_title_one"
+            android:layout_centerVertical="true"
+            android:text="分料第一步:选择工位" />
+
+
+        <TextView
+            android:id="@+id/tv_next"
+            style="@style/tv_feed_right_button"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x_design_60px"
+            android:text="下一步" />
+
+        <TextView
+            android:id="@+id/tv_cancle"
+            style="@style/tv_feed_right_button"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:layout_toLeftOf="@id/tv_next"
+            android:background="@drawable/shape_cancle"
+            android:text="取消" />
+
+        <TextView
+            android:id="@+id/tv_hand_barcode"
+            style="@style/tv_three"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:layout_toLeftOf="@id/tv_cancle"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_station_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="@dimen/y_design_10px"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_design_30px"
+            android:visibility="gone"
+            tools:text="共10个" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_title_describe"
+        style="@style/tv_feed_title_one"
+        android:text="请确认您要发放的物料数量"
+        android:textSize="@dimen/text_design_30px"
+        android:visibility="gone" />
+</merge>

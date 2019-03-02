@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/y_design_30px"
+    android:background="@drawable/shape_makesure_dialog">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_tool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/x_design_12px"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请输入分配数量"
+            android:textSize="@dimen/text_design_45px"
+            android:layout_marginTop="@dimen/y_design_20px"
+            android:textColor="@color/white_full"
+            android:layout_centerInParent="true" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/x_design_6px"
+            android:paddingRight="@dimen/x_design_6px"
+            tools:ignore="RelativeOverlap">
+
+            <TextView
+                android:id="@+id/tv_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white_full"
+                android:textSize="@dimen/text_design_35px"
+                tools:text="2017年" />
+
+            <TextView
+                android:id="@+id/tv_lunar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white_full"
+                android:textSize="@dimen/text_design_35px"
+                tools:text="3月"
+                tools:ignore="SmallSp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_current"
+            android:layout_width="@dimen/x_design_100px"
+            android:layout_height="@dimen/x_design_100px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_12px"
+            android:background="@drawable/bg_ripple">
+
+            <ImageView
+                android:id="@+id/ib_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerInside"
+                android:src="@mipmap/menu_action_calendar_mvp"
+                android:tint="#000000" />
+
+            <TextView
+                android:id="@+id/tv_current_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/y_design_2px"
+                android:gravity="center"
+                android:textColor="@color/white_full"
+                android:textSize="@dimen/text_design_30px"
+                tools:text="13" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <com.haibin.calendarview.CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="@dimen/x_design_960px"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        app:current_month_lunar_text_color="#CFCFCF"
+        app:current_month_text_color="#333333"
+        app:max_year="2018"
+        app:min_year="2017"
+        app:month_view="com.haibin.calendarview.custom.CustomMonthView"
+        app:month_view_show_mode="mode_fix"
+        app:other_month_lunar_text_color="#e1e1e1"
+        app:other_month_text_color="#e1e1e1"
+        app:scheme_text="假"
+        app:scheme_text_color="#333"
+        app:scheme_theme_color="#128c4b"
+        app:selected_lunar_text_color="#fff"
+        app:selected_text_color="#fff"
+        app:selected_theme_color="#046cea"
+        app:week_background="#fff"
+        app:week_text_color="#e1e1e1"
+        app:year_view_day_text_color="#333333"
+        app:year_view_day_text_size="9sp"
+        app:year_view_month_text_color="#ff0000"
+        app:year_view_month_text_size="@dimen/text_design_12px"
+        app:year_view_scheme_color="#f17706"
+        app:calendar_height="@dimen/x_design_100px" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_20px"
+        android:paddingRight="@dimen/x_design_30px"
+        android:paddingLeft="@dimen/x_design_30px">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="@style/dialog_bt_cancle" />
+
+        <TextView
+            android:id="@+id/tv_month_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x_design_16px"
+            android:textColor="@color/white_full"
+            android:textSize="@dimen/text_design_40px"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"
+            tools:text="4月5日"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/btn_date_plan"
+            style="@style/dialog_bt_confirm"
+            android:text="计划日期" />
+
+        <Button
+            android:id="@+id/btn_date_delivery"
+            style="@style/dialog_bt_confirm"
+            android:layout_centerInParent="true"
+            android:text="交货日期" />
+    </RelativeLayout>
+
+
+</LinearLayout>

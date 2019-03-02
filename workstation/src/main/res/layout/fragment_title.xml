@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y_design_110px"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title_one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_back_one"
+            style="@style/iv_back_style"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_back_one"
+            android:paddingLeft="@dimen/x_design_30px"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_design_50px"
+            android:visibility="visible"
+            tools:text="任务列表" />
+
+
+
+
+        <TextView
+            android:id="@+id/tv_right"
+            style="@style/tv_shape_three"
+            android:layout_width="@dimen/x_design_150px"
+            android:layout_height="@dimen/y_design_80px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:text="物料清单" />
+
+        <TextView
+            android:id="@+id/tv_hand_barcode"
+            style="@style/tv_shape_four"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_20px"
+            android:layout_toLeftOf="@id/tv_right"
+            android:text="手动输入条码" />
+        <TextView
+            android:id="@+id/tv_search_by_date"
+            style="@style/tv_shape_four"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x_design_20px"
+            android:text="日期搜索"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/tv_search"
+            style="@style/tv_shape_four"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_20px"
+            android:layout_toLeftOf="@id/tv_search_by_date"
+            android:text="任务搜索" />
+
+        <include
+            android:id="@+id/tab_tasklist"
+            layout="@layout/layout_tab_tasklist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x_design_20px"
+            android:layout_marginRight="@dimen/x_design_40px"
+            android:layout_toRightOf="@id/tv_title"
+            android:layout_toLeftOf="@id/tv_search"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_title_two"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_back_two"
+            android:layout_centerVertical="true"
+           style="@style/iv_back_style" />
+
+        <TextView
+            android:id="@+id/tv_product_number"
+            style="@style/tv_three"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_back_two"
+            android:paddingLeft="@dimen/x_design_20px"
+            tools:text="生产编号: N11145" />
+
+        <TextView
+            android:id="@+id/tv_model"
+            style="@style/tv_three"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x_design_480px"
+            tools:text="型号: N11145" />
+
+        <TextView
+            android:id="@+id/tv_detail"
+            style="@style/tv_shape_two"
+            android:layout_width="@dimen/x_design_150px"
+            android:layout_height="@dimen/y_design_80px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:text="详情" />
+
+        <TextView
+            android:id="@+id/tv_produce"
+            style="@style/tv_three"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:visibility="gone"
+            tools:text="工序: 组装" />
+
+        <TextView
+            android:id="@+id/tv_cancle"
+            style="@style/tv_shape_one"
+            android:layout_width="@dimen/x_design_150px"
+            android:layout_height="@dimen/y_design_80px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:text="返回"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_hand_barcode_two"
+            style="@style/tv_shape_four"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_20px"
+            android:layout_toLeftOf="@id/tv_detail"
+            android:text="手动输入条码" />
+
+        <TextView
+            android:id="@+id/tv_inspection"
+            style="@style/tv_shape_four"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_20px"
+            android:layout_toLeftOf="@id/tv_hand_barcode_two"
+            android:paddingLeft="@dimen/x_design_30px"
+            android:paddingRight="@dimen/x_design_30px"
+            android:text="报验"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_hand_barcode_two_two"
+            style="@style/tv_shape_four"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_20px"
+            android:layout_toLeftOf="@id/tv_detail"
+            android:text="手动输入条码"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_title_three"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_back_three"
+            android:layout_centerVertical="true"
+            style="@style/iv_back_style" />
+
+        <TextView
+            android:id="@+id/tv_title_left"
+            style="@style/tv_three"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_back_three"
+            android:paddingLeft="@dimen/x_design_50px"
+            tools:text="生产编号: N11145" />
+
+        <TextView
+            android:id="@+id/tv_quit"
+            style="@style/tv_shape_four"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:text="返回"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_hand_barcode_three"
+            style="@style/tv_shape_four"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:text="手动输入条码" />
+
+        <TextView
+            android:id="@+id/tv_bind_tray"
+            style="@style/tv_shape_four"
+            android:layout_width="@dimen/x_design_230px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:paddingLeft="@dimen/x_design_12px"
+            android:paddingRight="@dimen/x_design_12px"
+            android:text="绑定托盘"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_title_four"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_back_four"
+            android:layout_width="@dimen/x_design_140px"
+            android:layout_height="@dimen/x_design_90px"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/x_design_30px"
+            android:paddingRight="@dimen/x_design_20px"
+            android:src="@drawable/back_three" />
+
+        <LinearLayout
+            android:id="@+id/ll_product_number_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x_design_20px"
+            android:layout_marginTop="@dimen/y_design_10px"
+            android:layout_toRightOf="@id/iv_back_four"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_product_number_four"
+                style="@style/tv_three"
+                android:textSize="@dimen/text_design_33px"
+                tools:text="生产编号: N11145" />
+
+            <TextView
+                style="@style/tv_task"
+                android:paddingTop="@dimen/y_design_1px"
+                android:text="生产编号"
+                android:textColor="@color/black_sixty"
+                android:textSize="@dimen/text_design_20px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/ll_product_number_four"
+            android:layout_marginLeft="@dimen/x_design_480px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_model_four"
+                style="@style/tv_three"
+                android:textSize="@dimen/text_design_33px"
+                tools:text="型号: N11145" />
+
+            <TextView
+                style="@style/tv_task"
+                android:paddingTop="@dimen/y_design_1px"
+                android:text="产品型号"
+                android:textColor="@color/black_sixty"
+                android:textSize="@dimen/text_design_20px" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_detail_four"
+            style="@style/tv_shape_four"
+            android:paddingLeft="@dimen/x_design_30px"
+            android:paddingRight="@dimen/x_design_30px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:text="详情" />
+        <TextView
+            android:id="@+id/tv_inspection_four"
+            style="@style/tv_shape_four"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_20px"
+            android:layout_toLeftOf="@id/tv_detail_four"
+            android:paddingLeft="@dimen/x_design_30px"
+            android:paddingRight="@dimen/x_design_30px"
+            android:text="报验"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/tv_print_label"
+            style="@style/tv_shape_four"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_20px"
+            android:layout_toLeftOf="@id/tv_inspection_four"
+            android:paddingLeft="@dimen/x_design_10px"
+            android:paddingRight="@dimen/x_design_10px"
+            android:text="打印标签"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/iv_title_line_bg_four"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y_design_10px"
+            android:layout_alignLeft="@id/ll_product_number_four"
+            android:layout_below="@id/ll_product_number_four"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:layout_marginTop="@dimen/y_design_3px"
+            android:layout_toLeftOf="@id/tv_print_label" />
+
+
+    </RelativeLayout>
+</LinearLayout>

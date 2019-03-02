@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_75px"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:weightSum="2">
+        <View
+            style="@style/cm_line_ve"/>
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/tv_one"
+            android:textSize="@dimen/text_design_28px"
+            tools:text="物料名称"
+            android:layout_weight="1"/>
+
+        <View
+            style="@style/cm_line_ve"/>
+
+        <TextView
+            android:id="@+id/tv_count"
+            tools:text="数量"
+            android:textSize="@dimen/text_design_28px"
+            android:layout_weight="1"
+            style="@style/tv_one" />
+        <View
+            style="@style/cm_line_ve"
+           />
+    </LinearLayout>
+    <View
+        style="@style/cm_line_hz"/>
+</LinearLayout>

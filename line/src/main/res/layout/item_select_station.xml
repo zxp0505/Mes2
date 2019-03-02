@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_item"
+    android:layout_width="@dimen/x_design_350px"
+    android:layout_height="@dimen/x_design_350px"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/x_design_20px"
+    android:layout_marginBottom="@dimen/y_design_20px"
+    android:background="@drawable/shape_station_item_bg">
+    <TextView
+        android:id="@+id/tv_station_number"
+        style="@style/tv_one"
+        android:paddingTop="@dimen/y_design_20px"
+        tools:text="工位001"/>
+    <TextView
+        android:id="@+id/tv_product_number"
+        style="@style/tv_one"
+        android:paddingTop="@dimen/y_design_20px"
+        tools:text="生产编号:10000000"/>
+    <TextView
+        android:id="@+id/tv_produce"
+        style="@style/tv_one"
+        android:paddingTop="@dimen/y_design_20px"
+        tools:text="工序:机械初加工"/>
+    <TextView
+        android:id="@+id/tv_station_require_detail"
+        style="@style/tv_one"
+        android:layout_marginTop="@dimen/y_design_20px"
+        android:layout_width="@dimen/x_design_200px"
+        android:layout_height="@dimen/y_design_100px"
+        android:text="工位需求详情"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/shape_station_item_bg"/>
+
+
+</LinearLayout>

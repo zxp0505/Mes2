@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/x_design_50px"
+    android:paddingRight="@dimen/x_design_50px"
+    android:paddingTop="@dimen/y_design_20px">
+
+    <include layout="@layout/layout_exception_report_title" />
+
+    <include
+        android:id="@+id/menu_unreport"
+        layout="@layout/unusal_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_10px" />
+
+    <include
+        android:id="@+id/menu_report"
+        layout="@layout/unusal_menu_unreport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_10px"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycyleview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_480px">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/tv_next_bottom"
+        style="@style/tv_next"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/design_30px"
+        android:text="确认分料"
+        android:visibility="visible" />
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/x_design_500px"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_makesure_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/y_design_50px">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y_design_50px"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_design_35px"
+        tools:text="投递成功" />
+    <TextView
+        android:id="@+id/tv_materail_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_design_26px"
+        android:padding="@dimen/x_design_20px"
+        tools:text="投递成功投递成功投递成功投递成功投递成功投递成功投递成功投递成功投递成功投递成功投递成功投递成功投递成功投递成功" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_sure"
+            android:layout_width="@dimen/x_design_160px"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/x_design_30px"
+            android:layout_marginTop="@dimen/y_design_50px"
+            android:background="@drawable/btn_main_login"
+            android:padding="@dimen/x_design_12px"
+            android:textColor="#fff"
+            android:textSize="@dimen/f_work_font_size"
+            tools:text="确定" />
+
+        <Button
+            android:id="@+id/btn_cancle"
+            android:layout_width="@dimen/x_design_160px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/btn_print"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:background="@drawable/btn_main_login"
+            android:padding="@dimen/x_design_12px"
+            android:text="关闭"
+            android:textColor="#fff"
+            android:textSize="@dimen/f_work_font_size"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <!--<string name="app_name">质量</string>-->
+    <string name="materail_name">物料</string>
+    <string name="wip_name">在制品</string>
+</resources>

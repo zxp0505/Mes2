@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/y_design_10px">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/tv_feed_title_one"
+            android:text="异常输出"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/tv_bar_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_design_30px"
+            tools:text="仓库发料编号:1000"
+            android:paddingLeft="@dimen/x_design_20px"
+            android:paddingTop="@dimen/y_design_10px"
+            android:layout_below="@id/tv_title"
+            android:visibility="gone"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_design_30px"
+            tools:text="异常:1000"
+            android:paddingLeft="@dimen/x_design_20px"
+            android:paddingTop="@dimen/y_design_10px"
+            android:layout_below="@id/tv_bar_code"
+            android:textColor="@color/black"
+            android:visibility="gone"/>
+
+
+        <TextView
+            android:id="@+id/tv_next"
+            style="@style/tv_feed_right_button"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_60px"
+            android:text="下一步" />
+
+        <TextView
+            android:id="@+id/tv_cancle"
+            style="@style/tv_feed_right_button"
+            android:layout_toLeftOf="@id/tv_next"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x_design_30px"
+            android:text="返回" />
+    </RelativeLayout>
+
+</merge>

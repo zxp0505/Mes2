@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_task_bg_unnormal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/x_design_30px">
+
+    <TextView
+        android:id="@+id/tv_station_trasfer"
+        style="@style/tv_shape_two"
+        android:layout_width="@dimen/x_design_200px"
+        android:layout_height="@dimen/y_design_120px"
+        android:layout_marginBottom="@dimen/y_design_50px"
+        android:text="工位转移" />
+
+    <TextView
+        android:id="@+id/tv_cancle"
+        style="@style/tv_shape_two"
+        android:layout_width="@dimen/x_design_200px"
+        android:layout_height="@dimen/y_design_120px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="取消" />
+</LinearLayout>

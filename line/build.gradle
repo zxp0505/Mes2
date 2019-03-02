@@ -1,0 +1,153 @@
+if (isDebug.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+
+}
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    flavorDimensions "channel"
+
+    signingConfigs {
+
+        Properties properties = new Properties();
+        InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream();
+        properties.load(inputStream)
+
+        //读取文件
+        def key_storeFile = properties.getProperty('storeFile')
+
+        //读取字段
+        def key_keyAlias = properties.getProperty('keyAlias')
+        def key_keyPassword = properties.getProperty('keyPassword');
+        def key_storePassword = properties.getProperty('storePassword');
+        release {
+//            keyAlias 'key0'
+//            keyPassword 'zjgz123456'
+//            storeFile file('C:/Users/zjgz/Desktop/sign/zjgzkeystore.jks')
+//            storePassword 'zjgz123456'
+
+            keyAlias key_keyAlias
+            keyPassword key_keyPassword
+            storeFile file(key_storeFile)
+            storePassword key_storePassword
+
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "线边库${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                }
+            }
+        }
+        debug {
+//            keyAlias 'key0'
+//            keyPassword 'zjgz123456'
+//            storeFile file('C:/Users/zjgz/Desktop/sign/zjgzkeystore.jks')
+//            storePassword 'zjgz123456'
+
+            keyAlias key_keyAlias
+            keyPassword key_keyPassword
+            storeFile file(key_storeFile)
+            storePassword key_storePassword
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "线边库${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                }
+            }
+
+        }
+    }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+    defaultConfig {
+        if (isDebug.toBoolean()) {
+            applicationId "workstation.zjyk.line"
+        }
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode_line
+        versionName rootProject.ext.versionName_line
+        //所有资源必须以此 prefix 开头，否则会报错
+//        resourcePrefix "line_"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // 多渠道/多环境 的不同配置
+    productFlavors {
+
+        reciver {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.line.reciver"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "线边库收料"
+            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "is_reciver", "true"
+
+            // 修改 AndroidManifest.xml 里渠道变量
+//            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
+//                                    ,app_icon   : "@mipmap/logo_baidu"]
+        }
+
+
+
+        out {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.line.out"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "线边库发料"
+            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "is_reciver", "false"
+            // 修改 AndroidManifest.xml 里渠道变量
+//            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
+//                                    ,app_icon   : "@mipmap/logo_baidu"]
+        }
+
+        
+
+    }
+
+    dependencies {
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
+        implementation rootProject.ext.appcompatV7
+        implementation rootProject.ext.constraintLayout
+
+        implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'com.android.support.test:runner:1.0.1'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+//    implementation project(':resource')
+        implementation project(':mylibrary')
+
+        //    butterknife
+        implementation rootProject.ext.butterknife
+        annotationProcessor rootProject.ext.butterknifeCompiler
+        implementation project(':calendarview')
+        implementation rootProject.ext.pdfview
+
+    }
+
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-android-extensions'
+}

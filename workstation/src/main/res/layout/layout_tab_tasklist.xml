@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_task_normal"
+        style="@style/tv_four"
+        android:background="@drawable/shape_task_normal_tab_bg"
+        android:text="正常任务(0)" />
+
+    <TextView
+        android:id="@+id/tv_task_rework"
+        style="@style/tv_four"
+        android:layout_toRightOf="@id/tv_task_normal"
+        android:background="@drawable/shape_task_rework_tab_bg"
+        android:layout_marginLeft="@dimen/x_design_15px"
+        android:text="返工任务(0)" />
+
+    <TextView
+        android:id="@+id/tv_task_assist"
+        style="@style/tv_four"
+        android:layout_toRightOf="@id/tv_task_rework"
+        android:layout_marginLeft="@dimen/x_design_15px"
+        android:background="@drawable/shape_task_assis_tab_bg"
+        android:text="辅助任务(0)" />
+
+    <TextView
+        android:id="@+id/tv_task_history"
+        style="@style/tv_four"
+        android:layout_toRightOf="@id/tv_task_assist"
+        android:layout_marginLeft="@dimen/x_design_15px"
+        android:background="@drawable/shape_task_history_tab_bg"
+        android:text="历史任务(0)" />
+
+    <ImageView
+        android:id="@+id/iv_task_tile_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y_design_15px"
+        android:layout_below="@id/tv_task_normal"
+        android:background="@color/task_normal" />
+
+    <ImageView
+        android:id="@+id/iv_trangle"
+        android:layout_width="@dimen/x_design_15px"
+        android:layout_height="@dimen/x_design_15px"
+        android:layout_below="@id/tv_task_normal"
+        android:src="@drawable/trangle" />
+
+</RelativeLayout>

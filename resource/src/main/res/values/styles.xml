@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="cm_line_ve">
+        <item name="android:layout_width">@dimen/line_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="cm_line_hz">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/line_width</item>
+        <item name="android:background">@color/black</item>
+    </style>
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+    <style name="tv_dialog_button_bg">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/f_work_font_size</item>
+        <item name="android:textColor">@color/white_full</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_main_login</item>
+        <item name="android:paddingBottom">@dimen/y_design_15px</item>
+        <item name="android:paddingTop">@dimen/y_design_15px</item>
+    </style>
+    <style name="dialog_bt_confirm">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_design_30px</item>
+        <item name="android:textColor">@color/white_full</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_main_login</item>
+        <item name="android:paddingBottom">@dimen/y_design_20px</item>
+        <item name="android:paddingTop">@dimen/y_design_20px</item>
+        <item name="android:paddingLeft">@dimen/x_design_50px</item>
+        <item name="android:paddingRight">@dimen/x_design_50px</item>
+        <item name="android:text">确认</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="dialog_bt_cancle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_design_30px</item>
+        <item name="android:textColor">@color/white_full</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_main_login</item>
+        <item name="android:paddingBottom">@dimen/y_design_20px</item>
+        <item name="android:paddingTop">@dimen/y_design_20px</item>
+        <item name="android:paddingLeft">@dimen/x_design_50px</item>
+        <item name="android:paddingRight">@dimen/x_design_50px</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:text">取消</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+    <style name="dialog_rl" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/x_design_30px</item>
+        <item name="android:paddingRight">@dimen/x_design_30px</item>
+        <item name="android:layout_marginTop">@dimen/y_design_30px</item>
+    </style>
+
+
+</resources>
