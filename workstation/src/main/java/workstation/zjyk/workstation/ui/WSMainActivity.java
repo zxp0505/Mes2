@@ -82,6 +82,7 @@ import workstation.zjyk.workstation.modle.bean.WSWorkStation;
 import workstation.zjyk.workstation.modle.bean.WSWorkStationTask;
 import workstation.zjyk.workstation.modle.bean.WSWorkStationTrayTaskMainInfoVo;
 import workstation.zjyk.workstation.modle.bean.WSWorkStationVo;
+import workstation.zjyk.workstation.modle.bean.WSWranInfo;
 import workstation.zjyk.workstation.modle.bean.enumpackage.WSAppTypeEnum;
 import workstation.zjyk.workstation.modle.bean.enumpackage.WSTrayLoadTypeEnum;
 import workstation.zjyk.workstation.modle.bean.enumpackage.WSYesOrNoEnum;
@@ -113,6 +114,7 @@ import workstation.zjyk.workstation.util.dialog.WSDownApkProgressDialog;
 import workstation.zjyk.workstation.util.dialog.WSPushOneDialog;
 import workstation.zjyk.workstation.util.dialog.WSUpdateStationDialog;
 import workstation.zjyk.workstation.util.dialog.WSUserRecordDetailDialog;
+import workstation.zjyk.workstation.util.dialog.WSWarnRemindDialog;
 import workstation.zjyk.workstation.util.dialog.callback.WSDialogCallBackTwo;
 
 /**
@@ -216,6 +218,7 @@ public class WSMainActivity extends WSBaseActivity<WSMainPresent> implements WSM
     };
     private WSUserRecordDetailDialog mUserRecordDetailDialog;
     private WSUpdateStationDialog wsUpdateStationDialog;
+    private WSWarnRemindDialog mWarnRemindDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -609,8 +612,8 @@ public class WSMainActivity extends WSBaseActivity<WSMainPresent> implements WSM
             drawLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         } else {
             //打开手势滑动
-//            drawLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-            drawLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+            drawLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+//            drawLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         }
     }
 
@@ -846,7 +849,7 @@ public class WSMainActivity extends WSBaseActivity<WSMainPresent> implements WSM
                 getStationDetailPopup().showPopupWindow(true);
                 break;
             case R.id.tv_warn:
-                toWran();
+               showWranRemindDialog();
                 break;
             case R.id.iv_main_user_photo:
                 if (WSUserManager.getInstance().getLoginStatus()) {
@@ -930,8 +933,7 @@ public class WSMainActivity extends WSBaseActivity<WSMainPresent> implements WSM
         //dhc
         WSTaskFragment taskF = findFragment(WSTaskFragment.class);
 
-        if(taskF!=null)
-        {
+        if (taskF != null) {
             taskF.quitRefresh();
         }
 
@@ -988,11 +990,40 @@ public class WSMainActivity extends WSBaseActivity<WSMainPresent> implements WSM
         }
     }
 
-    private void toWran() {
+    private void showWranRemindDialog() {
+        if (mWarnRemindDialog == null) {
+            mWarnRemindDialog = WSDialogUtils.showWranRemindDialog(this, "警告", new WSDialogCallBackTwo() {
+                @Override
+                public void OnPositiveClick(Object obj) {
+                    if (obj != null) {
+                        WSWranInfo wsWranInfo = (WSWranInfo) obj;
+                        toWran(wsWranInfo);
+                    }
+                }
+
+                @Override
+                public void OnNegativeClick() {
+
+                }
+            });
+        }
+        mWarnRemindDialog.showInfo(getWranInfo());
+        mWarnRemindDialog.show();
+    }
+
+    private void toWran(WSWranInfo wsWranInfo) {
         ISupportFragment topFragment = getTopFragment();
         if (topFragment != null && topFragment instanceof WSTaskFragment) {
-            ((WSTaskFragment) topFragment).startWran();
+            ((WSTaskFragment) topFragment).startWran(wsWranInfo);
         }
+    }
+
+    private WSWranInfo getWranInfo() {
+        ISupportFragment topFragment = getTopFragment();
+        if (topFragment != null && topFragment instanceof WSTaskFragment) {
+            return  ((WSTaskFragment) topFragment).getWranInfo();
+        }
+        return null;
     }
 
     @Override

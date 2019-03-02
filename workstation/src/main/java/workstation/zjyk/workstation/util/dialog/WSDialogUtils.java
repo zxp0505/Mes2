@@ -439,6 +439,13 @@ public class WSDialogUtils {
         return wsReportHistoryDialog;
     }
 
+    public static WSWarnRemindDialog showWranRemindDialog(Context context, String title, WSDialogCallBackTwo dialogCallBackTwo) {
+        WSWarnRemindDialog wsWarnRemindDialog = new WSWarnRemindDialog(context, title, dialogCallBackTwo);
+        wsWarnRemindDialog.setCanceledOnTouchOutside(false);
+        setCurrentDialog(wsWarnRemindDialog);
+        return wsWarnRemindDialog;
+    }
+
 
     private static void setCurrentDialog(WSCommonDialog dialog) {
         ((WSBaseApplication) WSBaseApplication.getInstance()).setCurrentDialog(dialog);

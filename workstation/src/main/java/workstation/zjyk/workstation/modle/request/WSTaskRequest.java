@@ -1326,6 +1326,43 @@ public class WSTaskRequest {
         });
     }
 
+    /**
+     * 发送警告
+     * @param params
+     * @param baseView
+     * @param callBack
+     * @param isShowLoad
+     */
+    public void toSendWran(Map<String, String> params, final WSBaseView baseView, final WSRxDataCallBack<String> callBack, boolean isShowLoad) {
+        if (baseView == null) {
+            return;
+        }
+        WSApiManager.getInstance().post("", params, baseView.<String>bindToLife(), new WSChildHttpResultObsever<String>(baseView, null) {
+            @Override
+            protected void _onErrorChild(int code, String error, Throwable e) {
+                if (isShowLoad) {
+                    baseView.hideLoadingDialog();
+                }
+                callBack.onFail();
+            }
+
+            @Override
+            public void _showLoadingDialog(String message) {
+                if (isShowLoad) {
+                    baseView.showLoadingDialog(message);
+                }
+            }
+
+            @Override
+            public void _onSuccess(String info) {
+                callBack.onSucess(info);
+                if (isShowLoad) {
+                    baseView.hideLoadingDialog();
+                }
+            }
+        });
+    }
+
     public void toInspection(Map<String, String> params, final WSBaseView baseView, final WSRxDataCallBack<String> callBack, boolean isShowLoad) {
         if (baseView == null) {
             return;

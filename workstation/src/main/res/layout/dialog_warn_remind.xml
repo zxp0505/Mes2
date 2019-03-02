@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x_design_500px"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/y_design_50px"
+    android:background="@drawable/shape_makesure_dialog">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="报警"
+        android:textSize="@dimen/text_design_35px"
+        android:layout_marginTop="@dimen/y_design_20px"
+        android:textColor="@color/black"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tv_order_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单编号"
+        android:textSize="@dimen/text_design_32px"
+        android:layout_marginTop="@dimen/y_design_15px"
+        android:textColor="@color/black"
+        android:gravity="center" />
+    <TextView
+        android:id="@+id/tv_wran_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="报警人"
+        android:textSize="@dimen/text_design_32px"
+        android:layout_marginTop="@dimen/y_design_10px"
+        android:textColor="@color/black"
+        android:gravity="center" />
+    <RelativeLayout
+        style="@style/dialog_rl">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="@style/dialog_bt_cancle" />
+
+        <Button
+            android:id="@+id/btn_sure"
+            style="@style/dialog_bt_confirm" />
+    </RelativeLayout>
+
+
+</LinearLayout>

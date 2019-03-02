@@ -74,6 +74,7 @@ import workstation.zjyk.workstation.modle.bean.WSWip;
 import workstation.zjyk.workstation.modle.bean.WSWipTray;
 import workstation.zjyk.workstation.modle.bean.WSWorkStationOutVO;
 import workstation.zjyk.workstation.modle.bean.WSWorkStationTask;
+import workstation.zjyk.workstation.modle.bean.WSWranInfo;
 import workstation.zjyk.workstation.modle.bean.enumpackage.WSBeginOrEndEnum;
 import workstation.zjyk.workstation.modle.bean.enumpackage.WSTaskTypeEnum;
 import workstation.zjyk.workstation.modle.bean.enumpackage.WSTrayLoadTypeEnum;
@@ -287,8 +288,16 @@ public class WSTaskFragment extends WSBaseFragment<WSTaskPresent> implements WST
         gradientDrawable.setColor(getContext().getResources().getColor(R.color.red));
     }
 
-    public void startWran() {
-        handler.sendEmptyMessage(WRAN_RED);
+    public void startWran(WSWranInfo wsWranInfo) {
+//        handler.sendEmptyMessage(WRAN_RED);
+//        currentPresent.toSendWran();
+    }
+
+    public WSWranInfo getWranInfo() {
+        WSWranInfo wsWranInfo = new WSWranInfo();
+        wsWranInfo.setPersonName(WSUserManager.getInstance().getCurrentUserName());
+        wsWranInfo.setOrderNumber(wsTaskMainInfo.getSerialNumber());
+        return wsWranInfo;
     }
 
     public static WSTaskFragment newInstance(WSWorkStationTask wsWorkStationTask) {

@@ -678,4 +678,27 @@ public class WSTaskPresent extends WSRxPresent<WSTaskView> {
         }, isShowLoading);
     }
 
+    /**
+     * 发送警告
+     * @param params
+     * @param isShowLoading
+     */
+    public void toSendWran(Map<String, String> params, boolean isShowLoading) {
+        mTaskRequest.toSendWran(params, getView(), new WSRxDataCallBack<String>() {
+            @Override
+            public void onSucess(String s) {
+                if (getView() != null) {
+                    getView().toMakeSureInspectResult(true);
+                }
+            }
+
+            @Override
+            public void onFail() {
+                if (getView() != null) {
+                    getView().toMakeSureInspectResult(false);
+                }
+            }
+        }, isShowLoading);
+    }
+
 }
