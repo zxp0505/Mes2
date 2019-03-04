@@ -11,13 +11,13 @@ android {
         release {
             keyAlias 'key0'
             keyPassword 'zjgz123456'
-            storeFile file('C:/Users/84707/Desktop/sign/zjgzkeystore.jks')
+            storeFile file('../keystore/zjgzkeystore.jks')
             storePassword 'zjgz123456'
         }
         debug {
             keyAlias 'key0'
             keyPassword 'zjgz123456'
-            storeFile file('C:/Users/84707/Desktop/sign/zjgzkeystore.jks')
+            storeFile file('../keystore/zjgzkeystore.jks')
             storePassword 'zjgz123456'
         }
     }
