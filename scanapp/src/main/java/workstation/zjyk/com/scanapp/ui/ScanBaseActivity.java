@@ -14,6 +14,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -72,7 +75,18 @@ public abstract class ScanBaseActivity<P extends ScanRxPresent> extends RxLifeAc
 
 
     }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventBase(MessageEventBean messageEventBean) {
+        switch (messageEventBean.getType()) {
+            case 0:
 
+                break;
+            default:
+                onEvent(messageEventBean);
+                break;
+        }
+
+    }
 
     //收到推送 弹框 退出
     private void showInterceptToquitDialog(MessageEventBean messageEventBean) {

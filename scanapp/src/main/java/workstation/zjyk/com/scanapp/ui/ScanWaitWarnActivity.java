@@ -83,18 +83,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
             e.printStackTrace();
         }
     }
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEventBase(MessageEventBean messageEventBean) {
-        switch (messageEventBean.getType()) {
-            case 0:
 
-                break;
-            default:
-                onEvent(messageEventBean);
-                break;
-        }
-
-    }
 
 
     @OnClick({R.id.send_wran, R.id.bt_play})
