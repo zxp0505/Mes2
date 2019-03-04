@@ -99,9 +99,8 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
             NotificationManager notificationManager = (NotificationManager) getSystemService(
                     NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(channel);
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            intent.setType("image/*");
-            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            Intent intent = new Intent(this, ScanH5Activity.class);
+            PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
             PendingIntent pendingResult = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
             NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
