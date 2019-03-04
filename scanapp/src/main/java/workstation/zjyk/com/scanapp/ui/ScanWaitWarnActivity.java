@@ -21,9 +21,16 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.io.IOException;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.com.ethank.mylibrary.resourcelibrary.server.MessageEventBean;
+import cn.com.ethank.mylibrary.resourcelibrary.server.MyServer;
 import workstation.zjyk.com.scanapp.R;
 import workstation.zjyk.com.scanapp.ui.present.ScanMainPresent;
 import workstation.zjyk.com.scanapp.util.SoundPoolHelper;
@@ -38,6 +45,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
     @BindView(R.id.bt_play)
     Button btPlay;
     private SoundPoolHelper soundPoolHelper;
+    private MyServer myServer;
 
     @Override
     protected void creatPresent() {
@@ -61,6 +69,34 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
         ButterKnife.bind(this);
     }
 
+    @Override
+    public void initOnCreate() {
+        super.initOnCreate();
+        startServer();
+    }
+
+    private void startServer() {
+        try {
+            myServer = new MyServer();
+            myServer.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventBase(MessageEventBean messageEventBean) {
+        switch (messageEventBean.getType()) {
+            case 0:
+
+                break;
+            default:
+                onEvent(messageEventBean);
+                break;
+        }
+
+    }
+
+
     @OnClick({R.id.send_wran, R.id.bt_play})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -82,8 +118,8 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
     public void notification(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             //8.0 notify
-            String CHANNEL_ID=  "warn_id";
-            String CHANNEL_NAME=  "warn_name";
+            String CHANNEL_ID = "warn_id";
+            String CHANNEL_NAME = "warn_name";
 
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
             channel.setBypassDnd(true);    //设置绕过免打扰模式
@@ -114,9 +150,8 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
                     .setDefaults(Notification.DEFAULT_LIGHTS)
                     .setContentIntent(pendingResult)
                     .setOngoing(true);
-            notificationManager.notify(id++,mBuilder.build());
-        }
-        else {
+            notificationManager.notify(id++, mBuilder.build());
+        } else {
             //普通
             Drawable drawable = ContextCompat.getDrawable(this, R.drawable.logo);
             Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
@@ -207,7 +242,12 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
 
     @Override
     protected void onDestroy() {
-        soundPoolHelper.release();
+        if (soundPoolHelper != null) {
+            soundPoolHelper.release();
+        }
+        if (myServer != null) {
+            myServer.stop();
+        }
         super.onDestroy();
     }
 }
