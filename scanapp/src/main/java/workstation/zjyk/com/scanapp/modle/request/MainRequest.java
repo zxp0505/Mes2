@@ -343,4 +343,41 @@ public class MainRequest {
             }
         });
     }
+
+    /**
+     * 拉去警告信息
+     * @param parms
+     * @param baseView
+     * @param callBack
+     * @param isShowLoading
+     */
+    public void pullWarnInfoRequest(Map<String, String> parms, final ScanBaseView baseView, final ScanRxDataCallBack<String> callBack, boolean isShowLoading) {
+        ScanApiManager.getInstance().post("", parms, baseView.<ScanTrayInfoVo>bindToLife(), new ScanChildHttpResultObsever<String>(baseView, String.class) {
+            @Override
+            public void _onSuccess(String workStationVo) {
+                callBack.onSucess(workStationVo);
+                if (isShowLoading) {
+//                    baseView.hideLoadingDialog();
+                    baseView.hideLoading();
+                }
+            }
+
+            @Override
+            public void _showLoadingDialog(String message) {
+                if (isShowLoading) {
+//                    baseView.showLoadingDialog(message);
+                    baseView.showLoading("正在加载中...");
+                }
+            }
+
+            @Override
+            protected void _onErrorChild(int code, String error, Throwable e) {
+                callBack.onFail(error, e);
+                if (isShowLoading) {
+//                    baseView.hideLoadingDialog();
+                    baseView.hideLoading();
+                }
+            }
+        });
+    }
 }

@@ -25,6 +25,8 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,13 +35,15 @@ import cn.com.ethank.mylibrary.resourcelibrary.server.MessageEventBean;
 import cn.com.ethank.mylibrary.resourcelibrary.server.MyServer;
 import workstation.zjyk.com.scanapp.R;
 import workstation.zjyk.com.scanapp.ui.present.ScanMainPresent;
+import workstation.zjyk.com.scanapp.ui.present.ScanWaitWarnPresent;
+import workstation.zjyk.com.scanapp.ui.views.ScanWaitWarnView;
 import workstation.zjyk.com.scanapp.util.SoundPoolHelper;
 import workstation.zjyk.com.scanapp.util.VirateUtil;
 
 /**
  * Created by zhangxiaoping on 2019/3/2 15:07
  */
-public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
+public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> implements ScanWaitWarnView {
     @BindView(R.id.send_wran)
     Button sendWran;
     @BindView(R.id.bt_play)
@@ -49,7 +53,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
 
     @Override
     protected void creatPresent() {
-
+        currentPresent = new ScanWaitWarnPresent();
     }
 
     @Override
@@ -85,12 +89,11 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
     }
 
 
-
     @OnClick({R.id.send_wran, R.id.bt_play})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.send_wran:
-                notification(sendWran);
+                notification(sendWran,"","");
 //                startVibrate();
                 break;
             case R.id.bt_play:
@@ -104,7 +107,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
 
     private int id = 1;
 
-    public void notification(View view) {
+    public void notification(View view,String title,String content) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             //8.0 notify
             String CHANNEL_ID = "warn_id";
@@ -130,8 +133,8 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
 
             NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
                     .setSmallIcon(android.R.drawable.stat_notify_chat)
-                    .setContentTitle("notification title_9")
-                    .setContentText("notification content_9")
+                    .setContentTitle(title)
+                    .setContentText(content)
                     .setPriority(1000)
                     .setAutoCancel(true)
 //                    .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
@@ -151,20 +154,20 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
             //设置大图标
             mBuilder.setLargeIcon(bitmap);
             //设置标题
-            mBuilder.setContentTitle("这是标题");
+            mBuilder.setContentTitle(title);
             //设置通知正文
-            mBuilder.setContentText("这是正文，当前ID是：" + id);
+            mBuilder.setContentText(content);
             //设置摘要
-            mBuilder.setSubText("这是摘要");
+//            mBuilder.setSubText("这是摘要");
             //设置是否点击消息后自动clean
             mBuilder.setAutoCancel(true);
             //显示指定文本
-            mBuilder.setContentInfo("Info");
+//            mBuilder.setContentInfo("Info");
             //与setContentInfo类似，但如果设置了setContentInfo则无效果
             //用于当显示了多个相同ID的Notification时，显示消息总数
             mBuilder.setNumber(2);
             //通知在状态栏显示时的文本
-            mBuilder.setTicker("在状态栏上显示的文本");
+//            mBuilder.setTicker("在状态栏上显示的文本");
             //设置优先级
             mBuilder.setPriority(NotificationCompat.PRIORITY_MAX);
             //自定义消息时间，以毫秒为单位，当前设置为比系统时间少一小时
@@ -238,5 +241,15 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanMainPresent> {
             myServer.stop();
         }
         super.onDestroy();
+    }
+
+    private void pullWarnInfo() {
+        Map<String, String> params = new HashMap<>();
+        currentPresent.pullWarnInfo(params, true);
+    }
+
+    @Override
+    public void showWarnInfo() {
+
     }
 }
