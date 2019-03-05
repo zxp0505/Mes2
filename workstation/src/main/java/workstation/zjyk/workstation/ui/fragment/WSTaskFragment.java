@@ -290,7 +290,10 @@ public class WSTaskFragment extends WSBaseFragment<WSTaskPresent> implements WST
 
     public void startWran(WSWranInfo wsWranInfo) {
 //        handler.sendEmptyMessage(WRAN_RED);
-//        currentPresent.toSendWran();
+        Map<String,String> params =new HashMap<>();
+        params.put("personId",WSUserManager.getInstance().getCurrentPerson().getPersonId());
+        params.put("taskId",taskId);
+        currentPresent.toSendWran(params,true);
     }
 
     public WSWranInfo getWranInfo() {
@@ -2255,6 +2258,19 @@ public class WSTaskFragment extends WSBaseFragment<WSTaskPresent> implements WST
             mOutPutInsoectionDialog.setScanCode(code);
         } else {
             mOutPutInsoectionDialog.setScanCode(getResources().getString(R.string.text_unbind));
+        }
+    }
+
+    @Override
+    public void showWarnResult(boolean result) {
+        if(result){
+            ToastUtil.showInfoCenterShort("报警成功");
+            if (mActivity != null && mActivity instanceof WSMainActivity) {
+                ((WSMainActivity) mActivity).closeDrawers();
+            }
+        }else{
+            ToastUtil.showInfoCenterShort("报警失败");
+
         }
     }
 

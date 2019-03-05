@@ -10,9 +10,9 @@
     <TextView
         android:id="@+id/tv_warn"
         style="@style/tv_task"
-        android:layout_width="@dimen/x_design_300px"
-        android:layout_height="@dimen/x_design_300px"
+        android:layout_width="@dimen/x_design_250px"
+        android:layout_height="@dimen/x_design_250px"
         android:background="@drawable/shape_wran_circle"
         android:text="报警"
-        android:textSize="@dimen/text_design_60px" />
+        android:textSize="@dimen/text_design_50px" />
 </LinearLayout>

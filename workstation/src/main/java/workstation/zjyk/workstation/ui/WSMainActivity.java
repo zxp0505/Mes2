@@ -617,6 +617,12 @@ public class WSMainActivity extends WSBaseActivity<WSMainPresent> implements WSM
         }
     }
 
+    public void closeDrawers(){
+        if(drawLayout != null){
+            drawLayout.closeDrawers();
+        }
+    }
+
     private void setCurrentPersonName() {
         if (currentPerson != null) {
             tvWorkerNameCurrent.setText(currentPerson.getName());

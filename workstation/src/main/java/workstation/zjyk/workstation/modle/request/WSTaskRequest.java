@@ -1337,7 +1337,7 @@ public class WSTaskRequest {
         if (baseView == null) {
             return;
         }
-        WSApiManager.getInstance().post("", params, baseView.<String>bindToLife(), new WSChildHttpResultObsever<String>(baseView, null) {
+        WSApiManager.getInstance().post(WSURLBuilder.TO_WARN, params, baseView.<String>bindToLife(), new WSChildHttpResultObsever<String>(baseView, null) {
             @Override
             protected void _onErrorChild(int code, String error, Throwable e) {
                 if (isShowLoad) {

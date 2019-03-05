@@ -77,4 +77,6 @@ public interface WSTaskView extends WSBaseView {
 
     void checkInspectionResult(boolean result, String code);
 
+    void showWarnResult(boolean result);
+
 }

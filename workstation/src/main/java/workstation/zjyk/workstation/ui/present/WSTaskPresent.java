@@ -688,14 +688,14 @@ public class WSTaskPresent extends WSRxPresent<WSTaskView> {
             @Override
             public void onSucess(String s) {
                 if (getView() != null) {
-                    getView().toMakeSureInspectResult(true);
+                    getView().showWarnResult(true);
                 }
             }
 
             @Override
             public void onFail() {
                 if (getView() != null) {
-                    getView().toMakeSureInspectResult(false);
+                    getView().showWarnResult(false);
                 }
             }
         }, isShowLoading);

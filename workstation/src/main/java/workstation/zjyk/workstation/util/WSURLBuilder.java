@@ -132,4 +132,7 @@ public class WSURLBuilder {
     public static final String REPAIR_RESEON_TYPE = "api/work/maintain/get/reason/Info.data";//维修原因类型
     public static final String GET_INSPECT_LIST= "api/work/get/order/check/list.data";//查询巡检列表
     public static final String UPDATE_INSPECT_STATUS= "api/work/update/order/check/data.data";//更新巡检状态
+
+//报警
+    public static final String TO_WARN= "api/andong!alarm.action";//更新巡检状态
 }

@@ -76,21 +76,21 @@ android {
 //            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
 //                                    ,app_icon   : "@mipmap/logo_baidu"]
         }
-        inspect {
-
-            // 每个环境包名不同
-            applicationId "workstation.zjyk.com.inspect"
-            // 动态添加 string.xml 字段；
-            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
-            resValue "string", "app_name", "巡检"
-//            resValue "bool", "auto_updates", 'false'
-            // 动态修改 常量 字段
-            buildConfigField "String", "ENVIRONMENT", '"false"'
-            buildConfigField "boolean", "isInspect", "true"
-            // 修改 AndroidManifest.xml 里渠道变量
-//            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
-//                                    ,app_icon   : "@mipmap/logo_baidu"]
-        }
+//        inspect {
+//
+//            // 每个环境包名不同
+//            applicationId "workstation.zjyk.com.inspect"
+//            // 动态添加 string.xml 字段；
+//            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+//            resValue "string", "app_name", "巡检"
+////            resValue "bool", "auto_updates", 'false'
+//            // 动态修改 常量 字段
+//            buildConfigField "String", "ENVIRONMENT", '"false"'
+//            buildConfigField "boolean", "isInspect", "true"
+//            // 修改 AndroidManifest.xml 里渠道变量
+////            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
+////                                    ,app_icon   : "@mipmap/logo_baidu"]
+//        }
     }
 }
 
