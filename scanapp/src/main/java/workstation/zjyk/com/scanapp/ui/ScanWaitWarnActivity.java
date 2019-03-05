@@ -1,5 +1,6 @@
 package workstation.zjyk.com.scanapp.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -93,7 +94,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.send_wran:
-                notification(sendWran,"","");
+                notification(sendWran,"","","");
 //                startVibrate();
                 break;
             case R.id.bt_play:
@@ -107,13 +108,13 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 
     private int id = 1;
 
-    public void notification(View view,String title,String content) {
+    public void notification(View view,String title,String content,String h5url) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             //8.0 notify
             String CHANNEL_ID = "warn_id";
             String CHANNEL_NAME = "warn_name";
 
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
+            @SuppressLint("WrongConstant") NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
             channel.setBypassDnd(true);    //设置绕过免打扰模式
             channel.canBypassDnd();       //检测是否绕过免打扰模式
             channel.setLockscreenVisibility(Notification.VISIBILITY_SECRET);//设置在锁屏界面上显示这条通知
@@ -128,6 +129,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
                     NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(channel);
             Intent intent = new Intent(this, ScanH5Activity.class);
+            intent.putExtra("url",h5url);
             PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
             PendingIntent pendingResult = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -181,6 +183,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 //        mBuilder.setVibrate(new long[]{0, 1000, 1000, 1000});
 
             Intent intent = new Intent(this, ScanH5Activity.class);
+            intent.putExtra("url",h5url);
             PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
             mBuilder.setContentIntent(pIntent);
 

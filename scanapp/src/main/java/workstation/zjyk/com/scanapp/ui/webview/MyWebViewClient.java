@@ -72,6 +72,8 @@ public class MyWebViewClient extends WebViewClient {
             //用javascript隐藏系统定义的404页面信息
             String data = "Page NO FOUND！";
             view.loadUrl("javascript:document.body.innerHTML=\"" + data + "\"");
+        }else{
+
         }
     }
 

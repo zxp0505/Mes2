@@ -1,34 +1,47 @@
 package workstation.zjyk.com.scanapp.ui;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-
+import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import cn.com.ethank.mylibrary.resourcelibrary.toast.ToastUtil;
 import workstation.zjyk.com.scanapp.R;
 import workstation.zjyk.com.scanapp.ui.present.ScanMainPresent;
 import workstation.zjyk.com.scanapp.ui.webview.IWebPageView;
 import workstation.zjyk.com.scanapp.ui.webview.MyJavascriptInterface;
 import workstation.zjyk.com.scanapp.ui.webview.MyWebChromeClient;
 import workstation.zjyk.com.scanapp.ui.webview.MyWebViewClient;
+import workstation.zjyk.com.scanapp.util.CheckNetwork;
 
 /**
  * Created by zhangxiaoping on 2019/3/2 15:07
  */
-public class ScanH5Activity extends ScanBaseActivity<ScanMainPresent>  implements IWebPageView {
+public class ScanH5Activity extends ScanBaseActivity<ScanMainPresent> implements IWebPageView {
     @BindView(R.id.webview)
     WebView webView;
+    @BindView(R.id.bt_refresh)
+    Button btRefresh;
+    private String currentUrl;
 
     @Override
     protected void creatPresent() {
 
+    }
+
+    @Override
+    public void initOnCreate() {
+        super.initOnCreate();
+        tvTitle.setVisibility(View.VISIBLE);
+        tvTitle.setText("报警内容");
     }
 
     @Override
@@ -45,8 +58,11 @@ public class ScanH5Activity extends ScanBaseActivity<ScanMainPresent>  implement
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
+        Intent intent = getIntent();
+        currentUrl = intent.getStringExtra("url");
         initWebView();
-        webView.loadUrl("http://www.baidu.com");
+        webView.loadUrl(currentUrl);
+//        webView.loadUrl("http://www.baidu.com");
     }
 
     @SuppressLint({"SetJavaScriptEnabled", "AddJavascriptInterface"})
@@ -142,7 +158,22 @@ public class ScanH5Activity extends ScanBaseActivity<ScanMainPresent>  implement
 
     }
 
+    @Override
+    public void onReceivedError(int errorCode, String description) {
+        ToastUtil.showInfoCenterShort(""+description);
+        btRefresh.setVisibility(View.VISIBLE);
+        if (!CheckNetwork.isNetworkConnected(this)) {
+
+        }
+    }
+
     public ViewGroup getVideoFullView() {
         return null;
+    }
+
+    @OnClick(R.id.bt_refresh)
+    public void onViewClicked() {
+        webView.loadUrl(currentUrl);
+        btRefresh.setVisibility(View.GONE);
     }
 }

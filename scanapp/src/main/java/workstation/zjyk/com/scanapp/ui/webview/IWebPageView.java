@@ -44,5 +44,7 @@ public interface IWebPageView {
 
     void hindVideoFullView();
 
+    void  onReceivedError(int errorCode, String description);
+
 
 }
