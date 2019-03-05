@@ -11,5 +11,7 @@ public class SharePreferenceKeyUtil {
     public static final String STATION_ID = "stationId";//工位的id
     public static final String PERSON_ID = "personId";//工人的id
     public static final String DOMAIN = "domain";//域名
+    public static final String USERNAME = "username";//域名
+    public static final String PSW = "password";//域名
 
 }

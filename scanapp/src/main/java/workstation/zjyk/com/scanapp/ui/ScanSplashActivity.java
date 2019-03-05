@@ -167,7 +167,7 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
     @Override
     public void showidentityVerifiResult(boolean result, Throwable throwable) {
         if(result){
-            ToastUtil.showInfoCenterShort("身份验证通过");
+//            ToastUtil.showInfoCenterShort("身份验证通过");
             startUi();
         }else{
             if(throwable !=  null){

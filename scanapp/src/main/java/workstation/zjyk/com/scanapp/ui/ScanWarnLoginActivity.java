@@ -10,7 +10,9 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.com.ethank.mylibrary.resourcelibrary.common_util.SharePreferenceKeyUtil;
 import cn.com.ethank.mylibrary.resourcelibrary.intent.StartIntentUtils;
+import cn.com.ethank.mylibrary.resourcelibrary.shareutils.SharedPreferencesUitl;
 import cn.com.ethank.mylibrary.resourcelibrary.toast.ToastUtil;
 import workstation.zjyk.com.scanapp.R;
 import workstation.zjyk.com.scanapp.modle.bean.ScanPersonInfo;
@@ -47,6 +49,12 @@ public class ScanWarnLoginActivity extends ScanBaseActivity<ScanLoginPresent> im
     @Override
     public void initOnCreate() {
         ivBack.setVisibility(View.GONE);
+        String username = SharedPreferencesUitl.getStringData(SharePreferenceKeyUtil.USERNAME);
+        String psw = SharedPreferencesUitl.getStringData(SharePreferenceKeyUtil.PSW);
+        if (!TextUtils.isEmpty(username)) {
+            etUsername.setText(username);
+            etPassword.setText(psw);
+        }
     }
 
 
@@ -88,8 +96,10 @@ public class ScanWarnLoginActivity extends ScanBaseActivity<ScanLoginPresent> im
             ToastUtil.showInfoCenterShort("登录成功");
             ScanUserManager.getInstance().setWarnPersonId(id);
             ScanUserManager.getInstance().setWarnUserName(etUsername.getText().toString().trim());
+            SharedPreferencesUitl.saveStringData(SharePreferenceKeyUtil.USERNAME, etUsername.getText().toString().trim());
+            SharedPreferencesUitl.saveStringData(SharePreferenceKeyUtil.PSW, etPassword.getText().toString().trim());
             go();
-        }else{
+        } else {
             ToastUtil.showInfoCenterShort("登录失败");
         }
     }
