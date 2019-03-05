@@ -91,5 +91,9 @@
             android:name=".ui.ScanH5Activity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ScanWarnLoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

@@ -9,4 +9,5 @@ import workstation.zjyk.com.scanapp.modle.bean.ScanPersonInfo;
 public interface ScanSplashView extends ScanBaseView {
 
     void showTestServerResult(boolean result);
+    void showidentityVerifiResult(boolean result, Throwable throwable);
 }

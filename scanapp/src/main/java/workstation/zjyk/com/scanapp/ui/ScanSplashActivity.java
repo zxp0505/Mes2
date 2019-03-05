@@ -15,10 +15,12 @@ import android.view.View;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import cn.com.ethank.mylibrary.resourcelibrary.common_util.AppUtils;
 import cn.com.ethank.mylibrary.resourcelibrary.intent.StartIntentUtils;
 import cn.com.ethank.mylibrary.resourcelibrary.toast.ToastUtil;
+import cn.com.ethank.mylibrary.resourcelibrary.utils.UICommonUtil;
 import cn.com.ethank.ui.common.dialog.LibraryDialogUtils;
 import cn.com.ethank.ui.common.dialog.callback.ResourceDialogCallBackTwo;
 import io.reactivex.functions.Consumer;
@@ -47,16 +49,21 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         creatPresent();
-        initPermission(permissions);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                timeB = true;
-                if (permissonB) {
-                    checkGo();
+        if (ScanConstants.isWarn()) {
+            //报警  1.测试服务2.传递mac
+            identityVerifi();
+        } else {
+            initPermission(permissions);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    timeB = true;
+                    if (permissonB) {
+                        checkGo();
+                    }
                 }
-            }
-        }, 1500);
+            }, 1500);
+        }
 
     }
 
@@ -132,8 +139,6 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
     }
 
     private void testServer() {
-        //查看用哪个接口传递mac
-        // params.put("mac", UICommonUtil.getAdresseMAC(this));
         currentPresent.testServer(new HashMap<>());
     }
 
@@ -159,11 +164,39 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
         }
     }
 
+    @Override
+    public void showidentityVerifiResult(boolean result, Throwable throwable) {
+        if(result){
+            ToastUtil.showInfoCenterShort("身份验证通过");
+            startUi();
+        }else{
+            if(throwable !=  null){
+                //onerror
+                showModifiHostUrlDialog();
+            }else{
+                ToastUtil.showInfoCenterShort("身份验证失败");
+            }
+//            finish();
+        }
+    }
+
+
+    /**
+     * 身份验证
+     */
+    private void identityVerifi() {
+        Map<String, String> params = new HashMap<>();
+        params.put("mac", UICommonUtil.getAdresseMAC(this));
+        currentPresent.identityVerifi(params);
+
+    }
+
     private void startUi() {
         if (!ScanConstants.isCheckTray()) {
             //质量
             if (ScanConstants.isWarn()) {
                 //报警
+                StartIntentUtils.startIntentUtils(this,ScanWarnLoginActivity.class);
 
             } else {
                 goLogin(VERTICAL);

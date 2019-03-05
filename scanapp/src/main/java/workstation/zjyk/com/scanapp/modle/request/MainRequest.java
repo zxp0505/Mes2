@@ -54,6 +54,41 @@ public class MainRequest {
             }
         });
     }
+
+    public void identityVerifi(Map<String, String> parms, final ScanBaseView baseView, final ScanRxDataCallBack<String> callBack, boolean isShowLoading) {
+        ScanApiManager.getInstance().post(ScanURLBuilder.IDENTY_VERIFI, parms, baseView.<String>bindToLife(), new ScanChildHttpResultObsever<String>(null, String.class) {
+            @Override
+            public void _onSuccess(String workStationVo) {
+                callBack.onSucess(workStationVo);
+                if (isShowLoading) {
+//                    baseView.hideLoadingDialog();
+                    baseView.hideLoading();
+                }
+            }
+
+            @Override
+            public void _showLoadingDialog(String message) {
+                if (isShowLoading) {
+//                    baseView.showLoadingDialog(message);
+                    baseView.showLoading("正在加载中...");
+                }
+            }
+
+            @Override
+            protected void _onErrorChild(int code, String error, Throwable e) {
+                if (isShowLoading) {
+//                    baseView.hideLoadingDialog();
+                    baseView.hideLoading();
+                }
+                if (code == ScanErrorCode.CODE_DATA_NULL || code == ScanErrorCode.CODE_RESULT_ERROR ) {
+                    callBack.onSucess(null);
+                    return;
+                }
+                callBack.onFail(error, e);
+
+            }
+        });
+    }
     public void requestByScancode(Map<String, String> parms, final ScanBaseView baseView, final ScanRxDataCallBack<ScanTrayInfoVo> callBack, boolean isShowLoading) {
         ScanApiManager.getInstance().post(ScanURLBuilder.GET_TRAY_INFO, parms, baseView.<ScanTrayInfoVo>bindToLife(), new ScanChildHttpResultObsever<ScanTrayInfoVo>(baseView, ScanTrayInfoVo.class) {
             @Override
@@ -152,6 +187,35 @@ public class MainRequest {
         });
     }
 
+    public void requestWarnLogin(Map<String, String> parms, final ScanBaseView baseView, final ScanRxDataCallBack<ScanPersonInfo> callBack, boolean isShowLoading) {
+        ScanApiManager.getInstance().post(ScanURLBuilder.REQUEST_WARN_LOGIN, parms, baseView.<ScanPersonInfo>bindToLife(), new ScanChildHttpResultObsever<ScanPersonInfo>(baseView, ScanPersonInfo.class) {
+            @Override
+            public void _onSuccess(ScanPersonInfo workStationVo) {
+                callBack.onSucess(workStationVo);
+                if (isShowLoading) {
+//                    baseView.hideLoadingDialog();
+                    baseView.hideLoading();
+                }
+            }
+
+            @Override
+            public void _showLoadingDialog(String message) {
+                if (isShowLoading) {
+//                    baseView.showLoadingDialog(message);
+                    baseView.showLoading("正在加载中...");
+                }
+            }
+
+            @Override
+            protected void _onErrorChild(int code, String error, Throwable e) {
+                callBack.onFail(error, e);
+                if (isShowLoading) {
+//                    baseView.hideLoadingDialog();
+                    baseView.hideLoading();
+                }
+            }
+        });
+    }
     /**
      * 请求历史列表
      *

@@ -41,4 +41,23 @@ public class ScanLoginPresent extends ScanRxPresent<ScanLoginView> {
         }, true);
     }
 
+    public void requestWarnLogin(Map<String, String> params) {
+        mainRequest.requestWarnLogin(params, getView(), new ScanRxDataCallBack<ScanPersonInfo>() {
+            @Override
+            public void onSucess(ScanPersonInfo s) {
+                if (getView() != null) {
+                    getView().loginResult(s);
+                }
+
+            }
+
+            @Override
+            public void onFail(String message, Throwable throwable) {
+                if (getView() != null) {
+                    getView().loginResult(null);
+                }
+            }
+        }, true);
+    }
+
 }

@@ -40,4 +40,27 @@ public class ScanSplashPresent extends ScanRxPresent<ScanSplashView> {
         }, false);
     }
 
+    /**
+     * 身份验证
+     * @param params
+     */
+    public void identityVerifi(Map<String, String> params) {
+        mainRequest.identityVerifi(params, getView(), new ScanRxDataCallBack<String>() {
+            @Override
+            public void onSucess(String s) {
+                if (getView() != null) {
+                    getView().showidentityVerifiResult(true,null);
+                }
+
+            }
+
+            @Override
+            public void onFail(String message, Throwable throwable) {
+                if (getView() != null) {
+                    getView().showidentityVerifiResult(false,throwable);
+                }
+            }
+        }, false);
+    }
+
 }

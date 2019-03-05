@@ -36,7 +36,7 @@ public class ScanURLBuilder {
         if (isOnline) {
             return "";
         } else {
-            return "http://" + getDomain() + "/agent/";
+            return "http://" + getDomain() ;//+ "/agent/"
 //            return "http://www.wanandroid.com/tools/mockapi/1867/";
 //            return "http://192.168.4.77:8080/agent/";
 //            return "http://192.168.4.3:8080/agent/";
@@ -56,8 +56,10 @@ public class ScanURLBuilder {
     public static final String UPLOAD_IMAGES = "query/save/qualityRecord/and/accessory/data.data";//上传文件
     public static final String REQUEST_REFUSE = "query/quality/refuse/data.data";//拒绝
     public static final String REQUEST_LOGIN = "manager/quality!qualityLogin.action";//登录
+    public static final String REQUEST_WARN_LOGIN = "";//警告登录
     public static final String REQUEST_HISTORY_LIST = "manager/quality!getHandledRecord.action";//历史记录
     public static final String REQUEST_HISTORY_DETAIL = "manager/quality!getHandledRecordDetail.action";//历史记录详情
+    public static final String IDENTY_VERIFI = "server/api/andong!check.action";//身份验证
 
 
 }
