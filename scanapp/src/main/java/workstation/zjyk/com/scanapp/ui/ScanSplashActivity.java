@@ -86,6 +86,9 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
     @Override
     protected void onRestart() {
         super.onRestart();
+        if(ScanConstants.isWarn()){
+            return;
+        }
         //从系统的设置界面设置完返回app的时候，需要重新检测一下权限
         if (Build.VERSION.SDK_INT < 23) {
             allGrantedToDo();

@@ -27,7 +27,7 @@ public class ScanWaitWarnPresent extends ScanRxPresent<ScanWaitWarnView> {
             @Override
             public void onSucess(String s) {
                 if (getView() != null) {
-                    getView().showWarnInfo();
+                    getView().showWarnInfo(true);
                 }
 
             }
@@ -35,7 +35,7 @@ public class ScanWaitWarnPresent extends ScanRxPresent<ScanWaitWarnView> {
             @Override
             public void onFail(String message, Throwable throwable) {
                 if (getView() != null) {
-                    getView().showWarnInfo();
+                    getView().showWarnInfo(false);
                 }
             }
         }, true);

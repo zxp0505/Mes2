@@ -10,5 +10,5 @@ import workstation.zjyk.com.scanapp.modle.bean.QualityHandledRecordVO;
 
 public interface ScanWaitWarnView extends ScanBaseView {
 
-    public  void showWarnInfo();
+      void showWarnInfo(boolean refult);
 }

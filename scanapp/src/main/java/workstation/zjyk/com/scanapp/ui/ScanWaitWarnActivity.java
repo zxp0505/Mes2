@@ -32,12 +32,15 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.com.ethank.mylibrary.resourcelibrary.intent.StartIntentUtils;
 import cn.com.ethank.mylibrary.resourcelibrary.server.MessageEventBean;
 import cn.com.ethank.mylibrary.resourcelibrary.server.MyServer;
 import workstation.zjyk.com.scanapp.R;
 import workstation.zjyk.com.scanapp.ui.present.ScanMainPresent;
 import workstation.zjyk.com.scanapp.ui.present.ScanWaitWarnPresent;
 import workstation.zjyk.com.scanapp.ui.views.ScanWaitWarnView;
+import workstation.zjyk.com.scanapp.util.ScanURLBuilder;
+import workstation.zjyk.com.scanapp.util.ScanUserManager;
 import workstation.zjyk.com.scanapp.util.SoundPoolHelper;
 import workstation.zjyk.com.scanapp.util.VirateUtil;
 
@@ -64,7 +67,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 
     @Override
     protected View getLoadingTargetView() {
-        return null;
+        return mFlContent;
     }
 
     @Override
@@ -72,6 +75,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+        pullWarnInfo();
     }
 
     @Override
@@ -94,7 +98,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.send_wran:
-                notification(sendWran,"","","");
+                notification(sendWran, "", "", "");
 //                startVibrate();
                 break;
             case R.id.bt_play:
@@ -108,7 +112,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 
     private int id = 1;
 
-    public void notification(View view,String title,String content,String h5url) {
+    public void notification(View view, String title, String content, String h5url) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             //8.0 notify
             String CHANNEL_ID = "warn_id";
@@ -129,7 +133,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
                     NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(channel);
             Intent intent = new Intent(this, ScanH5Activity.class);
-            intent.putExtra("url",h5url);
+            intent.putExtra("url", h5url);
             PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
             PendingIntent pendingResult = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -183,7 +187,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 //        mBuilder.setVibrate(new long[]{0, 1000, 1000, 1000});
 
             Intent intent = new Intent(this, ScanH5Activity.class);
-            intent.putExtra("url",h5url);
+            intent.putExtra("url", h5url);
             PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
             mBuilder.setContentIntent(pIntent);
 
@@ -248,11 +252,16 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 
     private void pullWarnInfo() {
         Map<String, String> params = new HashMap<>();
+        params.put("personId", ScanUserManager.getInstance().getWarnPersonId());
+        params.put("status", "NO");
+        params.put("messageType", "ALARM");
         currentPresent.pullWarnInfo(params, true);
     }
 
     @Override
-    public void showWarnInfo() {
-
+    public void showWarnInfo(boolean result) {
+        if (result) {
+            StartIntentUtils.startIntentUtils(this, ScanH5Activity.class, "url", ScanURLBuilder.getHostUrl()+"/" + ScanURLBuilder.H5_URL);
+        }
     }
 }
