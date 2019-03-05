@@ -16,6 +16,8 @@ public class ScanUserManager {
     private ScanPersonInfo currentPerson;
     private boolean isLogin;
     private String personId;
+    private String warnPersonId;
+    private String warnUserName;
 
     public ScanPersonInfo getCurrentPerson() {
         return currentPerson;
@@ -39,5 +41,25 @@ public class ScanUserManager {
 
     public void setLogin(boolean login) {
         isLogin = login;
+    }
+
+    public void setPersonId(String personId) {
+        this.personId = personId;
+    }
+
+    public String getWarnPersonId() {
+        return warnPersonId == null ? "" : warnPersonId;
+    }
+
+    public void setWarnPersonId(String warnPersonId) {
+        this.warnPersonId = warnPersonId;
+    }
+
+    public String getWarnUserName() {
+        return warnUserName == null ? "" : warnUserName;
+    }
+
+    public void setWarnUserName(String warnUserName) {
+        this.warnUserName = warnUserName;
     }
 }

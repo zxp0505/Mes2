@@ -9,4 +9,5 @@ import workstation.zjyk.com.scanapp.modle.bean.ScanPersonInfo;
 public interface ScanLoginView extends ScanBaseView {
 
     void loginResult( ScanPersonInfo personInfo);
+    void loginWarnResult( String id);
 }

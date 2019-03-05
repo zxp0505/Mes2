@@ -71,18 +71,26 @@ public class ScanWarnLoginActivity extends ScanBaseActivity<ScanLoginPresent> im
             return;
         }
         Map<String, String> params = new HashMap<>();
-        params.put("account", str_username);
-        params.put("passWord", str_password);
+        params.put("username", str_username);
+        params.put("password", str_password);
         currentPresent.requestWarnLogin(params);
     }
 
 
     @Override
     public void loginResult(ScanPersonInfo personInfo) {
-        if (personInfo != null) {
+
+    }
+
+    @Override
+    public void loginWarnResult(String id) {
+        if (!TextUtils.isEmpty(id)) {
             ToastUtil.showInfoCenterShort("登录成功");
-            ScanUserManager.getInstance().setCurrentPerson(personInfo);
+            ScanUserManager.getInstance().setWarnPersonId(id);
+            ScanUserManager.getInstance().setWarnUserName(etUsername.getText().toString().trim());
             go();
+        }else{
+            ToastUtil.showInfoCenterShort("登录失败");
         }
     }
 

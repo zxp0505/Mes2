@@ -83,6 +83,11 @@ public class ScanLoginHzActivity extends ScanBaseActivity<ScanLoginPresent> impl
         }
     }
 
+    @Override
+    public void loginWarnResult(String id) {
+
+    }
+
     private void goScan() {
         StartIntentUtils.startIntentUtils(this, ScanCode2Activity.class);
         finish();

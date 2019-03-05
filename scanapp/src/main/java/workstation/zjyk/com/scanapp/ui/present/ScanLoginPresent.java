@@ -42,11 +42,11 @@ public class ScanLoginPresent extends ScanRxPresent<ScanLoginView> {
     }
 
     public void requestWarnLogin(Map<String, String> params) {
-        mainRequest.requestWarnLogin(params, getView(), new ScanRxDataCallBack<ScanPersonInfo>() {
+        mainRequest.requestWarnLogin(params, getView(), new ScanRxDataCallBack<String>() {
             @Override
-            public void onSucess(ScanPersonInfo s) {
+            public void onSucess(String s) {
                 if (getView() != null) {
-                    getView().loginResult(s);
+                    getView().loginWarnResult(s);
                 }
 
             }
@@ -54,7 +54,7 @@ public class ScanLoginPresent extends ScanRxPresent<ScanLoginView> {
             @Override
             public void onFail(String message, Throwable throwable) {
                 if (getView() != null) {
-                    getView().loginResult(null);
+                    getView().loginWarnResult(null);
                 }
             }
         }, true);

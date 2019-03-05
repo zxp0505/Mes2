@@ -80,10 +80,6 @@ public class MainRequest {
 //                    baseView.hideLoadingDialog();
                     baseView.hideLoading();
                 }
-                if (code == ScanErrorCode.CODE_DATA_NULL || code == ScanErrorCode.CODE_RESULT_ERROR ) {
-                    callBack.onSucess(null);
-                    return;
-                }
                 callBack.onFail(error, e);
 
             }
@@ -187,10 +183,10 @@ public class MainRequest {
         });
     }
 
-    public void requestWarnLogin(Map<String, String> parms, final ScanBaseView baseView, final ScanRxDataCallBack<ScanPersonInfo> callBack, boolean isShowLoading) {
-        ScanApiManager.getInstance().post(ScanURLBuilder.REQUEST_WARN_LOGIN, parms, baseView.<ScanPersonInfo>bindToLife(), new ScanChildHttpResultObsever<ScanPersonInfo>(baseView, ScanPersonInfo.class) {
+    public void requestWarnLogin(Map<String, String> parms, final ScanBaseView baseView, final ScanRxDataCallBack<String> callBack, boolean isShowLoading) {
+        ScanApiManager.getInstance().post(ScanURLBuilder.REQUEST_WARN_LOGIN, parms, baseView.<String>bindToLife(), new ScanChildHttpResultObsever<String>(baseView, String.class) {
             @Override
-            public void _onSuccess(ScanPersonInfo workStationVo) {
+            public void _onSuccess(String workStationVo) {
                 callBack.onSucess(workStationVo);
                 if (isShowLoading) {
 //                    baseView.hideLoadingDialog();

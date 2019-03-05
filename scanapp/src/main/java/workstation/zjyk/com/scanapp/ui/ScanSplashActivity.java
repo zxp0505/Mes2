@@ -175,8 +175,8 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
                 showModifiHostUrlDialog();
             }else{
                 ToastUtil.showInfoCenterShort("身份验证失败");
+                finish();
             }
-//            finish();
         }
     }
 
@@ -197,6 +197,7 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
             if (ScanConstants.isWarn()) {
                 //报警
                 StartIntentUtils.startIntentUtils(this,ScanWarnLoginActivity.class);
+                finish();
 
             } else {
                 goLogin(VERTICAL);
