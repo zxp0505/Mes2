@@ -1,7 +1,11 @@
 package workstation.zjyk.com.scanapp.util;
 
+import android.text.TextUtils;
+
 import cn.com.ethank.mylibrary.resourcelibrary.common_util.ConfogProrerties;
+import cn.com.ethank.mylibrary.resourcelibrary.utils.GetIPAddressUtil;
 import workstation.zjyk.com.scanapp.BuildConfig;
+import workstation.zjyk.com.scanapp.ui.application.ScanBaseApplication;
 
 public class ScanConstants {
     public static boolean isLogin = false;
@@ -25,5 +29,20 @@ public class ScanConstants {
         return isWarn;
     }
 
+    static String clientIP;
+
+    public static String getClientIp() {
+
+        if (TextUtils.isEmpty(clientIP)) {
+            clientIP = GetIPAddressUtil.getWifiIP(ScanBaseApplication.getInstance());
+        }
+        if (TextUtils.isEmpty(clientIP)) {
+            clientIP = GetIPAddressUtil.getLocalIp();
+        }
+        if (TextUtils.isEmpty(clientIP)) {
+            clientIP = "";
+        }
+        return clientIP;
+    }
 
 }

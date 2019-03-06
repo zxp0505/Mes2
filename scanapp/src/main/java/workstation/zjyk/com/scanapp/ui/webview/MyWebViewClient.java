@@ -9,6 +9,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import workstation.zjyk.com.scanapp.ui.ScanH5Activity;
+import workstation.zjyk.com.scanapp.ui.ScanWaitWarnActivity;
 import workstation.zjyk.com.scanapp.util.CheckNetwork;
 import workstation.zjyk.com.scanapp.util.Tools;
 
@@ -23,11 +24,11 @@ import workstation.zjyk.com.scanapp.util.Tools;
 public class MyWebViewClient extends WebViewClient {
 
     private IWebPageView mIWebPageView;
-    private ScanH5Activity mActivity;
+    private ScanWaitWarnActivity mActivity;
 
     public MyWebViewClient(IWebPageView mIWebPageView) {
         this.mIWebPageView = mIWebPageView;
-        mActivity = (ScanH5Activity) mIWebPageView;
+        mActivity = (ScanWaitWarnActivity) mIWebPageView;
 
     }
 
@@ -56,10 +57,10 @@ public class MyWebViewClient extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
         if (!CheckNetwork.isNetworkConnected(mActivity)) {
-            mIWebPageView.hindProgressBar();
         }
+        mIWebPageView.hindProgressBar();
         // html加载完成之后，添加监听图片的点击js函数
-        mIWebPageView.addImageClickListener();
+//        mIWebPageView.addImageClickListener();
         super.onPageFinished(view, url);
     }
 

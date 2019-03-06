@@ -10,6 +10,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
 import workstation.zjyk.com.scanapp.ui.ScanH5Activity;
+import workstation.zjyk.com.scanapp.ui.ScanWaitWarnActivity;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -27,14 +28,14 @@ public class MyWebChromeClient extends WebChromeClient {
     public static int FILECHOOSER_RESULTCODE_FOR_ANDROID_5 = 2;
 
     private View mXProgressVideo;
-    private ScanH5Activity mActivity;
+    private ScanWaitWarnActivity mActivity;
     private IWebPageView mIWebPageView;
     private View mXCustomView;
     private CustomViewCallback mXCustomViewCallback;
 
     public MyWebChromeClient(IWebPageView mIWebPageView) {
         this.mIWebPageView = mIWebPageView;
-        this.mActivity = (ScanH5Activity) mIWebPageView;
+        this.mActivity = (ScanWaitWarnActivity) mIWebPageView;
     }
 
     /**

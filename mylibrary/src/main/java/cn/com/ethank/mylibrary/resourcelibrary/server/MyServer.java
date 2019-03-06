@@ -4,6 +4,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 
+import com.alibaba.fastjson.JSON;
+
 import org.greenrobot.eventbus.EventBus;
 
 import java.io.IOException;
@@ -112,6 +114,7 @@ public class MyServer extends NanoHTTPD {
     private static final String URL_LINE = "line";
     private static final String URL_CMPUSH = "cmpush";
     private static final String URL_WORKSTATION = "workstation";
+    private static final String URL_WARN = "warn";
     int status;
     String defaulResponse = "{\"code\":\"1\"}";
     String errorRespones = "{\"code\":\"0\"}";
@@ -172,9 +175,20 @@ public class MyServer extends NanoHTTPD {
             case URL_WORKSTATION:
                 handleWorkstationAction(params);
                 break;
+            case URL_WARN:
+                handleWarnAction(params);
+                break;
         }
         handleAction(urlParams);
     }
+
+    private void handleWarnAction(Map<String, String> data) {
+        MessageEventBean bean =new MessageEventBean();
+        bean.setMessage(JSON.toJSONString(data));
+        bean.setType(110);
+        EventBus.getDefault().post(bean);
+    }
+
 
     private void handleWorkstationAction(Map<String, String> data) {
         String param = data.get("param");

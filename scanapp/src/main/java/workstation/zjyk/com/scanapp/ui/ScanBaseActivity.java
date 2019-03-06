@@ -78,8 +78,8 @@ public abstract class ScanBaseActivity<P extends ScanRxPresent> extends RxLifeAc
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventBase(MessageEventBean messageEventBean) {
         switch (messageEventBean.getType()) {
-            case 0:
-
+            case 110:
+                onEvent(messageEventBean);
                 break;
             default:
                 onEvent(messageEventBean);

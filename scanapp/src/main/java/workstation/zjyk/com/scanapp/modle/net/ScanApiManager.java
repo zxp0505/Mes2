@@ -26,6 +26,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
+import workstation.zjyk.com.scanapp.util.ScanConstants;
 import workstation.zjyk.com.scanapp.util.ScanURLBuilder;
 import workstation.zjyk.com.scanapp.util.ScanUserManager;
 
@@ -62,7 +63,7 @@ public class ScanApiManager {
                     HttpUrl httpUrl = request.url()
                             .newBuilder()
 //                            .addQueryParameter("token", WSConstants.getToken())
-                            .addQueryParameter("personId",ScanUserManager.getInstance().getPersonId())
+                            .addQueryParameter("personId", ScanUserManager.getInstance().getPersonId())
 //                            .addQueryParameter("clientIP", WSConstants.getClientIp())
                             .build();
                     request = request.newBuilder().url(httpUrl).build();
@@ -76,12 +77,14 @@ public class ScanApiManager {
                         for (int i = 0; i < formBody.size(); i++) {
                             bodyBuilder.addEncoded(formBody.encodedName(i), formBody.encodedValue(i));
                         }
-
-                        formBody = bodyBuilder
+                        if (!ScanConstants.isWarn()) {
+                            formBody = bodyBuilder
 //                                .addEncoded("token", WSConstants.getToken())
-                                .addEncoded("personId", ScanUserManager.getInstance().getPersonId())
+                                    .addEncoded("personId", ScanUserManager.getInstance().getPersonId())
 //                                .addEncoded("clientIP", WSConstants.getClientIp())
-                                .build();
+                                    .build();
+                        }
+
 
                         request = request.newBuilder().post(formBody).build();
                     }
@@ -145,7 +148,7 @@ public class ScanApiManager {
         for (int i = 0; i < imageUrls.size(); i++) {
             File file = new File(imageUrls.get(i));
             RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-            part[i] = MultipartBody.Part.createFormData("file" , file.getName(), requestBody);
+            part[i] = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
         }
         toSubscribe(apiService.uploadImagesWithText(url, part, params), lifecycleTransformer, subscriber);
 

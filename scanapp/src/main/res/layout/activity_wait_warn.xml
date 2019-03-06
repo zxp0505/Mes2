@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-<Button
-    android:id="@+id/send_wran"
-    android:layout_width="100dp"
-    android:layout_height="50dp"
-    android:text="发送警告"/>
+    >
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
     <Button
-        android:id="@+id/bt_play"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="播放音乐"/>
-</LinearLayout>
+        android:id="@+id/bt_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="网络出差点击刷新"
+        android:visibility="gone"/>
+
+</FrameLayout>
