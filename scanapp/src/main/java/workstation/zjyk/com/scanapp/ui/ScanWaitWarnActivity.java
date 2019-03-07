@@ -284,7 +284,12 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 //                .load(this, "a", R.raw.a);
 //        soundPoolHelper.play("a", true);
         soundPool = new SoundPool(10, AudioManager.STREAM_MUSIC, 1);
-        soundPool.load(this, R.raw.alarm, 1);
+        if(ScanConstants.isWarnLogin()){
+            soundPool.load(this, R.raw.alarm, 1);
+        }else{
+            soundPool.load(this, R.raw.message, 1);
+
+        }
         soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
             @Override
             public void onLoadComplete(SoundPool soundPool, int i, int i2) {
