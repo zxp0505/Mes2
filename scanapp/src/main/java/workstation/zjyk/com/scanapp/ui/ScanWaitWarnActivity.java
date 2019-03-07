@@ -28,6 +28,8 @@ import android.widget.Button;
 import com.alibaba.fastjson.JSONObject;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,6 +64,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
     @BindView(R.id.bt_refresh)
     Button btRefresh;
     private String currentUrl;
+    private SoundPool soundPool;
 
     @Override
     protected void creatPresent() {
@@ -89,16 +92,20 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
     @Override
     public void initOnCreate() {
         super.initOnCreate();
+        mRlTitle.setVisibility(View.GONE);
         startServer();
         initWebView();
         Intent intent = getIntent();
-        String url = intent.getStringExtra("url");
+        String url = intent.getStringExtra("pathurl");
         String loadUrl = ScanURLBuilder.getHostUrl() + "/" + ScanURLBuilder.H5_URL + "&personId=" + ScanUserManager.getInstance().getWarnUserName();
         if (intent != null && !TextUtils.isEmpty(url)) {
             loadUrl = url;
         }
         showLoadingDialog("正在加载中...");
         webView.loadUrl(loadUrl);
+
+        notification("a", "b","http://192.168.4.27/server/yike/andong!info.action?alarmId=efab724a-8159-4424-bd6f-b8e93e361d83" );
+
     }
 
     private void startServer() {
@@ -119,10 +126,9 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
                 ScanWarnInfo scanWarnInfo = JSONObject.parseObject(message, ScanWarnInfo.class);
                 String url = scanWarnInfo.getUrl();
                 if(!TextUtils.isEmpty(url)){
-                    url = new String(Base64.decode(url.getBytes(), Base64.DEFAULT));
+                    notification(scanWarnInfo.getTitle(), scanWarnInfo.getMsg(),url );
+                    playMusic();
                 }
-                //base64解码
-                notification(scanWarnInfo.getTitle(), scanWarnInfo.getMsg(),url );
             }
         }
     }
@@ -157,7 +163,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 
 
     private int id = 1;
-
+private int requestCode = 1;
     public void notification(String title, String content, String h5url) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             //8.0 notify
@@ -178,10 +184,10 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
             NotificationManager notificationManager = (NotificationManager) getSystemService(
                     NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(channel);
-            Intent intent = new Intent(this, ScanH5Activity.class);
-            intent.putExtra("url", h5url);
-            PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
-            PendingIntent pendingResult = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            Intent intent = new Intent(this, ScanWaitWarnActivity.class);
+            intent.putExtra("pathurl", h5url);
+//            PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+            PendingIntent pendingResult = PendingIntent.getActivity(this, requestCode++, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
             NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
                     .setSmallIcon(android.R.drawable.stat_notify_chat)
@@ -232,9 +238,9 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
             //设置震动方式，延迟零秒，震动一秒，延迟一秒、震动一秒
 //        mBuilder.setVibrate(new long[]{0, 1000, 1000, 1000});
 
-            Intent intent = new Intent(this, ScanH5Activity.class);
-            intent.putExtra("url", h5url);
-            PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+            Intent intent = new Intent(this, ScanWaitWarnActivity.class);
+            intent.putExtra("pathurl", h5url);
+            PendingIntent pIntent = PendingIntent.getActivity(this, requestCode++, intent,  PendingIntent.FLAG_UPDATE_CURRENT);
             mBuilder.setContentIntent(pIntent);
 
             NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -260,6 +266,7 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
     }
 
     private void playMusic() {
+        releaseSoundPool();
         //加载默认音频，因为上面指定了，所以其默认是：RING_TYPE_MUSIC
 //        soundPoolHelper = new SoundPoolHelper(4, SoundPoolHelper.TYPE_MUSIC)
 //                .setRingtoneType(SoundPoolHelper.RING_TYPE_MUSIC)
@@ -268,8 +275,8 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 //                .loadDefault(this)
 //                .load(this, "a", R.raw.a);
 //        soundPoolHelper.play("a", true);
-        SoundPool soundPool = new SoundPool(10, AudioManager.STREAM_MUSIC, 1);
-        soundPool.load(this, R.raw.message, 1);
+        soundPool = new SoundPool(10, AudioManager.STREAM_MUSIC, 1);
+        soundPool.load(this, R.raw.alarm, 1);
         soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
             @Override
             public void onLoadComplete(SoundPool soundPool, int i, int i2) {
@@ -277,12 +284,18 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
                         1, //左声道
                         1, //右声道
                         1, //优先级
-                        1, // 0表示不循环，-1表示循环播放 1播放两次
+                        0, // 0表示不循环，-1表示循环播放 1播放两次
                         1);//播放比率，0.5~2，一般为1
             }
         });
 
 
+    }
+
+    private void releaseSoundPool(){
+        if(soundPool != null){
+            soundPool.release();
+        }
     }
 
     @Override

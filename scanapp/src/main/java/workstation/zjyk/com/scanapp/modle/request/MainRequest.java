@@ -348,7 +348,7 @@ public class MainRequest {
      * @param isShowLoading
      */
     public void pullWarnInfoRequest(Map<String, String> parms, final ScanBaseView baseView, final ScanRxDataCallBack<String> callBack, boolean isShowLoading) {
-        ScanApiManager.getInstance().post(ScanURLBuilder.PULL_WARN_INFO, parms, baseView.<ScanTrayInfoVo>bindToLife(), new ScanChildHttpResultObsever<String>(baseView, String.class) {
+        ScanApiManager.getInstance().post(ScanURLBuilder.PULL_WARN_INFO, parms, baseView.<ScanTrayInfoVo>bindToLife(), new ScanChildHttpResultObsever<String>(null, String.class) {
             @Override
             public void _onSuccess(String workStationVo) {
                 callBack.onSucess(workStationVo);

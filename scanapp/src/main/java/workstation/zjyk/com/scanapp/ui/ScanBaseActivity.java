@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -71,10 +72,12 @@ public abstract class ScanBaseActivity<P extends ScanRxPresent> extends RxLifeAc
             initOnCreate();
             initStateControl();
         }
+        EventBus.getDefault().register(this);
         AppManager.getAppManager().addActivity(this);
 
 
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventBase(MessageEventBean messageEventBean) {
         switch (messageEventBean.getType()) {
@@ -358,7 +361,7 @@ public abstract class ScanBaseActivity<P extends ScanRxPresent> extends RxLifeAc
         if (getCurrentPresent() != null) {
             getCurrentPresent().detachView(false);
         }
-
+        EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
 
