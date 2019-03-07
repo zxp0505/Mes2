@@ -34,6 +34,7 @@ import workstation.zjyk.com.scanapp.modle.net.ScanErrorResultClickListner;
 import workstation.zjyk.com.scanapp.ui.loading.VaryViewHelperController;
 import workstation.zjyk.com.scanapp.ui.present.ScanRxPresent;
 import workstation.zjyk.com.scanapp.util.BundleParams;
+import workstation.zjyk.com.scanapp.util.ScanConstants;
 import workstation.zjyk.com.scanapp.util.dialog.ScanDialogUtils;
 import workstation.zjyk.com.scanapp.util.dialog.ScanProgressHUD;
 
@@ -82,7 +83,14 @@ public abstract class ScanBaseActivity<P extends ScanRxPresent> extends RxLifeAc
     public void onEventBase(MessageEventBean messageEventBean) {
         switch (messageEventBean.getType()) {
             case 110:
-                onEvent(messageEventBean);
+                if (ScanConstants.isWarnLogin()) {
+                    onEvent(messageEventBean);
+                }
+                break;
+            case 111:
+                if (!ScanConstants.isWarnLogin()) {
+                    onEvent(messageEventBean);
+                }
                 break;
             default:
                 onEvent(messageEventBean);
