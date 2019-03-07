@@ -86,13 +86,14 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
-        pullWarnInfo();
+
     }
 
     @Override
     public void initOnCreate() {
         super.initOnCreate();
         mRlTitle.setVisibility(View.GONE);
+        pullWarnInfo();
         startServer();
         initWebView();
         Intent intent = getIntent();
