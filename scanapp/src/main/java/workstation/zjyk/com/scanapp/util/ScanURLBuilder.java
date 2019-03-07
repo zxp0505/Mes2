@@ -60,8 +60,8 @@ public class ScanURLBuilder {
     public static final String REQUEST_HISTORY_LIST = "manager/quality!getHandledRecord.action";//历史记录
     public static final String REQUEST_HISTORY_DETAIL = "manager/quality!getHandledRecordDetail.action";//历史记录详情
     public static final String IDENTY_VERIFI = "server/api/andong!check.action";//身份验证
-    public static final String PULL_WARN_INFO = "server/yike/message!notice.action";//拉取警告
-    public static final String H5_URL = "server/yike/message!alist.action?status=NO&messageType=ALARM";//拉取警告-固定url
+//    public static final String PULL_WARN_INFO = "server/yike/message!notice.action";//拉取警告
+//    public static final String H5_URL = "server/yike/message!alist.action?status=NO&messageType=ALARM";//拉取警告-固定url
 
 
 }

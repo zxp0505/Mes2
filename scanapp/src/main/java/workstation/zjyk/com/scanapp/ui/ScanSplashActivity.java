@@ -86,7 +86,7 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
     @Override
     protected void onRestart() {
         super.onRestart();
-        if(ScanConstants.isWarn()){
+        if (ScanConstants.isWarn()) {
             return;
         }
         //从系统的设置界面设置完返回app的时候，需要重新检测一下权限
@@ -169,14 +169,14 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
 
     @Override
     public void showidentityVerifiResult(boolean result, Throwable throwable) {
-        if(result){
+        if (result) {
 //            ToastUtil.showInfoCenterShort("身份验证通过");
             startUi();
-        }else{
-            if(throwable !=  null){
+        } else {
+            if (throwable != null) {
                 //onerror
                 showModifiHostUrlDialog();
-            }else{
+            } else {
                 ToastUtil.showInfoCenterShort("身份验证失败");
                 finish();
             }
@@ -199,7 +199,11 @@ public class ScanSplashActivity extends ScanPermissionActivity<ScanSplashPresent
             //质量
             if (ScanConstants.isWarn()) {
                 //报警
-                StartIntentUtils.startIntentUtils(this,ScanWarnLoginActivity.class);
+                if (ScanConstants.isWarnLogin()) {
+                    StartIntentUtils.startIntentUtils(this, ScanWarnLoginActivity.class);
+                }else{
+                    StartIntentUtils.startIntentUtils(this, ScanWaitWarnActivity.class);
+                }
                 finish();
 
             } else {

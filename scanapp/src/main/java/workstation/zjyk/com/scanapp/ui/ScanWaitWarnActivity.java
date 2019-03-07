@@ -48,6 +48,7 @@ import workstation.zjyk.com.scanapp.ui.webview.MyJavascriptInterface;
 import workstation.zjyk.com.scanapp.ui.webview.MyWebChromeClient;
 import workstation.zjyk.com.scanapp.ui.webview.MyWebViewClient;
 import workstation.zjyk.com.scanapp.util.CheckNetwork;
+import workstation.zjyk.com.scanapp.util.ScanConstants;
 import workstation.zjyk.com.scanapp.util.ScanURLBuilder;
 import workstation.zjyk.com.scanapp.util.ScanUserManager;
 import workstation.zjyk.com.scanapp.util.SoundPoolHelper;
@@ -98,14 +99,19 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
         initWebView();
         Intent intent = getIntent();
         String url = intent.getStringExtra("pathurl");
-        String loadUrl = ScanURLBuilder.getHostUrl() + "/" + ScanURLBuilder.H5_URL + "&personId=" + ScanUserManager.getInstance().getWarnUserName();
+        String loadUrl = "";
+        if (ScanConstants.isWarnLogin()) {
+            loadUrl = ScanURLBuilder.getHostUrl() + "/" + ScanConstants.getDefaulth5Url() + "&personId=" + ScanUserManager.getInstance().getWarnUserName();
+        } else {
+            loadUrl = ScanURLBuilder.getHostUrl() + "/" + ScanConstants.getDefaulth5Url();
+
+        }
         if (intent != null && !TextUtils.isEmpty(url)) {
             loadUrl = url;
         }
         showLoadingDialog("正在加载中...");
         webView.loadUrl(loadUrl);
 
-        notification("a", "b","http://192.168.4.27/server/yike/andong!info.action?alarmId=efab724a-8159-4424-bd6f-b8e93e361d83" );
 
     }
 
@@ -126,8 +132,8 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
             if (!TextUtils.isEmpty(message)) {
                 ScanWarnInfo scanWarnInfo = JSONObject.parseObject(message, ScanWarnInfo.class);
                 String url = scanWarnInfo.getUrl();
-                if(!TextUtils.isEmpty(url)){
-                    notification(scanWarnInfo.getTitle(), scanWarnInfo.getMsg(),url );
+                if (!TextUtils.isEmpty(url)) {
+                    notification(scanWarnInfo.getTitle(), scanWarnInfo.getMsg(), url);
                     playMusic();
                 }
             }
@@ -164,7 +170,8 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 
 
     private int id = 1;
-private int requestCode = 1;
+    private int requestCode = 1;
+
     public void notification(String title, String content, String h5url) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             //8.0 notify
@@ -241,7 +248,7 @@ private int requestCode = 1;
 
             Intent intent = new Intent(this, ScanWaitWarnActivity.class);
             intent.putExtra("pathurl", h5url);
-            PendingIntent pIntent = PendingIntent.getActivity(this, requestCode++, intent,  PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pIntent = PendingIntent.getActivity(this, requestCode++, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             mBuilder.setContentIntent(pIntent);
 
             NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -293,8 +300,8 @@ private int requestCode = 1;
 
     }
 
-    private void releaseSoundPool(){
-        if(soundPool != null){
+    private void releaseSoundPool() {
+        if (soundPool != null) {
             soundPool.release();
         }
     }

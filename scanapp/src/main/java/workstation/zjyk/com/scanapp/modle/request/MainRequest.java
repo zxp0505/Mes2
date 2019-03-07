@@ -12,6 +12,7 @@ import workstation.zjyk.com.scanapp.modle.net.ScanApiManager;
 import workstation.zjyk.com.scanapp.modle.net.ScanChildHttpResultObsever;
 import workstation.zjyk.com.scanapp.modle.net.ScanErrorCode;
 import workstation.zjyk.com.scanapp.ui.views.ScanBaseView;
+import workstation.zjyk.com.scanapp.util.ScanConstants;
 import workstation.zjyk.com.scanapp.util.ScanURLBuilder;
 
 /**
@@ -348,7 +349,7 @@ public class MainRequest {
      * @param isShowLoading
      */
     public void pullWarnInfoRequest(Map<String, String> parms, final ScanBaseView baseView, final ScanRxDataCallBack<String> callBack, boolean isShowLoading) {
-        ScanApiManager.getInstance().post(ScanURLBuilder.PULL_WARN_INFO, parms, baseView.<ScanTrayInfoVo>bindToLife(), new ScanChildHttpResultObsever<String>(null, String.class) {
+        ScanApiManager.getInstance().post(ScanConstants.getPullWarnInfo(), parms, baseView.<ScanTrayInfoVo>bindToLife(), new ScanChildHttpResultObsever<String>(null, String.class) {
             @Override
             public void _onSuccess(String workStationVo) {
                 callBack.onSucess(workStationVo);

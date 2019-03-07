@@ -102,7 +102,10 @@ android {
 //            buildConfigField "boolean", "isInspect", "false"
 //            buildConfigField "boolean", "isWarn", "false"
 //        }
-
+        def default_h5_url_warn = "\"server/yike/message!alist.action?status=NO&messageType=ALARM\""//
+        def pull_warn_info_warn = "\"server/yike/message!notice.action\""//
+        def default_h5_url_warn_nologin = "\"server/yike/message!alist.action?status=NO&messageType=ALARM\""//
+        def pull_warn_info_warn_nologin = "\"server/yike/message!notice.action\""//
         warn {
             // 每个环境包名不同
             applicationId "workstation.zjyk.com.warn"
@@ -115,6 +118,29 @@ android {
             buildConfigField "boolean", "isCheck", "false"
             buildConfigField "boolean", "isInspect", "false"
             buildConfigField "boolean", "isWarn", "true"
+            buildConfigField "boolean", "isWarnLogin", "true"
+            //默认h5
+            buildConfigField "String", "default_h5_url", "${default_h5_url_warn}"
+            //拉取警告
+            buildConfigField "String", "pull_warn_info", "${pull_warn_info_warn}"
+        }
+        nologinwarn {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.com.nologinwarn"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "报警"
+//            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "isCheck", "false"
+            buildConfigField "boolean", "isInspect", "false"
+            buildConfigField "boolean", "isWarn", "true"
+            buildConfigField "boolean", "isWarnLogin", "false"
+            //默认h5
+            buildConfigField "String", "default_h5_url","${default_h5_url_warn_nologin}"
+            //拉取警告
+            buildConfigField "String", "pull_warn_info", "${pull_warn_info_warn_nologin}"
         }
 
 
