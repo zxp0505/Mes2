@@ -156,13 +156,6 @@ public class CommitConfirmDialog extends ScanCommonDialog {
     }
 
 
-    @OnClick(R.id.btn_sure)
-    public void onViewClicked() {
-        dismiss();
-        if (dialogCallBackTwo != null) {
-            dialogCallBackTwo.OnPositiveClick("");
-        }
-    }
 
     @OnClick({R.id.tv_upload_detail, R.id.tv_refuse_detail})
     public void onViewClicked(View view) {

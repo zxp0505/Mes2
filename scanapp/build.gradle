@@ -67,45 +67,55 @@ android {
     flavorDimensions "channel"
     // 多渠道/多环境 的不同配置
     productFlavors {
-
-
-//        check {
-//            // 每个环境包名不同
-//            applicationId "workstation.zjyk.com.check"
-//            // 动态添加 string.xml 字段；
-//            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
-//            resValue "string", "app_name", "托盘查询"
-////            resValue "bool", "auto_updates", 'false'
-//            // 动态修改 常量 字段
-//            buildConfigField "String", "ENVIRONMENT", '"false"'
-//            buildConfigField "boolean", "isCheck", "true"
-//            buildConfigField "boolean", "isInspect", "false"
-//            buildConfigField "boolean", "isWarn", "false"
-//            // 修改 AndroidManifest.xml 里渠道变量
-////            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
-////                                    ,app_icon   : "@mipmap/logo_baidu"]
-//        }
-
-
-
-
-//        quality {
-//            // 每个环境包名不同
-//            applicationId "workstation.zjyk.com.quality"
-//            // 动态添加 string.xml 字段；
-//            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
-//            resValue "string", "app_name", "质量"
-////            resValue "bool", "auto_updates", 'false'
-//            // 动态修改 常量 字段
-//            buildConfigField "String", "ENVIRONMENT", '"false"'
-//            buildConfigField "boolean", "isCheck", "false"
-//            buildConfigField "boolean", "isInspect", "false"
-//            buildConfigField "boolean", "isWarn", "false"
-//        }
         def default_h5_url_warn = "\"server/yike/message!alist.action?status=NO&messageType=ALARM\""//默认h5配置地址
         def pull_warn_info_warn = "\"server/yike/message!notice.action\""//拉去警告接口
         def default_h5_url_warn_nologin = "\"\""//
         def pull_warn_info_warn_nologin = "\"\""//
+
+        check {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.com.check"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "托盘查询"
+//            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "isCheck", "true"
+            buildConfigField "boolean", "isInspect", "false"
+            buildConfigField "boolean", "isWarn", "false"
+            // 修改 AndroidManifest.xml 里渠道变量
+//            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
+//                                    ,app_icon   : "@mipmap/logo_baidu"]
+            buildConfigField "boolean", "isWarnLogin", "false"
+            //默认h5
+            buildConfigField "String", "default_h5_url", ""
+            //拉取警告
+            buildConfigField "String", "pull_warn_info", ""
+        }
+
+
+
+
+        quality {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.com.quality"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "质量"
+//            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "isCheck", "false"
+            buildConfigField "boolean", "isInspect", "false"
+            buildConfigField "boolean", "isWarn", "false"
+            buildConfigField "boolean", "isWarnLogin", "false"
+            //默认h5
+            buildConfigField "String", "default_h5_url", ""
+            //拉取警告
+            buildConfigField "String", "pull_warn_info", ""
+        }
+
         warn {
             // 每个环境包名不同
             applicationId "workstation.zjyk.com.warn"
