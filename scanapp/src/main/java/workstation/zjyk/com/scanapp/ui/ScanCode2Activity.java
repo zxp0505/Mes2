@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,11 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bingoogolapple.qrcode.core.QRCodeView;
 import cn.bingoogolapple.qrcode.zbar.ZBarView;
-import cn.com.ethank.mylibrary.resourcelibrary.common_util.AppManager;
 import cn.com.ethank.mylibrary.resourcelibrary.intent.StartIntentUtils;
 import cn.com.ethank.mylibrary.resourcelibrary.toast.ToastUtil;
 import cn.com.ethank.mylibrary.resourcelibrary.utils.UICommonUtil;
@@ -45,6 +44,10 @@ public class ScanCode2Activity extends ScanBaseActivity<ScanCodePresent> impleme
 //    TextView tvQuit;
 
     int flag = 0;//0:扫描完进入操作界面   1:扫描完进入详情界面
+    @BindView(R.id.edit_number)
+    EditText editNumber;
+    @BindView(R.id.btn_sure)
+    Button btnSure;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -81,7 +84,7 @@ public class ScanCode2Activity extends ScanBaseActivity<ScanCodePresent> impleme
         mQRCodeView.setDelegate(this);
     }
 
-    @OnClick({R.id.tv_control_light, R.id.tv_history})
+    @OnClick({R.id.tv_control_light, R.id.tv_history, R.id.btn_sure})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_control_light:
@@ -99,6 +102,14 @@ public class ScanCode2Activity extends ScanBaseActivity<ScanCodePresent> impleme
                 break;
             case R.id.tv_history:
                 requestHistoryList();
+                break;
+            case R.id.btn_sure:
+                String number = editNumber.getText().toString();
+                if (!TextUtils.isEmpty(number)) {
+                    ToastUtil.showInfoCenterShort("条码不能为空");
+                } else {
+                    onScanQRCodeSuccess(number);
+                }
                 break;
         }
     }
@@ -220,4 +231,5 @@ public class ScanCode2Activity extends ScanBaseActivity<ScanCodePresent> impleme
     public void hideLoading() {
         hideLoadingDialog();
     }
+
 }
