@@ -115,6 +115,7 @@ public class MyServer extends NanoHTTPD {
     private static final String URL_CMPUSH = "cmpush";
     private static final String URL_WORKSTATION = "workstation";
     private static final String URL_WARN = "warn";
+    private static final String URL_WARN_NOLOGIN = "warnnologin";
     int status;
     String defaulResponse = "{\"code\":\"1\"}";
     String errorRespones = "{\"code\":\"0\"}";
@@ -175,15 +176,23 @@ public class MyServer extends NanoHTTPD {
             case URL_WORKSTATION:
                 handleWorkstationAction(params);
                 break;
+            case URL_WARN_NOLOGIN:
+                handleWarnNologinAction(params);
+                break;
             case URL_WARN:
                 handleWarnAction(params);
                 break;
         }
         handleAction(urlParams);
     }
-
+    private void handleWarnNologinAction(Map<String, String> data) {
+        MessageEventBean bean = new MessageEventBean();
+        bean.setMessage(JSON.toJSONString(data));
+        bean.setType(111);
+        EventBus.getDefault().post(bean);
+    }
     private void handleWarnAction(Map<String, String> data) {
-        MessageEventBean bean =new MessageEventBean();
+        MessageEventBean bean = new MessageEventBean();
         bean.setMessage(JSON.toJSONString(data));
         bean.setType(110);
         EventBus.getDefault().post(bean);

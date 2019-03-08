@@ -31,7 +31,7 @@ android {
 //            applicationId "workstation.zjyk.com.scanapp"
 //        }
 //        if(isScanCheckOnly.toBoolean()){
-            applicationId "workstation.zjyk.com.scanapp"
+        applicationId "workstation.zjyk.com.scanapp"
 //        }else{
 //            applicationId "workstation.zjyk.com.scanapp.check"
 //        }
@@ -98,60 +98,80 @@ android {
             buildConfigField "boolean", "isCheck", "false"
             buildConfigField "boolean", "isInspect", "false"
             buildConfigField "boolean", "isWarn", "false"
-//        }
+}
+//            warn {
+//                // 每个环境包名不同
+//                applicationId "workstation.zjyk.com.warn"
+//                // 动态添加 string.xml 字段；
+//                // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+//                resValue "string", "app_name", "报警"
+////            resValue "bool", "auto_updates", 'false'
+//                // 动态修改 常量 字段
+//                buildConfigField "String", "ENVIRONMENT", '"false"'
+//                buildConfigField "boolean", "isCheck", "false"
+//                buildConfigField "boolean", "isInspect", "false"
+//                buildConfigField "boolean", "isWarn", "true"
+//                buildConfigField "boolean", "isWarnLogin", "true"
+//                //默认h5
+////                buildConfigField "String", "default_h5_url", "${default_h5_url_warn}"
+//                //拉取警告
+////                buildConfigField "String", "pull_warn_info", "${pull_warn_info_warn}"
+//            }
+//            nologinwarn {
+//                // 每个环境包名不同
+//                applicationId "workstation.zjyk.com.nologinwarn"
+//                // 动态添加 string.xml 字段；
+//                // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+//                resValue "string", "app_name", "报警"
+////            resValue "bool", "auto_updates", 'false'
+//                // 动态修改 常量 字段
+//                buildConfigField "String", "ENVIRONMENT", '"false"'
+//                buildConfigField "boolean", "isCheck", "false"
+//                buildConfigField "boolean", "isInspect", "false"
+//                buildConfigField "boolean", "isWarn", "true"
+//                buildConfigField "boolean", "isWarnLogin", "false"
+//                //默认h5
+////                buildConfigField "String", "default_h5_url", "${default_h5_url_warn_nologin}"
+//                //拉取警告
+////                buildConfigField "String", "pull_warn_info", "${pull_warn_info_warn_nologin}"
+//            }
 
-            /*warn {
-            // 每个环境包名不同
-            applicationId "workstation.zjyk.com.warn"
-            // 动态添加 string.xml 字段；
-            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
-            resValue "string", "app_name", "报警"
-//            resValue "bool", "auto_updates", 'false'
-            // 动态修改 常量 字段
-            buildConfigField "String", "ENVIRONMENT", '"false"'
-            buildConfigField "boolean", "isCheck", "false"
-            buildConfigField "boolean", "isInspect", "false"
-            buildConfigField "boolean", "isWarn", "true"
-        }
-        */
-
-
-        }
 
     }
 
+}
 
 
-    dependencies {
-        implementation fileTree(include: ['*.jar'], dir: 'libs')
-        implementation rootProject.ext.appcompatV7
-        implementation rootProject.ext.constraintLayout
-        //    butterknife
-        implementation rootProject.ext.butterknife
-        implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-        annotationProcessor rootProject.ext.butterknifeCompiler
-        testImplementation 'junit:junit:4.12'
-        androidTestImplementation 'com.android.support.test:runner:1.0.1'
-        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-        implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.2.0'
-        implementation 'cn.bingoogolapple:bga-qrcode-zbar:1.2.0'
-        implementation project(':mylibrary')
-        implementation rootProject.ext.percent_layout
-        implementation("com.github.hotchemi:permissionsdispatcher:3.1.0") {
-            // if you don't use android.app.Fragment you can exclude support for them
-            exclude module: "support-v13"
-        }
-        annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.1.0"
-        implementation rootProject.ext.picktureSelect
 
-        compile('com.github.ganfra:material-spinner:2.0.0')
-        compile 'com.github.arcadefire:nice-spinner:1.3.1'
-        implementation 'com.android.support:design:24.2.0'
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.appcompatV7
+    implementation rootProject.ext.constraintLayout
+    //    butterknife
+    implementation rootProject.ext.butterknife
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    annotationProcessor rootProject.ext.butterknifeCompiler
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.2.0'
+    implementation 'cn.bingoogolapple:bga-qrcode-zbar:1.2.0'
+    implementation project(':mylibrary')
+    implementation rootProject.ext.percent_layout
+    implementation("com.github.hotchemi:permissionsdispatcher:3.1.0") {
+        // if you don't use android.app.Fragment you can exclude support for them
+        exclude module: "support-v13"
+    }
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.1.0"
+    implementation rootProject.ext.picktureSelect
+
+    compile('com.github.ganfra:material-spinner:2.0.0')
+    compile 'com.github.arcadefire:nice-spinner:1.3.1'
+    implementation 'com.android.support:design:24.2.0'
 //    implementation 'com.github.Victory-Over:SuperWeb:v1.0.2'
 
 
-    }
-    apply plugin: 'kotlin-android'
-    apply plugin: 'kotlin-android-extensions'
 }
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'

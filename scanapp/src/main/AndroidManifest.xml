@@ -86,6 +86,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.ScanWaitWarnActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.ScanH5Activity"

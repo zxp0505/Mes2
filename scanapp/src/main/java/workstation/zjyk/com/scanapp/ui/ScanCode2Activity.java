@@ -106,9 +106,9 @@ public class ScanCode2Activity extends ScanBaseActivity<ScanCodePresent> impleme
             case R.id.btn_sure:
                 String number = editNumber.getText().toString();
                 if (!TextUtils.isEmpty(number)) {
-                    ToastUtil.showInfoCenterShort("条码不能为空");
-                } else {
                     onScanQRCodeSuccess(number);
+                } else {
+                    ToastUtil.showInfoCenterShort("条码不能为空");
                 }
                 break;
         }
