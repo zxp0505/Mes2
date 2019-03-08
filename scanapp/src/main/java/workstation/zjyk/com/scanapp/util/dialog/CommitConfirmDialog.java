@@ -26,6 +26,7 @@ import workstation.zjyk.com.scanapp.modle.bean.QualityHandleDetailVO;
 import workstation.zjyk.com.scanapp.modle.bean.ScanResultItem;
 import workstation.zjyk.com.scanapp.modle.bean.enumpackage.ScanYesOrNoEnum;
 import workstation.zjyk.com.scanapp.ui.adapter.AdapterHistoryPhoto;
+import workstation.zjyk.com.scanapp.ui.adapter.AdapterPreviewHistoryPhoto;
 import workstation.zjyk.com.scanapp.ui.adapter.ScanResultAdapter;
 import workstation.zjyk.com.scanapp.util.dialog.callback.ScanDialogCallBackTwo;
 
@@ -86,7 +87,7 @@ public class CommitConfirmDialog extends ScanCommonDialog {
     NestedScrollView nestScroll;
     private ScanResultAdapter mScanResultAdapter;
     private ScanResultAdapter mScanResultOrderAdapter;
-    private AdapterHistoryPhoto mAdapterHistoryPhoto;
+    private AdapterPreviewHistoryPhoto mAdapterHistoryPhoto;
 
     public CommitConfirmDialog(Context context, String title, ScanDialogCallBackTwo dialogCallBackTwo) {
         this(context, title, "确定", dialogCallBackTwo);
@@ -122,7 +123,7 @@ public class CommitConfirmDialog extends ScanCommonDialog {
         recycleviewOrder.setAdapter(mScanResultOrderAdapter);
 
         //选择的图片
-        mAdapterHistoryPhoto = new AdapterHistoryPhoto();
+        mAdapterHistoryPhoto = new AdapterPreviewHistoryPhoto();
         recyclePhotoDetail.setLayoutManager(new GridLayoutManager(this.getContext(), 1));
         recyclePhotoDetail.setAdapter(mAdapterHistoryPhoto);
 
@@ -156,13 +157,6 @@ public class CommitConfirmDialog extends ScanCommonDialog {
     }
 
 
-    @OnClick(R.id.btn_sure)
-    public void onViewClicked() {
-        dismiss();
-        if (dialogCallBackTwo != null) {
-            dialogCallBackTwo.OnPositiveClick("");
-        }
-    }
 
     @OnClick({R.id.tv_upload_detail, R.id.tv_refuse_detail})
     public void onViewClicked(View view) {
@@ -171,11 +165,13 @@ public class CommitConfirmDialog extends ScanCommonDialog {
                 if (dialogCallBackTwo != null) {
                     dialogCallBackTwo.OnPositiveClick("");
                 }
+                dismiss();
                 break;
             case R.id.tv_refuse_detail:
                 if (dialogCallBackTwo != null) {
                     dialogCallBackTwo.OnNegativeClick();
                 }
+                dismiss();
                 break;
         }
     }

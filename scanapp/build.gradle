@@ -67,23 +67,34 @@ android {
     flavorDimensions "channel"
     // 多渠道/多环境 的不同配置
     productFlavors {
+        def default_h5_url_warn = "\"server/yike/message!alist.action?status=NO&messageType=ALARM\""//默认h5配置地址
+        def pull_warn_info_warn = "\"server/yike/message!notice.action\""//拉去警告接口
+        def default_h5_url_warn_nologin = "\"..\""//
+        def pull_warn_info_warn_nologin = "\"..\""//
 
-//        check {
-//            // 每个环境包名不同
-//            applicationId "workstation.zjyk.com.check"
-//            // 动态添加 string.xml 字段；
-//            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
-//            resValue "string", "app_name", "托盘查询"
-////            resValue "bool", "auto_updates", 'false'
-//            // 动态修改 常量 字段
-//            buildConfigField "String", "ENVIRONMENT", '"false"'
-//            buildConfigField "boolean", "isCheck", "true"
-//            buildConfigField "boolean", "isInspect", "false"
-//            buildConfigField "boolean", "isWarn", "false"
-//            // 修改 AndroidManifest.xml 里渠道变量
-////            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
-////                                    ,app_icon   : "@mipmap/logo_baidu"]
-//        }
+        check {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.com.check"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "托盘查询"
+//            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "isCheck", "true"
+            buildConfigField "boolean", "isInspect", "false"
+            buildConfigField "boolean", "isWarn", "false"
+            // 修改 AndroidManifest.xml 里渠道变量
+//            manifestPlaceholders = [CHANNEL_VALUE: "baidu"
+//                                    ,app_icon   : "@mipmap/logo_baidu"]
+            buildConfigField "boolean", "isWarnLogin", "false"
+            //默认h5
+            buildConfigField "String", "default_h5_url", "${default_h5_url_warn_nologin}"
+            //拉取警告
+            buildConfigField "String", "pull_warn_info", "${pull_warn_info_warn_nologin}"
+        }
+
+
 
 
         quality {
@@ -98,43 +109,50 @@ android {
             buildConfigField "boolean", "isCheck", "false"
             buildConfigField "boolean", "isInspect", "false"
             buildConfigField "boolean", "isWarn", "false"
-}
-//            warn {
-//                // 每个环境包名不同
-//                applicationId "workstation.zjyk.com.warn"
-//                // 动态添加 string.xml 字段；
-//                // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
-//                resValue "string", "app_name", "报警"
-////            resValue "bool", "auto_updates", 'false'
-//                // 动态修改 常量 字段
-//                buildConfigField "String", "ENVIRONMENT", '"false"'
-//                buildConfigField "boolean", "isCheck", "false"
-//                buildConfigField "boolean", "isInspect", "false"
-//                buildConfigField "boolean", "isWarn", "true"
-//                buildConfigField "boolean", "isWarnLogin", "true"
-//                //默认h5
-////                buildConfigField "String", "default_h5_url", "${default_h5_url_warn}"
-//                //拉取警告
-////                buildConfigField "String", "pull_warn_info", "${pull_warn_info_warn}"
-//            }
-//            nologinwarn {
-//                // 每个环境包名不同
-//                applicationId "workstation.zjyk.com.nologinwarn"
-//                // 动态添加 string.xml 字段；
-//                // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
-//                resValue "string", "app_name", "报警"
-////            resValue "bool", "auto_updates", 'false'
-//                // 动态修改 常量 字段
-//                buildConfigField "String", "ENVIRONMENT", '"false"'
-//                buildConfigField "boolean", "isCheck", "false"
-//                buildConfigField "boolean", "isInspect", "false"
-//                buildConfigField "boolean", "isWarn", "true"
-//                buildConfigField "boolean", "isWarnLogin", "false"
-//                //默认h5
-////                buildConfigField "String", "default_h5_url", "${default_h5_url_warn_nologin}"
-//                //拉取警告
-////                buildConfigField "String", "pull_warn_info", "${pull_warn_info_warn_nologin}"
-//            }
+            buildConfigField "boolean", "isWarnLogin", "false"
+            //默认h5
+            buildConfigField "String", "default_h5_url", "${default_h5_url_warn_nologin}"
+            //拉取警告
+            buildConfigField "String", "pull_warn_info", "${pull_warn_info_warn_nologin}"
+        }
+
+        warn {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.com.warn"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "报警"
+//            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "isCheck", "false"
+            buildConfigField "boolean", "isInspect", "false"
+            buildConfigField "boolean", "isWarn", "true"
+            buildConfigField "boolean", "isWarnLogin", "true"
+            //默认h5
+            buildConfigField "String", "default_h5_url", "${default_h5_url_warn}"
+            //拉取警告
+            buildConfigField "String", "pull_warn_info", "${pull_warn_info_warn}"
+        }
+        nologinwarn {
+            // 每个环境包名不同
+            applicationId "workstation.zjyk.com.nologinwarn"
+            // 动态添加 string.xml 字段；
+            // 注意，这里是添加，在 string.xml 不能有这个字段，会重名！！！
+            resValue "string", "app_name", "报警"
+//            resValue "bool", "auto_updates", 'false'
+            // 动态修改 常量 字段
+            buildConfigField "String", "ENVIRONMENT", '"false"'
+            buildConfigField "boolean", "isCheck", "false"
+            buildConfigField "boolean", "isInspect", "false"
+            buildConfigField "boolean", "isWarn", "true"
+            buildConfigField "boolean", "isWarnLogin", "false"
+            //默认h5
+            buildConfigField "String", "default_h5_url","${default_h5_url_warn_nologin}"
+            //拉取警告
+            buildConfigField "String", "pull_warn_info", "${pull_warn_info_warn_nologin}"
+        }
+
 
 
     }
@@ -166,7 +184,7 @@ dependencies {
     annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.1.0"
     implementation rootProject.ext.picktureSelect
 
-    compile('com.github.ganfra:material-spinner:2.0.0')
+    compile ('com.github.ganfra:material-spinner:2.0.0')
     compile 'com.github.arcadefire:nice-spinner:1.3.1'
     implementation 'com.android.support:design:24.2.0'
 //    implementation 'com.github.Victory-Over:SuperWeb:v1.0.2'
