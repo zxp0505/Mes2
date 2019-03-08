@@ -323,9 +323,18 @@ public class ScanWaitWarnActivity extends ScanBaseActivity<ScanWaitWarnPresent> 
 
     private void pullWarnInfo() {
         Map<String, String> params = new HashMap<>();
-        params.put("personId", ScanUserManager.getInstance().getWarnUserName());
-        params.put("status", "NO");
-        params.put("messageType", "ALARM");
+
+        //dhc 配置告警接口参数
+
+        if(ScanConstants.isWarnLogin()){
+            params.put("personId", ScanUserManager.getInstance().getWarnUserName());
+            params.put("status", "NO");
+            params.put("messageType", "ALARM");
+        }else{
+            params.put("status", "NO");
+            params.put("messageType", "FIRST_INSPECTION");
+        }
+
         currentPresent.pullWarnInfo(params, true);
     }
 

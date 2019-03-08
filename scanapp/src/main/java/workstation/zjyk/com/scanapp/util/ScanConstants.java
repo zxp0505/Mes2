@@ -13,12 +13,9 @@ public class ScanConstants {
     static boolean isCheckTray = BuildConfig.isCheck;
     static boolean isInspect = BuildConfig.isInspect;
     static boolean isWarn = BuildConfig.isWarn;
-//    static boolean isWarnLogin = BuildConfig.isWarnLogin;
-//    static String pull_warn_info = BuildConfig.pull_warn_info;
-//    static String default_h5_url = BuildConfig.default_h5_url;
-static boolean isWarnLogin = false;
-    static String pull_warn_info = "";
-    static String default_h5_url = "";
+    static boolean isWarnLogin = BuildConfig.isWarnLogin;
+    static String pull_warn_info = BuildConfig.pull_warn_info;
+    static String default_h5_url = BuildConfig.default_h5_url;
 
     public static String  getPullWarnInfo(){
         return pull_warn_info;

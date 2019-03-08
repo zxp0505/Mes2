@@ -69,8 +69,8 @@ android {
     productFlavors {
         def default_h5_url_warn = "\"server/yike/message!alist.action?status=NO&messageType=ALARM\""//默认h5配置地址
         def pull_warn_info_warn = "\"server/yike/message!notice.action\""//拉去警告接口
-        def default_h5_url_warn_nologin = "\"..\""//
-        def pull_warn_info_warn_nologin = "\"..\""//
+        def default_h5_url_warn_nologin = "\"server/yike/message!list.action?status=NO&messageType=FIRST_INSPECTION\""//
+        def pull_warn_info_warn_nologin = "\"server/yike/message!notice.action\""//
 
         check {
             // 每个环境包名不同

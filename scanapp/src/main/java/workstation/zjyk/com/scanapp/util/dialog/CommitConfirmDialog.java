@@ -7,11 +7,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.luck.picture.lib.entity.LocalMedia;
 
 import java.util.ArrayList;
@@ -25,7 +30,6 @@ import workstation.zjyk.com.scanapp.R;
 import workstation.zjyk.com.scanapp.modle.bean.QualityHandleDetailVO;
 import workstation.zjyk.com.scanapp.modle.bean.ScanResultItem;
 import workstation.zjyk.com.scanapp.modle.bean.enumpackage.ScanYesOrNoEnum;
-import workstation.zjyk.com.scanapp.ui.adapter.AdapterHistoryPhoto;
 import workstation.zjyk.com.scanapp.ui.adapter.AdapterPreviewHistoryPhoto;
 import workstation.zjyk.com.scanapp.ui.adapter.ScanResultAdapter;
 import workstation.zjyk.com.scanapp.util.dialog.callback.ScanDialogCallBackTwo;
@@ -85,6 +89,8 @@ public class CommitConfirmDialog extends ScanCommonDialog {
     LinearLayout llRoot;
     @BindView(R.id.nestScroll)
     NestedScrollView nestScroll;
+    @BindView(R.id.ll_images)
+    LinearLayout llImages;
     private ScanResultAdapter mScanResultAdapter;
     private ScanResultAdapter mScanResultOrderAdapter;
     private AdapterPreviewHistoryPhoto mAdapterHistoryPhoto;
@@ -127,7 +133,11 @@ public class CommitConfirmDialog extends ScanCommonDialog {
         recyclePhotoDetail.setLayoutManager(new GridLayoutManager(this.getContext(), 1));
         recyclePhotoDetail.setAdapter(mAdapterHistoryPhoto);
 
-
+//解决数据加载不完的问题
+        recyclePhotoDetail.setNestedScrollingEnabled(false);
+        recyclePhotoDetail.setHasFixedSize(true);
+//解决数据加载完成后, 没有停留在顶部的问题
+        recyclePhotoDetail.setFocusable(false);
     }
 
     public void showDatas(List<ScanResultItem> data, List<ScanResultItem> mScanResultOrderAdapterData, List<LocalMedia> selectList, QualityHandleDetailVO qualityHandleDetailVO) {
@@ -140,6 +150,24 @@ public class CommitConfirmDialog extends ScanCommonDialog {
             }
         }
         mAdapterHistoryPhoto.setNewData(photos);
+//        if(photos != null){
+//
+//
+//        for (int i = 0; i < photos.size(); i++) {
+//            ImageView imageView =new ImageView(this.getContext());
+//            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//            imageView.setLayoutParams(params);
+//            RequestOptions options = new RequestOptions()
+//                    .centerCrop()
+//                    .placeholder(R.drawable.picfail)
+//                    .diskCacheStrategy(DiskCacheStrategy.ALL);
+//            Glide.with(this.getContext())
+//                    .load(photos.get(i))
+//                    .apply(options)
+//                    .into(imageView);
+//            llImages.addView(imageView);
+//        }
+//        }
         if (qualityHandleDetailVO != null) {
             tvOpreationName.setText("操作人: " + qualityHandleDetailVO.getPersonName());
             String feedStr = (qualityHandleDetailVO.getNeedSupply() != null && qualityHandleDetailVO.getNeedSupply() == ScanYesOrNoEnum.YES) ? "是" : "否";
@@ -154,8 +182,8 @@ public class CommitConfirmDialog extends ScanCommonDialog {
             String reason = TextUtils.isEmpty(qualityHandleDetailVO.getReason()) ? "无" : qualityHandleDetailVO.getReason();
             tvExceptReason.setText("异常原因: " + reason);
         }
+        nestScroll.requestLayout();
     }
-
 
 
     @OnClick({R.id.tv_upload_detail, R.id.tv_refuse_detail})
