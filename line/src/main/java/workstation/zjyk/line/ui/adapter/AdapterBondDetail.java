@@ -29,7 +29,7 @@ public class AdapterBondDetail extends BaseQuickAdapter<OrderDistributeNeedMater
     protected void convert(BaseViewHolder holder, OrderDistributeNeedMaterielVo item) {
 
         //dhc  //隐藏收料的一键发料
-        holder.setVisible(R.id.tv_one_bond, false);
+//        holder.setVisible(R.id.tv_one_bond, false);
 
         if (Constants.isReciver) {
             holder.setVisible(R.id.tv_one_bond, false);
