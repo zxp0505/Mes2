@@ -25,6 +25,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.com.ethank.mylibrary.resourcelibrary.utils.UICommonUtil;
 import fr.ganfra.materialspinner.MaterialSpinner;
 import workstation.zjyk.com.scanapp.R;
 import workstation.zjyk.com.scanapp.modle.bean.QualityHandleDetailVO;
@@ -128,6 +129,7 @@ public class CommitConfirmDialog extends ScanCommonDialog {
         recycleviewOrder.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recycleviewOrder.setAdapter(mScanResultOrderAdapter);
 
+        int screenHeightPixels = UICommonUtil.getScreenHeightPixels(getContext());
         //选择的图片
         mAdapterHistoryPhoto = new AdapterPreviewHistoryPhoto();
         recyclePhotoDetail.setLayoutManager(new GridLayoutManager(this.getContext(), 1));

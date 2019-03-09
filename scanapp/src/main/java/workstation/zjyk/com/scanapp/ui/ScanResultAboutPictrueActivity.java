@@ -481,6 +481,7 @@ public class ScanResultAboutPictrueActivity extends ScanBaseActivity<ScanMainPre
     ScanTrayInfoVo currentTrayInfoVo;
     Map<String, String> downPicMap = new HashMap<>();
     QualityHandleDetailVO qualityHandleDetailVO;
+
     @Override
     public void showDetail(QualityHandleDetailVO qualityHandleDetailVO) {
         if (qualityHandleDetailVO != null) {
@@ -836,8 +837,8 @@ public class ScanResultAboutPictrueActivity extends ScanBaseActivity<ScanMainPre
         }
     }
 
-    private void showCommitConfirmDialog(){
-        if(mCommitConfirmDialog == null) {
+    private void showCommitConfirmDialog() {
+        if (mCommitConfirmDialog == null) {
             mCommitConfirmDialog = ScanDialogUtils.showCommitConfirmDialog(this, "", new ScanDialogCallBackTwo() {
                 @Override
                 public void OnPositiveClick(Object obj) {
@@ -850,12 +851,14 @@ public class ScanResultAboutPictrueActivity extends ScanBaseActivity<ScanMainPre
                 }
             });
         }
-        QualityHandleDetailVO qualityHandleDetailVO =new QualityHandleDetailVO();
-        qualityHandleDetailVO.setPersonName(ScanUserManager.getInstance().getCurrentPerson().getUserName());
+        QualityHandleDetailVO qualityHandleDetailVO = new QualityHandleDetailVO();
+        if (ScanUserManager.getInstance().getCurrentPerson() != null) {
+            qualityHandleDetailVO.setPersonName(ScanUserManager.getInstance().getCurrentPerson().getUserName());
+        }
         qualityHandleDetailVO.setExceptionType(exceptTypes.get(spinnerOne.getSelectedItemPosition()));
         qualityHandleDetailVO.setHandleType(handleTypes.get(spinnerTwo.getSelectedItemPosition()));
         qualityHandleDetailVO.setReason(editReason.getText().toString());
-        mCommitConfirmDialog.showDatas(mScanResultAdapter.getData(),mScanResultOrderAdapter.getData(),selectList,qualityHandleDetailVO);
+        mCommitConfirmDialog.showDatas(mScanResultAdapter.getData(), mScanResultOrderAdapter.getData(), selectList, qualityHandleDetailVO);
         mCommitConfirmDialog.show();
     }
 }
